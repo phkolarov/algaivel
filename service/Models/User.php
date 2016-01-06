@@ -4,32 +4,38 @@ class User
 {
 	const COL_ID = 'id';
 	const COL_USERNAME = 'username';
-	const COL_PASSWORD = 'password';
-	const COL_REGISTERDATE = 'registerDate';
-	const COL_EMAILVERIFIED = 'emailVerified';
 	const COL_EMAIL = 'email';
-	const COL_CREATEDAT = 'createdAt';
-	const COL_UPDATEDAT = 'updatedAt';
+	const COL_PASSWORD = 'password';
+	const COL_ROLE_ID = 'role_id';
+	const COL_F_NAME = 'f_name';
+	const COL_L_NAME = 'l_name';
+	const COL_GENDER = 'gender';
+	const COL_DATE_OF_BIRTH = 'date_of_birth';
+	const COL_REGISTERED_AT = 'registered_at';
 
 	private $id;
 	private $username;
-	private $password;
-	private $registerDate;
-	private $emailVerified;
 	private $email;
-	private $createdAt;
-	private $updatedAt;
+	private $password;
+	private $role_id;
+	private $f_name;
+	private $l_name;
+	private $gender;
+	private $date_of_birth;
+	private $registered_at;
 
-	public function __construct($username, $password, $registerDate, $emailVerified, $email, $createdAt, $updatedAt, $id = null)
+	public function __construct($username, $email, $password, $role_id, $f_name, $l_name, $gender, $date_of_birth, $registered_at, $id = null)
 	{
 		$this->setId($id);
 		$this->setUsername($username);
-		$this->setPassword($password);
-		$this->setRegisterDate($registerDate);
-		$this->setEmailVerified($emailVerified);
 		$this->setEmail($email);
-		$this->setCreatedAt($createdAt);
-		$this->setUpdatedAt($updatedAt);
+		$this->setPassword($password);
+		$this->setRole_id($role_id);
+		$this->setF_name($f_name);
+		$this->setL_name($l_name);
+		$this->setGender($gender);
+		$this->setDate_of_birth($date_of_birth);
+		$this->setRegistered_at($registered_at);
 	}
 
 	/**
@@ -75,66 +81,6 @@ class User
 	/**
 	* @return mixed
 	*/
-	public function getPassword()
-	{
-		return $this->password;
-	}
-
-	/**
-	* @param $password
-	* @return $this
-	*/
-	public function setPassword($password)
-	{
-		$this->password = $password;
-		
-		return $this;
-	}
-
-
-	/**
-	* @return mixed
-	*/
-	public function getRegisterDate()
-	{
-		return $this->registerDate;
-	}
-
-	/**
-	* @param $registerDate
-	* @return $this
-	*/
-	public function setRegisterDate($registerDate)
-	{
-		$this->registerDate = $registerDate;
-		
-		return $this;
-	}
-
-
-	/**
-	* @return mixed
-	*/
-	public function getEmailVerified()
-	{
-		return $this->emailVerified;
-	}
-
-	/**
-	* @param $emailVerified
-	* @return $this
-	*/
-	public function setEmailVerified($emailVerified)
-	{
-		$this->emailVerified = $emailVerified;
-		
-		return $this;
-	}
-
-
-	/**
-	* @return mixed
-	*/
 	public function getEmail()
 	{
 		return $this->email;
@@ -155,18 +101,18 @@ class User
 	/**
 	* @return mixed
 	*/
-	public function getCreatedAt()
+	public function getPassword()
 	{
-		return $this->createdAt;
+		return $this->password;
 	}
 
 	/**
-	* @param $createdAt
+	* @param $password
 	* @return $this
 	*/
-	public function setCreatedAt($createdAt)
+	public function setPassword($password)
 	{
-		$this->createdAt = $createdAt;
+		$this->password = $password;
 		
 		return $this;
 	}
@@ -175,18 +121,118 @@ class User
 	/**
 	* @return mixed
 	*/
-	public function getUpdatedAt()
+	public function getRole_id()
 	{
-		return $this->updatedAt;
+		return $this->role_id;
 	}
 
 	/**
-	* @param $updatedAt
+	* @param $role_id
 	* @return $this
 	*/
-	public function setUpdatedAt($updatedAt)
+	public function setRole_id($role_id)
 	{
-		$this->updatedAt = $updatedAt;
+		$this->role_id = $role_id;
+		
+		return $this;
+	}
+
+
+	/**
+	* @return mixed
+	*/
+	public function getF_name()
+	{
+		return $this->f_name;
+	}
+
+	/**
+	* @param $f_name
+	* @return $this
+	*/
+	public function setF_name($f_name)
+	{
+		$this->f_name = $f_name;
+		
+		return $this;
+	}
+
+
+	/**
+	* @return mixed
+	*/
+	public function getL_name()
+	{
+		return $this->l_name;
+	}
+
+	/**
+	* @param $l_name
+	* @return $this
+	*/
+	public function setL_name($l_name)
+	{
+		$this->l_name = $l_name;
+		
+		return $this;
+	}
+
+
+	/**
+	* @return mixed
+	*/
+	public function getGender()
+	{
+		return $this->gender;
+	}
+
+	/**
+	* @param $gender
+	* @return $this
+	*/
+	public function setGender($gender)
+	{
+		$this->gender = $gender;
+		
+		return $this;
+	}
+
+
+	/**
+	* @return mixed
+	*/
+	public function getDate_of_birth()
+	{
+		return $this->date_of_birth;
+	}
+
+	/**
+	* @param $date_of_birth
+	* @return $this
+	*/
+	public function setDate_of_birth($date_of_birth)
+	{
+		$this->date_of_birth = $date_of_birth;
+		
+		return $this;
+	}
+
+
+	/**
+	* @return mixed
+	*/
+	public function getRegistered_at()
+	{
+		return $this->registered_at;
+	}
+
+	/**
+	* @param $registered_at
+	* @return $this
+	*/
+	public function setRegistered_at($registered_at)
+	{
+		$this->registered_at = $registered_at;
 		
 		return $this;
 	}
@@ -197,12 +243,14 @@ class User
 	$object = (object)array(
 		"id" => $this->id, 
 		"username" => $this->username, 
-		"password" => $this->password, 
-		"registerDate" => $this->registerDate, 
-		"emailVerified" => $this->emailVerified, 
 		"email" => $this->email, 
-		"createdAt" => $this->createdAt, 
-		"updatedAt" => $this->updatedAt, 
+		"password" => $this->password, 
+		"role_id" => $this->role_id, 
+		"f_name" => $this->f_name, 
+		"l_name" => $this->l_name, 
+		"gender" => $this->gender, 
+		"date_of_birth" => $this->date_of_birth, 
+		"registered_at" => $this->registered_at, 
 	);
 	 return $object;
 	}}

@@ -2,10 +2,10 @@
 namespace Repositories;
 
 use Core\Database;
-use Models\User;
-use Collections\UserCollection;
+use Models\Gallery;
+use Collections\GalleryCollection;
 
-class UserRepository
+class GalleryRepository
 {
     private $query;
     private $where = " WHERE 1";
@@ -14,12 +14,12 @@ class UserRepository
     private static $selectedObjectPool = [];
     private static $insertObjectPool = [];
     /**
-     * @var UserRepository
+     * @var GalleryRepository
      */
     private static $inst = null;
     private function __construct() { }
     /**
-     * @return UserRepository
+     * @return GalleryRepository
      */
     public static function create()
     {
@@ -38,67 +38,58 @@ class UserRepository
         $this->placeholders[] = $id;
         return $this;
     }    /**
-     * @param $username
+     * @param $source
      * @return $this
      */
-    public function filterByUsername($username)
+    public function filterBySource($source)
     {
-        $this->where .= " AND username = ?";
-        $this->placeholders[] = $username;
+        $this->where .= " AND source = ?";
+        $this->placeholders[] = $source;
         return $this;
     }    /**
-     * @param $password
+     * @param $carousel
      * @return $this
      */
-    public function filterByPassword($password)
+    public function filterByCarousel($carousel)
     {
-        $this->where .= " AND password = ?";
-        $this->placeholders[] = $password;
+        $this->where .= " AND carousel = ?";
+        $this->placeholders[] = $carousel;
         return $this;
     }    /**
-     * @param $registerDate
+     * @param $post_date
      * @return $this
      */
-    public function filterByRegisterDate($registerDate)
+    public function filterByPost_date($post_date)
     {
-        $this->where .= " AND registerDate = ?";
-        $this->placeholders[] = $registerDate;
+        $this->where .= " AND post_date = ?";
+        $this->placeholders[] = $post_date;
         return $this;
     }    /**
-     * @param $emailVerified
+     * @param $category_id
      * @return $this
      */
-    public function filterByEmailVerified($emailVerified)
+    public function filterByCategory_id($category_id)
     {
-        $this->where .= " AND emailVerified = ?";
-        $this->placeholders[] = $emailVerified;
+        $this->where .= " AND category_id = ?";
+        $this->placeholders[] = $category_id;
         return $this;
     }    /**
-     * @param $email
+     * @param $title
      * @return $this
      */
-    public function filterByEmail($email)
+    public function filterByTitle($title)
     {
-        $this->where .= " AND email = ?";
-        $this->placeholders[] = $email;
+        $this->where .= " AND title = ?";
+        $this->placeholders[] = $title;
         return $this;
     }    /**
-     * @param $createdAt
+     * @param $description
      * @return $this
      */
-    public function filterByCreatedAt($createdAt)
+    public function filterByDescription($description)
     {
-        $this->where .= " AND createdAt = ?";
-        $this->placeholders[] = $createdAt;
-        return $this;
-    }    /**
-     * @param $updatedAt
-     * @return $this
-     */
-    public function filterByUpdatedAt($updatedAt)
-    {
-        $this->where .= " AND updatedAt = ?";
-        $this->placeholders[] = $updatedAt;
+        $this->where .= " AND description = ?";
+        $this->placeholders[] = $description;
         return $this;
     }
     /**
@@ -166,48 +157,46 @@ class UserRepository
         return $this;
     }
     /**
-     * @return UserCollection
+     * @return GalleryCollection
      * @throws \Exception
      */
     public function findAll()
     {
         $db = Database::getInstance('app');
-        $this->query = "SELECT * FROM user" . $this->where . $this->order;
+        $this->query = "SELECT * FROM gallery" . $this->where . $this->order;
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
-            $entity = new User($entityInfo['username'],
-$entityInfo['password'],
-$entityInfo['registerDate'],
-$entityInfo['emailVerified'],
-$entityInfo['email'],
-$entityInfo['createdAt'],
-$entityInfo['updatedAt'],
+            $entity = new Gallery($entityInfo['source'],
+$entityInfo['carousel'],
+$entityInfo['post_date'],
+$entityInfo['category_id'],
+$entityInfo['title'],
+$entityInfo['description'],
 $entityInfo['id']);
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
         }
-        return new UserCollection($collection);
+        return new GalleryCollection($collection);
     }
     /**
-     * @return User
+     * @return Gallery
      * @throws \Exception
      */
     public function findOne()
     {
         $db = Database::getInstance('app');
-        $this->query = "SELECT * FROM user" . $this->where . $this->order . " LIMIT 1";
+        $this->query = "SELECT * FROM gallery" . $this->where . $this->order . " LIMIT 1";
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         $entityInfo = $result->fetch();
-        $entity = new User($entityInfo['username'],
-$entityInfo['password'],
-$entityInfo['registerDate'],
-$entityInfo['emailVerified'],
-$entityInfo['email'],
-$entityInfo['createdAt'],
-$entityInfo['updatedAt'],
+        $entity = new Gallery($entityInfo['source'],
+$entityInfo['carousel'],
+$entityInfo['post_date'],
+$entityInfo['category_id'],
+$entityInfo['title'],
+$entityInfo['description'],
 $entityInfo['id']);
         self::$selectedObjectPool[] = $entity;
         return $entity;
@@ -219,12 +208,12 @@ $entityInfo['id']);
     public function delete()
     {
         $db = Database::getInstance('app');
-        $this->query = "DELETE FROM user" . $this->where;
+        $this->query = "DELETE FROM gallery" . $this->where;
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         return $result->rowCount() > 0;
     }
-    public static function add(User $model)
+    public static function add(Gallery $model)
     {
         if ($model->getId()) {
             throw new \Exception('This entity is not new');
@@ -241,51 +230,49 @@ $entityInfo['id']);
         }
         return true;
     }
-    private static function update(User $model)
+    private static function update(Gallery $model)
     {
         $db = Database::getInstance('app');
-        $query = "UPDATE user SET username= :username, password= :password, registerDate= :registerDate, emailVerified= :emailVerified, email= :email, createdAt= :createdAt, updatedAt= :updatedAt WHERE id = :id";
+        $query = "UPDATE gallery SET source= :source, carousel= :carousel, post_date= :post_date, category_id= :category_id, title= :title, description= :description WHERE id = :id";
         $result = $db->prepare($query);
         $result->execute(
             [
                 ':id' => $model->getId(),
-':username' => $model->getUsername(),
-':password' => $model->getPassword(),
-':registerDate' => $model->getRegisterDate(),
-':emailVerified' => $model->getEmailVerified(),
-':email' => $model->getEmail(),
-':createdAt' => $model->getCreatedAt(),
-':updatedAt' => $model->getUpdatedAt()
+':source' => $model->getSource(),
+':carousel' => $model->getCarousel(),
+':post_date' => $model->getPost_date(),
+':category_id' => $model->getCategory_id(),
+':title' => $model->getTitle(),
+':description' => $model->getDescription()
             ]
         );
     }
-    private static function insert(User $model)
+    private static function insert(Gallery $model)
     {
         $db = Database::getInstance('app');
-        $query = "INSERT INTO user (username,password,registerDate,emailVerified,email,createdAt,updatedAt) VALUES (:username, :password, :registerDate, :emailVerified, :email, :createdAt, :updatedAt);";
+        $query = "INSERT INTO gallery (source,carousel,post_date,category_id,title,description) VALUES (:source, :carousel, :post_date, :category_id, :title, :description);";
         $result = $db->prepare($query);
         $result->execute(
             [
-                ':username' => $model->getUsername(),
-':password' => $model->getPassword(),
-':registerDate' => $model->getRegisterDate(),
-':emailVerified' => $model->getEmailVerified(),
-':email' => $model->getEmail(),
-':createdAt' => $model->getCreatedAt(),
-':updatedAt' => $model->getUpdatedAt()
+                ':source' => $model->getSource(),
+':carousel' => $model->getCarousel(),
+':post_date' => $model->getPost_date(),
+':category_id' => $model->getCategory_id(),
+':title' => $model->getTitle(),
+':description' => $model->getDescription()
             ]
         );
         $model->setId($db->lastId());
     }
     private function isColumnAllowed($column)
     {
-        $refc = new \ReflectionClass('\Models\User');
+        $refc = new \ReflectionClass('\Models\Gallery');
         $consts = $refc->getConstants();
         return in_array($column, $consts);
     }
 
     /**
-     * @return UserCollection
+     * @return GalleryCollection
      * @throws \Exception
      */
     public function pagination($pageNum,$count){
@@ -296,23 +283,22 @@ $entityInfo['id']);
         $this->placeholders[] = $pageNum;
         $this->placeholders[] = $count;
         $db = Database::getInstance('app');
-        $this->query = "SELECT * FROM user" . $this->where. " ORDER BY createdAt DESC LIMIT $param1,$count;";
+        $this->query = "SELECT * FROM gallery" . $this->where. " ORDER BY createdAt DESC LIMIT $param1,$count;";
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
-            $entity = new User($entityInfo['username'],
-$entityInfo['password'],
-$entityInfo['registerDate'],
-$entityInfo['emailVerified'],
-$entityInfo['email'],
-$entityInfo['createdAt'],
-$entityInfo['updatedAt'],
+            $entity = new Gallery($entityInfo['source'],
+$entityInfo['carousel'],
+$entityInfo['post_date'],
+$entityInfo['category_id'],
+$entityInfo['title'],
+$entityInfo['description'],
 $entityInfo['id']);
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
         }
-        return new UserCollection($collection);
+        return new GalleryCollection($collection);
 
 
     }

@@ -8,7 +8,14 @@ class GalleryController
 
     public function index(){
 
-        var_dump('index');
+
+
+
+
+
+
+
+
     }
 
 

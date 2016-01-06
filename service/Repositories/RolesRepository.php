@@ -38,13 +38,13 @@ class RolesRepository
         $this->placeholders[] = $id;
         return $this;
     }    /**
-     * @param $name
+     * @param $role
      * @return $this
      */
-    public function filterByName($name)
+    public function filterByRole($role)
     {
-        $this->where .= " AND name = ?";
-        $this->placeholders[] = $name;
+        $this->where .= " AND role = ?";
+        $this->placeholders[] = $role;
         return $this;
     }
     /**
@@ -123,7 +123,7 @@ class RolesRepository
         $result->execute($this->placeholders);
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
-            $entity = new Role($entityInfo['name'],
+            $entity = new Role($entityInfo['role'],
 $entityInfo['id']);
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
@@ -141,7 +141,7 @@ $entityInfo['id']);
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         $entityInfo = $result->fetch();
-        $entity = new Role($entityInfo['name'],
+        $entity = new Role($entityInfo['role'],
 $entityInfo['id']);
         self::$selectedObjectPool[] = $entity;
         return $entity;
@@ -178,23 +178,23 @@ $entityInfo['id']);
     private static function update(Role $model)
     {
         $db = Database::getInstance('app');
-        $query = "UPDATE roles SET name= :name WHERE id = :id";
+        $query = "UPDATE roles SET role= :role WHERE id = :id";
         $result = $db->prepare($query);
         $result->execute(
             [
                 ':id' => $model->getId(),
-':name' => $model->getName()
+':role' => $model->getRole()
             ]
         );
     }
     private static function insert(Role $model)
     {
         $db = Database::getInstance('app');
-        $query = "INSERT INTO roles (name) VALUES (:name);";
+        $query = "INSERT INTO roles (role) VALUES (:role);";
         $result = $db->prepare($query);
         $result->execute(
             [
-                ':name' => $model->getName()
+                ':role' => $model->getRole()
             ]
         );
         $model->setId($db->lastId());
@@ -223,7 +223,7 @@ $entityInfo['id']);
         $result->execute($this->placeholders);
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
-            $entity = new Role($entityInfo['name'],
+            $entity = new Role($entityInfo['role'],
 $entityInfo['id']);
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;

@@ -1,10 +1,10 @@
 <?php
 namespace Collections;
-use Models\Video;
-class VideoCollection
+use Models\Gallery;
+class GalleryCollection
 {
     /**
-     * @var Video[];
+     * @var Gallery[];
      */
     private $collection = [];
     private $publicCollection = [];

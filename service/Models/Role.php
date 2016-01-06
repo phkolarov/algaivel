@@ -3,15 +3,15 @@ namespace Models;
 class Role
 {
 	const COL_ID = 'id';
-	const COL_NAME = 'name';
+	const COL_ROLE = 'role';
 
 	private $id;
-	private $name;
+	private $role;
 
-	public function __construct($name, $id = null)
+	public function __construct($role, $id = null)
 	{
 		$this->setId($id);
-		$this->setName($name);
+		$this->setRole($role);
 	}
 
 	/**
@@ -37,18 +37,18 @@ class Role
 	/**
 	* @return mixed
 	*/
-	public function getName()
+	public function getRole()
 	{
-		return $this->name;
+		return $this->role;
 	}
 
 	/**
-	* @param $name
+	* @param $role
 	* @return $this
 	*/
-	public function setName($name)
+	public function setRole($role)
 	{
-		$this->name = $name;
+		$this->role = $role;
 		
 		return $this;
 	}
@@ -58,7 +58,7 @@ class Role
 	{
 	$object = (object)array(
 		"id" => $this->id, 
-		"name" => $this->name, 
+		"role" => $this->role, 
 	);
 	 return $object;
 	}}

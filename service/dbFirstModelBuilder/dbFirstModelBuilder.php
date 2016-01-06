@@ -5,6 +5,7 @@ namespace dbFirstModelBuilder;
 ini_set('display_errors', 1);
 include 'repositories_create.php';
 include "collections_create.php";
+use Config\DatabaseConfig;
 use PDO;
 
 class dbFirstModelBuilder{
@@ -14,7 +15,7 @@ public static function createdbFirstModels()
 {
 
 
-    $pdo = new PDO("mysql:host=localhost;dbname=akatskydb", 'root', '');
+    $pdo = new PDO("mysql:host=localhost;dbname=".DatabaseConfig::DB_NAME."", 'root', '');
     $tables = array_map(function ($t) {
         return $t[0];
     },

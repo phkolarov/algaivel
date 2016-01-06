@@ -1,10 +1,10 @@
 <?php
 namespace Collections;
-use Models\UserRole;
-class UserRoleCollection
+use Models\GalleryCategorie;
+class GalleryCategorieCollection
 {
     /**
-     * @var UserRole[];
+     * @var GalleryCategorie[];
      */
     private $collection = [];
     private $publicCollection = [];

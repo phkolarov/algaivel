@@ -2,10 +2,10 @@
 namespace Repositories;
 
 use Core\Database;
-use Models\Article;
-use Collections\ArticleCollection;
+use Models\GalleryCategorie;
+use Collections\GalleryCategorieCollection;
 
-class ArticlesRepository
+class GalleryCategoriesRepository
 {
     private $query;
     private $where = " WHERE 1";
@@ -14,12 +14,12 @@ class ArticlesRepository
     private static $selectedObjectPool = [];
     private static $insertObjectPool = [];
     /**
-     * @var ArticlesRepository
+     * @var GalleryCategoriesRepository
      */
     private static $inst = null;
     private function __construct() { }
     /**
-     * @return ArticlesRepository
+     * @return GalleryCategoriesRepository
      */
     public static function create()
     {
@@ -38,58 +38,13 @@ class ArticlesRepository
         $this->placeholders[] = $id;
         return $this;
     }    /**
-     * @param $title
+     * @param $gallery_id
      * @return $this
      */
-    public function filterByTitle($title)
+    public function filterByGallery_id($gallery_id)
     {
-        $this->where .= " AND title = ?";
-        $this->placeholders[] = $title;
-        return $this;
-    }    /**
-     * @param $introNewsData
-     * @return $this
-     */
-    public function filterByIntroNewsData($introNewsData)
-    {
-        $this->where .= " AND introNewsData = ?";
-        $this->placeholders[] = $introNewsData;
-        return $this;
-    }    /**
-     * @param $newsData
-     * @return $this
-     */
-    public function filterByNewsData($newsData)
-    {
-        $this->where .= " AND newsData = ?";
-        $this->placeholders[] = $newsData;
-        return $this;
-    }    /**
-     * @param $picture
-     * @return $this
-     */
-    public function filterByPicture($picture)
-    {
-        $this->where .= " AND picture = ?";
-        $this->placeholders[] = $picture;
-        return $this;
-    }    /**
-     * @param $thumbnail
-     * @return $this
-     */
-    public function filterByThumbnail($thumbnail)
-    {
-        $this->where .= " AND thumbnail = ?";
-        $this->placeholders[] = $thumbnail;
-        return $this;
-    }    /**
-     * @param $createdAt
-     * @return $this
-     */
-    public function filterByCreatedAt($createdAt)
-    {
-        $this->where .= " AND createdAt = ?";
-        $this->placeholders[] = $createdAt;
+        $this->where .= " AND gallery_id = ?";
+        $this->placeholders[] = $gallery_id;
         return $this;
     }    /**
      * @param $category_id
@@ -99,15 +54,6 @@ class ArticlesRepository
     {
         $this->where .= " AND category_id = ?";
         $this->placeholders[] = $category_id;
-        return $this;
-    }    /**
-     * @param $isPosted
-     * @return $this
-     */
-    public function filterByIsPosted($isPosted)
-    {
-        $this->where .= " AND isPosted = ?";
-        $this->placeholders[] = $isPosted;
         return $this;
     }
     /**
@@ -175,50 +121,38 @@ class ArticlesRepository
         return $this;
     }
     /**
-     * @return ArticleCollection
+     * @return GalleryCategorieCollection
      * @throws \Exception
      */
     public function findAll()
     {
         $db = Database::getInstance('app');
-        $this->query = "SELECT * FROM articles" . $this->where . $this->order;
+        $this->query = "SELECT * FROM gallery_categories" . $this->where . $this->order;
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
-            $entity = new Article($entityInfo['title'],
-$entityInfo['introNewsData'],
-$entityInfo['newsData'],
-$entityInfo['picture'],
-$entityInfo['thumbnail'],
-$entityInfo['createdAt'],
+            $entity = new GalleryCategorie($entityInfo['gallery_id'],
 $entityInfo['category_id'],
-$entityInfo['isPosted'],
 $entityInfo['id']);
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
         }
-        return new ArticleCollection($collection);
+        return new GalleryCategorieCollection($collection);
     }
     /**
-     * @return Article
+     * @return GalleryCategorie
      * @throws \Exception
      */
     public function findOne()
     {
         $db = Database::getInstance('app');
-        $this->query = "SELECT * FROM articles" . $this->where . $this->order . " LIMIT 1";
+        $this->query = "SELECT * FROM gallery_categories" . $this->where . $this->order . " LIMIT 1";
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         $entityInfo = $result->fetch();
-        $entity = new Article($entityInfo['title'],
-$entityInfo['introNewsData'],
-$entityInfo['newsData'],
-$entityInfo['picture'],
-$entityInfo['thumbnail'],
-$entityInfo['createdAt'],
+        $entity = new GalleryCategorie($entityInfo['gallery_id'],
 $entityInfo['category_id'],
-$entityInfo['isPosted'],
 $entityInfo['id']);
         self::$selectedObjectPool[] = $entity;
         return $entity;
@@ -230,12 +164,12 @@ $entityInfo['id']);
     public function delete()
     {
         $db = Database::getInstance('app');
-        $this->query = "DELETE FROM articles" . $this->where;
+        $this->query = "DELETE FROM gallery_categories" . $this->where;
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         return $result->rowCount() > 0;
     }
-    public static function add(Article $model)
+    public static function add(GalleryCategorie $model)
     {
         if ($model->getId()) {
             throw new \Exception('This entity is not new');
@@ -252,53 +186,41 @@ $entityInfo['id']);
         }
         return true;
     }
-    private static function update(Article $model)
+    private static function update(GalleryCategorie $model)
     {
         $db = Database::getInstance('app');
-        $query = "UPDATE articles SET title= :title, introNewsData= :introNewsData, newsData= :newsData, picture= :picture, thumbnail= :thumbnail, createdAt= :createdAt, category_id= :category_id, isPosted= :isPosted WHERE id = :id";
+        $query = "UPDATE gallery_categories SET gallery_id= :gallery_id, category_id= :category_id WHERE id = :id";
         $result = $db->prepare($query);
         $result->execute(
             [
                 ':id' => $model->getId(),
-':title' => $model->getTitle(),
-':introNewsData' => $model->getIntroNewsData(),
-':newsData' => $model->getNewsData(),
-':picture' => $model->getPicture(),
-':thumbnail' => $model->getThumbnail(),
-':createdAt' => $model->getCreatedAt(),
-':category_id' => $model->getCategory_id(),
-':isPosted' => $model->getIsPosted()
+':gallery_id' => $model->getGallery_id(),
+':category_id' => $model->getCategory_id()
             ]
         );
     }
-    private static function insert(Article $model)
+    private static function insert(GalleryCategorie $model)
     {
         $db = Database::getInstance('app');
-        $query = "INSERT INTO articles (title,introNewsData,newsData,picture,thumbnail,createdAt,category_id,isPosted) VALUES (:title, :introNewsData, :newsData, :picture, :thumbnail, :createdAt, :category_id, :isPosted);";
+        $query = "INSERT INTO gallery_categories (gallery_id,category_id) VALUES (:gallery_id, :category_id);";
         $result = $db->prepare($query);
         $result->execute(
             [
-                ':title' => $model->getTitle(),
-':introNewsData' => $model->getIntroNewsData(),
-':newsData' => $model->getNewsData(),
-':picture' => $model->getPicture(),
-':thumbnail' => $model->getThumbnail(),
-':createdAt' => $model->getCreatedAt(),
-':category_id' => $model->getCategory_id(),
-':isPosted' => $model->getIsPosted()
+                ':gallery_id' => $model->getGallery_id(),
+':category_id' => $model->getCategory_id()
             ]
         );
         $model->setId($db->lastId());
     }
     private function isColumnAllowed($column)
     {
-        $refc = new \ReflectionClass('\Models\Article');
+        $refc = new \ReflectionClass('\Models\GalleryCategorie');
         $consts = $refc->getConstants();
         return in_array($column, $consts);
     }
 
     /**
-     * @return ArticleCollection
+     * @return GalleryCategorieCollection
      * @throws \Exception
      */
     public function pagination($pageNum,$count){
@@ -309,24 +231,18 @@ $entityInfo['id']);
         $this->placeholders[] = $pageNum;
         $this->placeholders[] = $count;
         $db = Database::getInstance('app');
-        $this->query = "SELECT * FROM articles" . $this->where. " ORDER BY createdAt DESC LIMIT $param1,$count;";
+        $this->query = "SELECT * FROM gallery_categories" . $this->where. " ORDER BY createdAt DESC LIMIT $param1,$count;";
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
-            $entity = new Article($entityInfo['title'],
-$entityInfo['introNewsData'],
-$entityInfo['newsData'],
-$entityInfo['picture'],
-$entityInfo['thumbnail'],
-$entityInfo['createdAt'],
+            $entity = new GalleryCategorie($entityInfo['gallery_id'],
 $entityInfo['category_id'],
-$entityInfo['isPosted'],
 $entityInfo['id']);
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
         }
-        return new ArticleCollection($collection);
+        return new GalleryCategorieCollection($collection);
 
 
     }

@@ -46,24 +46,6 @@ class CategoriesRepository
         $this->where .= " AND name = ?";
         $this->placeholders[] = $name;
         return $this;
-    }    /**
-     * @param $thumbnail
-     * @return $this
-     */
-    public function filterByThumbnail($thumbnail)
-    {
-        $this->where .= " AND thumbnail = ?";
-        $this->placeholders[] = $thumbnail;
-        return $this;
-    }    /**
-     * @param $createdAt
-     * @return $this
-     */
-    public function filterByCreatedAt($createdAt)
-    {
-        $this->where .= " AND createdAt = ?";
-        $this->placeholders[] = $createdAt;
-        return $this;
     }
     /**
      * @param $column
@@ -142,8 +124,6 @@ class CategoriesRepository
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
             $entity = new Categorie($entityInfo['name'],
-$entityInfo['thumbnail'],
-$entityInfo['createdAt'],
 $entityInfo['id']);
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
@@ -162,8 +142,6 @@ $entityInfo['id']);
         $result->execute($this->placeholders);
         $entityInfo = $result->fetch();
         $entity = new Categorie($entityInfo['name'],
-$entityInfo['thumbnail'],
-$entityInfo['createdAt'],
 $entityInfo['id']);
         self::$selectedObjectPool[] = $entity;
         return $entity;
@@ -200,27 +178,23 @@ $entityInfo['id']);
     private static function update(Categorie $model)
     {
         $db = Database::getInstance('app');
-        $query = "UPDATE categories SET name= :name, thumbnail= :thumbnail, createdAt= :createdAt WHERE id = :id";
+        $query = "UPDATE categories SET name= :name WHERE id = :id";
         $result = $db->prepare($query);
         $result->execute(
             [
                 ':id' => $model->getId(),
-':name' => $model->getName(),
-':thumbnail' => $model->getThumbnail(),
-':createdAt' => $model->getCreatedAt()
+':name' => $model->getName()
             ]
         );
     }
     private static function insert(Categorie $model)
     {
         $db = Database::getInstance('app');
-        $query = "INSERT INTO categories (name,thumbnail,createdAt) VALUES (:name, :thumbnail, :createdAt);";
+        $query = "INSERT INTO categories (name) VALUES (:name);";
         $result = $db->prepare($query);
         $result->execute(
             [
-                ':name' => $model->getName(),
-':thumbnail' => $model->getThumbnail(),
-':createdAt' => $model->getCreatedAt()
+                ':name' => $model->getName()
             ]
         );
         $model->setId($db->lastId());
@@ -250,8 +224,6 @@ $entityInfo['id']);
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
             $entity = new Categorie($entityInfo['name'],
-$entityInfo['thumbnail'],
-$entityInfo['createdAt'],
 $entityInfo['id']);
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
