@@ -5,28 +5,25 @@ class Gallery
 	const COL_ID = 'id';
 	const COL_SOURCE = 'source';
 	const COL_CAROUSEL = 'carousel';
-	const COL_POST_DATE = 'post_date';
-	const COL_CATEGORY_ID = 'category_id';
 	const COL_TITLE = 'title';
 	const COL_DESCRIPTION = 'description';
+	const COL_POST_DATE = 'post_date';
 
 	private $id;
 	private $source;
 	private $carousel;
-	private $post_date;
-	private $category_id;
 	private $title;
 	private $description;
+	private $post_date;
 
-	public function __construct($source, $carousel, $post_date, $category_id, $title, $description, $id = null)
+	public function __construct($source, $carousel, $title, $description, $post_date, $id = null)
 	{
 		$this->setId($id);
 		$this->setSource($source);
 		$this->setCarousel($carousel);
-		$this->setPost_date($post_date);
-		$this->setCategory_id($category_id);
 		$this->setTitle($title);
 		$this->setDescription($description);
+		$this->setPost_date($post_date);
 	}
 
 	/**
@@ -92,46 +89,6 @@ class Gallery
 	/**
 	* @return mixed
 	*/
-	public function getPost_date()
-	{
-		return $this->post_date;
-	}
-
-	/**
-	* @param $post_date
-	* @return $this
-	*/
-	public function setPost_date($post_date)
-	{
-		$this->post_date = $post_date;
-		
-		return $this;
-	}
-
-
-	/**
-	* @return mixed
-	*/
-	public function getCategory_id()
-	{
-		return $this->category_id;
-	}
-
-	/**
-	* @param $category_id
-	* @return $this
-	*/
-	public function setCategory_id($category_id)
-	{
-		$this->category_id = $category_id;
-		
-		return $this;
-	}
-
-
-	/**
-	* @return mixed
-	*/
 	public function getTitle()
 	{
 		return $this->title;
@@ -169,16 +126,35 @@ class Gallery
 	}
 
 
+	/**
+	* @return mixed
+	*/
+	public function getPost_date()
+	{
+		return $this->post_date;
+	}
+
+	/**
+	* @param $post_date
+	* @return $this
+	*/
+	public function setPost_date($post_date)
+	{
+		$this->post_date = $post_date;
+		
+		return $this;
+	}
+
+
 	 public function FullObjectGeter()
 	{
 	$object = (object)array(
 		"id" => $this->id, 
 		"source" => $this->source, 
 		"carousel" => $this->carousel, 
-		"post_date" => $this->post_date, 
-		"category_id" => $this->category_id, 
 		"title" => $this->title, 
 		"description" => $this->description, 
+		"post_date" => $this->post_date, 
 	);
 	 return $object;
 	}}

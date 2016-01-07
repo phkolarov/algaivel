@@ -71,6 +71,25 @@ KUF;
         self::\$inst = new self();
         return self::\$inst;
     }
+
+    /**
+     * @param \$columnName
+     * @param \$value
+     * @return \$this
+     */
+    public function andGet(\$columnName,\$value)
+    {
+        if(strpos(\$this->where,"AND \$columnName =")){
+            \$this->where .= " OR \$columnName = ?";
+            \$this->placeholders[] = \$value;
+            return \$this;
+        }else{
+            \$this->where .= " AND \$columnName = ?";
+            \$this->placeholders[] = \$value;
+            return \$this;
+        }
+
+    }
 $columnFilters
     /**
      * @param \$column
@@ -240,7 +259,7 @@ $columnFilters
         \$this->placeholders[] = \$pageNum;
         \$this->placeholders[] = \$count;
         \$db = Database::getInstance('app');
-        \$this->query = "SELECT * FROM $tableName" . \$this->where. " ORDER BY createdAt DESC LIMIT \$param1,\$count;";
+        \$this->query = "SELECT * FROM $tableName" . \$this->where. " ORDER BY post_date DESC LIMIT \$param1,\$count;";
         \$result = \$db->prepare(\$this->query);
         \$result->execute(\$this->placeholders);
         \$collection = [];

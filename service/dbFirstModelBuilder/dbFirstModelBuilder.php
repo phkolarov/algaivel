@@ -15,7 +15,8 @@ public static function createdbFirstModels()
 {
 
 
-    $pdo = new PDO("mysql:host=localhost;dbname=".DatabaseConfig::DB_NAME."", 'root', '');
+    $dbName = DatabaseConfig::DB_NAME;
+    $pdo = new PDO("mysql:host=localhost;dbname=$dbName", 'root', '');
     $tables = array_map(function ($t) {
         return $t[0];
     },

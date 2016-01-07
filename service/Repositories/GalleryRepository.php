@@ -28,6 +28,25 @@ class GalleryRepository
         self::$inst = new self();
         return self::$inst;
     }
+
+    /**
+     * @param $columnName
+     * @param $value
+     * @return $this
+     */
+    public function andGet($columnName,$value)
+    {
+        if(strpos($this->where,"AND $columnName =")){
+            $this->where .= " OR $columnName = ?";
+            $this->placeholders[] = $value;
+            return $this;
+        }else{
+            $this->where .= " AND $columnName = ?";
+            $this->placeholders[] = $value;
+            return $this;
+        }
+
+    }
     /**
      * @param $id
      * @return $this
@@ -56,24 +75,6 @@ class GalleryRepository
         $this->placeholders[] = $carousel;
         return $this;
     }    /**
-     * @param $post_date
-     * @return $this
-     */
-    public function filterByPost_date($post_date)
-    {
-        $this->where .= " AND post_date = ?";
-        $this->placeholders[] = $post_date;
-        return $this;
-    }    /**
-     * @param $category_id
-     * @return $this
-     */
-    public function filterByCategory_id($category_id)
-    {
-        $this->where .= " AND category_id = ?";
-        $this->placeholders[] = $category_id;
-        return $this;
-    }    /**
      * @param $title
      * @return $this
      */
@@ -90,6 +91,15 @@ class GalleryRepository
     {
         $this->where .= " AND description = ?";
         $this->placeholders[] = $description;
+        return $this;
+    }    /**
+     * @param $post_date
+     * @return $this
+     */
+    public function filterByPost_date($post_date)
+    {
+        $this->where .= " AND post_date = ?";
+        $this->placeholders[] = $post_date;
         return $this;
     }
     /**
@@ -170,10 +180,9 @@ class GalleryRepository
         foreach ($result->fetchAll() as $entityInfo) {
             $entity = new Gallery($entityInfo['source'],
 $entityInfo['carousel'],
-$entityInfo['post_date'],
-$entityInfo['category_id'],
 $entityInfo['title'],
 $entityInfo['description'],
+$entityInfo['post_date'],
 $entityInfo['id']);
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
@@ -193,10 +202,9 @@ $entityInfo['id']);
         $entityInfo = $result->fetch();
         $entity = new Gallery($entityInfo['source'],
 $entityInfo['carousel'],
-$entityInfo['post_date'],
-$entityInfo['category_id'],
 $entityInfo['title'],
 $entityInfo['description'],
+$entityInfo['post_date'],
 $entityInfo['id']);
         self::$selectedObjectPool[] = $entity;
         return $entity;
@@ -233,33 +241,31 @@ $entityInfo['id']);
     private static function update(Gallery $model)
     {
         $db = Database::getInstance('app');
-        $query = "UPDATE gallery SET source= :source, carousel= :carousel, post_date= :post_date, category_id= :category_id, title= :title, description= :description WHERE id = :id";
+        $query = "UPDATE gallery SET source= :source, carousel= :carousel, title= :title, description= :description, post_date= :post_date WHERE id = :id";
         $result = $db->prepare($query);
         $result->execute(
             [
                 ':id' => $model->getId(),
 ':source' => $model->getSource(),
 ':carousel' => $model->getCarousel(),
-':post_date' => $model->getPost_date(),
-':category_id' => $model->getCategory_id(),
 ':title' => $model->getTitle(),
-':description' => $model->getDescription()
+':description' => $model->getDescription(),
+':post_date' => $model->getPost_date()
             ]
         );
     }
     private static function insert(Gallery $model)
     {
         $db = Database::getInstance('app');
-        $query = "INSERT INTO gallery (source,carousel,post_date,category_id,title,description) VALUES (:source, :carousel, :post_date, :category_id, :title, :description);";
+        $query = "INSERT INTO gallery (source,carousel,title,description,post_date) VALUES (:source, :carousel, :title, :description, :post_date);";
         $result = $db->prepare($query);
         $result->execute(
             [
                 ':source' => $model->getSource(),
 ':carousel' => $model->getCarousel(),
-':post_date' => $model->getPost_date(),
-':category_id' => $model->getCategory_id(),
 ':title' => $model->getTitle(),
-':description' => $model->getDescription()
+':description' => $model->getDescription(),
+':post_date' => $model->getPost_date()
             ]
         );
         $model->setId($db->lastId());
@@ -283,17 +289,16 @@ $entityInfo['id']);
         $this->placeholders[] = $pageNum;
         $this->placeholders[] = $count;
         $db = Database::getInstance('app');
-        $this->query = "SELECT * FROM gallery" . $this->where. " ORDER BY createdAt DESC LIMIT $param1,$count;";
+        $this->query = "SELECT * FROM gallery" . $this->where. " ORDER BY post_date DESC LIMIT $param1,$count;";
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
             $entity = new Gallery($entityInfo['source'],
 $entityInfo['carousel'],
-$entityInfo['post_date'],
-$entityInfo['category_id'],
 $entityInfo['title'],
 $entityInfo['description'],
+$entityInfo['post_date'],
 $entityInfo['id']);
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
