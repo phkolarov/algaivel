@@ -1,0 +1,17 @@
+@media screen and (max-width: 480px) {
+    .navMenu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navMenu li span{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 968px) {
+	.navMenu{
+		padding: 0px;
+	}
+}

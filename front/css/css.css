@@ -1,0 +1,304 @@
+body {
+    padding-top: 50px;
+    position: relative;
+    overflow-x:hidden;
+}
+      
+pre {
+    tab-size: 8;
+}
+  
+.navbar-fixed-top{
+	background-color: #EEE;
+	box-shadow: 0px 5px 5px #777;
+}
+
+.icon-bar{
+	background-color: black;
+}
+
+.navbar-toggle{
+	border:1px solid #CCC;
+	margin-left: 5px;
+}
+
+
+.navbar-right li a{
+	color: #777;
+	font-weight: 600;
+}
+
+.navbar-right li{
+	border-bottom: 1px inset #EEE;	
+}
+
+	.navbar-right li:hover{
+		border-bottom: 1px inset black;	
+	}
+
+	.navbar-right a:hover{
+		color: #000!important;
+	}
+
+
+.dropdown:hover a ~ .dropdown-menu{
+	display: block!important;
+}
+
+.logo{
+	color: #777;
+	font-weight: 900;
+	letter-spacing: 3px;
+	padding-right: 5px!important;
+	font-size: 22px;
+}
+
+	.logo:hover, .logo:active, .logo:link, .logo:visited{
+		color: #777;
+		font-weight: 900;
+		letter-spacing: 3px;
+		padding-right: 5px!important;
+		font-size: 22px;
+	}
+
+.wal{
+	padding: 15px 0px!important;
+	color: #AAA;
+	opacity: 0.5;
+	font-weight: bold;
+}
+
+.mLanguage{
+	display: none!important;
+}
+
+.dropdown-menu{
+	background-color: #EEE;
+	padding: 0px;
+}
+
+	.dropdown-menu li:hover a{
+		background-color: #EEE;
+	}
+
+	.dropdown-menu .dropdown-toggle{
+		display: none;
+	}
+
+.dropdown{
+	padding: 0px;
+}
+
+.glyphicon{
+	padding: 15px 0px!important;
+}
+
+.closeSide{
+	display: none;
+	list-style-type: none;
+	padding: 0px;
+	height: 15px;
+}
+
+.closeSide button{
+	border:0px;
+	background-color: #EEE;
+	float: right;
+	margin: 5px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.closeSide button:hover{
+	color: black;
+	outline: none;
+}
+
+@media screen and (max-width: 962px) {
+	.wal{
+		display: none!important;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.logo{
+		display: none!important;
+	}
+
+    .side-collapse-container{
+        width:100%;
+        position:relative;
+        right:0;
+        transition:right .4s;
+    }
+    .side-collapse-container.out{
+        right:200px;
+    }
+    .side-collapse {
+    	top:0;
+        bottom:0;
+        right:0;
+        width:50%;
+        background-color: #EEE;
+        position:fixed;
+        overflow:hidden;
+        transition:width .4s;
+        z-index: 10000;
+    }
+    .side-collapse.in {
+        width:0;
+    }
+
+    .dropdown .caret{
+    	display: none;
+    }
+
+    .mLanguage{
+    	display: block!important;
+    }
+
+    .language{
+    	display: none!important;
+    }
+
+    .glyphicon{
+		display: none!important;
+	}
+
+	.navbar-right{
+		margin-top: 15px;
+		position: relative;
+	}
+
+		.navbar-right li a{
+			padding: 0px 0px 10px 35px;
+		}
+
+		.navbar-right li:hover{
+			border-bottom: 1px inset #EEE!important;
+		}
+
+		.navbar-right a:hover{
+			color: #000!important;
+			text-decoration: underline!important;
+		}
+
+	.dropdown-menu{
+		display: block;
+		position: inherit;
+		width: 100%;
+		border:0px;
+		box-shadow: none;
+		padding-left: 25px;
+		font-size: 14px!important;
+	}
+
+		.dropdown-menu li a{
+			font-size: 14px!important;
+			font-weight: normal!important;
+			background:transparent;
+		}
+
+	.closeSide{
+		display: block;
+	}
+}
+
+/*!
+ * Start Bootstrap - Full Slider HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+html,
+body {
+    height: 100%;
+    
+}
+
+.wrapper{
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+
+/*Admin Panel start*/
+
+.adminPanel{
+	height: 90%;
+	position: relative;
+	box-shadow: 10px 10px 10px #383535;
+}
+
+.adminPanel .row, .adminPanel .col-xs-3, .adminPanel .col-xs-9{
+	height: 100%;
+}
+
+.adminNav{
+	background-color: #383535;
+	color: white;
+	padding: 15px;
+	height: 100%;
+}
+
+.adminNav ul{
+	margin-top: 50px;
+	list-style-type: none;
+	padding: 0px;
+}
+
+.adminNav ul li a{
+	color: #777;
+	line-height: 15px;
+}
+
+.adminNav ul li a:hover{
+	color: white;
+}
+
+.adminNav ul li hr{
+	margin: 0px;
+	width: 100%;
+	vertical-align: middle;
+}
+
+.adminTempHold{
+	padding: 0px;
+	position: relative;
+}
+
+.adminTemplates{
+	border:2px groove #383535;
+	padding: 15px;
+	height: 100%;
+}
+
+/*Admin Panel end*/
