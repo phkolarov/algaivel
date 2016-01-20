@@ -1,0 +1,279 @@
+.paging{
+
+    list-style-type: none;
+    display: inline-block;
+    padding-left: 0px;
+}
+
+.paging li{
+    display: inline-block;
+    color: coral;
+    width: 8px;
+    height: 6px;
+    padding: 10px;
+    padding-bottom: 15px;
+    margin: 0px 3px 0px 3px;
+}
+.paging li:hover{
+    /*background-color: yellow;*/
+}
+
+.paging li a{
+    color: coral;
+}
+
+#currentPage li{
+    font-weight: bold;
+    width: 10px;
+    height: 10px;
+}
+.paginationWrapper{
+    margin-top: 25px;
+}
+
+#selectCount{
+    margin-top: 25px;
+    font-weight: bold;
+    color: coral;
+}
+
+.filtersElement{
+
+    border: 1px solid black;
+    margin-bottom: 15px;
+    color: grey;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+    padding-right: 30px;
+    border-radius: 3px;
+    width: 150px;
+}
+
+ h4{
+     width: 145px;
+}
+.imagesWrapper{
+    margin-top: 39px;
+}
+
+#presentedImage{
+
+    width: 745px;
+    height: 500px;
+
+    display: inline-block;
+    padding: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    position: relative;
+
+}
+#presentedImage img{
+    max-width:100%;
+    max-height:100%;
+    z-index: 10;
+    /*-webkit-transition: max-width 0.5s, max-height 0.5s; !* For Safari 3.1 to 6.0 *!*/
+    /*transition: max-height 0.5s, max-height 0.5s;*/
+    /*-webkit-transition: all 0.5s ease-in-out;*/
+    position: absolute;
+}
+#presentedImage img:hover{
+
+    /*max-width:105%;*/
+    /*max-height:105%;*/
+    /*position: absolute;*/
+    /*-webkit-transition: max-width 0.5s, max-height 0.5s; !* For Safari 3.1 to 6.0 *!*/
+    /*transition: max-height 0.5s, max-height 0.5s;*/
+    /*-webkit-transition: all 0.5s ease-in-out*/
+}
+#regularImage{
+
+    width: 362px;
+    height: 240px;
+    display: inline-block;
+    padding: 0px;
+    margin: 10px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+
+
+}
+.mIco{
+    position: absolute;
+    width: 100px;
+    z-index: 100;
+    top: calc(50% - 30.5px);
+    left: calc(50% - 50px);
+    display: none;
+}
+
+
+#regularImage img{
+
+    max-width:100%;
+    max-height:100%;
+    position: absolute;
+    /*-webkit-transition: max-width 0.5s, max-height 0.5s; !* For Safari 3.1 to 6.0 *!*/
+    /*transition: max-height 0.5s, max-height 0.5s;*/
+    /*-webkit-transition: all 0.5s ease-in-out*/
+
+}
+
+#regularImage img:hover{
+
+    /*max-width:105%;*/
+    /*max-height:105%;*/
+    /*-webkit-transition: max-width 0.3s, max-height 0.3s; !* For Safari 3.1 to 6.0 *!*/
+    /*transition: max-height 0.3s, max-height 0.3s;*/
+    /*-webkit-transition: all 0.3s ease-in-out*/
+
+}
+img{
+    display: inline-block;
+}
+.currentImage{
+    width: 100%;
+}
+
+
+.arrow{
+
+    position: fixed;
+    width: 100%;
+
+
+}
+#leftArrow{
+    background-image: url("arrows.png");
+    right: calc(97% - 128px);
+    width: 128px;
+    height: 128px;
+    top: calc(55% - 128px);
+    z-index: 100;
+
+}
+
+#leftArrow:hover{
+    border: 0px;
+    background: url("arrows.png") 0 128px;
+}
+
+#rightArrow{
+    background: url("arrows.png") 128px 0;
+    left: calc(97% - 128px);
+    width: 128px;
+    height: 128px;
+    top: calc(55% - 128px);
+    z-index: 100;
+}
+
+#rightArrow:hover{
+    background: url("arrows.png") 128px 128px;
+}
+#test{
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+#iconsSetWrapper{
+
+    position: fixed;
+    width: 100%;
+}
+
+#ico{
+
+    left: calc(97% - 100px);
+    width: 80px;
+    height: 80px;
+    top: calc(55% - 250px);
+    z-index: 100;
+    font-size: 40px;
+
+}
+#ico:hover{
+    color: #00d9f9;
+}
+
+#size{
+
+    left: calc(97% - 100px);
+    width: 80px;
+    height: 80px;
+    top: calc(55% - 315px);
+    z-index: 100;
+    font-size: 40px;
+
+}
+#size:hover{
+    color: #00d9f9;
+}
+.artContainer{
+    position: relative;
+}
+.articleWrapper{
+    /*margin: 20px;*/
+}
+.article{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 481px;
+    height: 320px;
+    padding: 0px;
+    margin: 15px;
+
+}
+
+.tick{
+
+    display: block;
+    background-color: coral;
+    position: relative;
+    border-radius: 5px;
+    width: 8%;
+    height: 15%;
+    top: -1.3%;
+    left: 90%;
+}
+.tick div{
+    position: absolute;
+    display: inline-block;
+    left: 0px;
+}
+.tick div span{
+    color: white;
+    display: block;
+    text-align: left;
+    margin-left: 3px;
+    font-weight: bold;
+}
+
+.article img{
+
+    max-width:100%;
+    max-height:100%;
+    margin-bottom: 25px;
+    float: left;
+}
+.title{
+    position: absolute;
+    top: calc(98% - 25px);
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.day{
+
+    margin-top: 3px;
+    margin-bottom: -2px;
+    font-size: 18px;
+}
+.monthName{
+
+}

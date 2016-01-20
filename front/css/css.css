@@ -289,7 +289,6 @@ footer {
 	width: 100%;
 	vertical-align: middle;
 }
-
 .adminTempHold{
 	padding: 0px;
 	position: relative;
@@ -300,5 +299,12 @@ footer {
 	padding: 15px;
 	height: 100%;
 }
+
+#bottomPagination{
+
+}
+
+
+
 
 /*Admin Panel end*/

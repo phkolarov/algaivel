@@ -8,65 +8,55 @@
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height" />
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <link rel="stylesheet" type="text/css" href="js/components/bootstrap/css/bootstrap.min.css" />
-  <script type="text/javascript" src="js/components/bootstrap/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="css/css2.css">
   <link rel="stylesheet" type="text/css" href="css/media-queries.css">
+  <script type="text/javascript" src="js/components/bootstrap/js/bootstrap.min.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
-  <script src="js/main.js"></script>
+
+
+
+    <script src="js/main.js"></script>
+    <script src="js/service/data-service.js"></script>
+
+    <!--CUSTOM JS-->
+    <script src="js/custom-js/custom-js.js"></script>
+
+    <!--  CONTROLLERS-->
+    <script src="js/controllers/mainMenuController.js"></script>
+    <script src="js/controllers/imagesController.js"></script>
+    <script src="js/controllers/pagingController.js"></script>
+    <script src="js/controllers/filtersController.js"></script>
+    <script src="js/controllers/galleryController.js"></script>
+    <script src="js/controllers/imageController.js"></script>
+    <script src="js/controllers/iconsController.js"></script>
+    <script src="js/controllers/allNewsMainController.js"></script>
+    <script src="js/controllers/allNewsController.js"></script>
+    <script src="js/controllers/pagingNewsController.js"></script>
+
+    <!--DIRECTIVES-->
+    <script src="js/directives/main-menu-directive.js"></script>
+    <script src="js/directives/images-element-directive.js"></script>
+    <script src="js/directives/paging-element-directive.js"></script>
+    <script src="js/directives/filters-element-directive.js"></script>
+    <script src="js/directives/current-image-element-directive.js"></script>
+    <script src="js/directives/arrows-element-directive.js"></script>
+    <script src="js/directives/icons-set-directive.js"></script>
+    <script src="js/directives/all-news-element-directive.js"></script>
+    <script src="js/directives/pagin-news-element-directive.js"></script>
+
+
 </head>
 
 <body>
 
 
-<header role="banner" class="navbar navbar-fixed-top " ng-controller="mainController">
-    <div class="container-fluid">
-      <div class="navbar-header">
 
-          <button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" class="navbar-toggle pull-right">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <ul class="nav navbar-nav navbar-left">
-            <li><a ng-click="setRoute('home')" class="logo" href="">GALYA</a></li>
-            <li class="wal"><span>планините в България и по света</span></li>
-          </ul>
-
-        </div>
-        <div class="side-collapse in">
-          <nav role="navigation" class="navbar-collapse">
-            <ul class="closeSide">
-              <li>
-                <button>X</button>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a ng-click="setRoute('home')" class="glyphicon glyphicon-home"></a></li>
-              <li><a ng-click="setRoute('gallery')" href="">ГАЛЕРИЯ</a></li>
-                  <li class="dropdown">
-                <a class="dropdown-toggle" >ЗА АВТОРА <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a ng-click="setRoute('aboutGalya')" href="">ЗА ГАЛЯ</a></li>
-                  <li><a ng-click="setRoute('media')" href="">В МЕДИИ</a></li>
-                  <li><a ng-click="setRoute('clients')" href="">КЛИЕНТИ</a></li>
-                  <li><a ng-click="setRoute('contacts')" href="">КОНТАКТИ</a></li>
-                </ul>         
-            </li>
-
-              <li><a ng-click="setRoute('news')" href="#">НОВИНИ</a></li>
-              <li><a ng-click="setRoute('calendar')" href="#">КАЛЕНДАР 2016</a></li>
-              <li><a href="#" class="glyphicon glyphicon-envelope"></a></li>
-              <li><a href="#" class="language">EN</a></li>
-              <li><a href="#" class="mLanguage">English</a></li>
-            </ul>
-          </nav>
-        </div>
-    </div>
-</header>
     
   
-<div class="container-fluid wrapper" ng-view>
+<div id="mainWrapper" class="container-fluid wrapper" ng-view>
 
 
 

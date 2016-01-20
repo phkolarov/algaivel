@@ -1,0 +1,23 @@
+<div id="filtersWrapper" class="row">
+
+    <div class="col-lg-12">
+        <div ng-repeat="$i in filterGroups" class="row">
+
+            <div class="col-xs-12">
+                <h4>{{$i.nameBG}}</h4>
+
+                <form>
+                    <div class="filtersElement form">
+                        <div ng-repeat="$tag in $i.elements" class="checkbox" ng-model="tags[$i.id]">
+                            <label><input  type="checkbox" ng-click="filter($i.id,tags)" ng-model="tags[$i.id][$tag.tagId]">{{$tag.tagNameBG}}</label>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

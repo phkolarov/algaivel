@@ -1,1 +1,22 @@
-<p>gallery</p>
+<div main-menu></div>
+<div class="row">
+    <div class="header col-xs-12">
+        <div class="row">
+            <div  class="col-md-6 col-xs-3 col-md-offset-2">
+                <h1>Галерия</h1>
+            </div>
+            <div id="selectCount" class="col-md-1 col-xs-1 col-md-offset-1">
+                <select class="form-control" ng-change="$emit('MyEvent')"  ng-model='formPageCount.count' ng-options='option.value as option.name for option in pageCount'>
+                </select>
+            </div>
+            <div  class="col-md-2 col-xs-3" paging></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-xs-0 "></div>
+    <div class="col-md-1 col-md-offset-1" filters></div>
+    <div class="col-md-10" image></div>
+    <div id="bottomPagination" class="col-md-2 col-xs-3 pull-right" paging></div>
+</div>
