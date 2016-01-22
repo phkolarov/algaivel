@@ -1,15 +1,16 @@
 <div class="paginationWrapper">
 
-    <button ng-click="backPage()">&#8592;</button>
+    <button ng-click="backNewsPage()">&#8592;</button>
 
     <ul class="paging">
-        <li ng-repeat="i in leftSideButtons(leftPageButForPrint) track by $index"><a href="#/gallery/page/{{leftSideIndex + $index}}">{{leftSideIndex + $index}}</a></li>
+        <li ng-repeat="i in leftSideButtons(leftPageButForPrint) track by $index"><a href="#/news/page/{{leftSideIndex + $index}}/{{linkYear}}">{{leftSideIndex + $index}}</a></li>
     </ul>
     <ul id="currentPage" class="paging">
-        <li><a href="#/gallery/page/{{currentPage}}">{{currentPage}}</a></li>
+        <li><a href="#/gallery/page/{{currentPage}}/{{linkYear}}">{{currentPage}}</a></li>
     </ul>
     <ul class="paging">
-        <li ng-repeat="i in rightSideButtons(rightPageButForPrint) track by $index"><a href="#/gallery/page/{{rightSideIndex + $index}}">{{rightSideIndex + $index}}</a></li>
+        <li ng-repeat="i in rightSideButtons(rightPageButForPrint) track by $index"><a href="#/news/page/{{rightSideIndex + $index}}/{{linkYear}}">{{rightSideIndex + $index}}</a></li>
     </ul>
-    <button ng-click="nextPage()">&#8594;</button>
+
+    <button ng-click="nextNewsPage()">&#8594;</button>
 </div>

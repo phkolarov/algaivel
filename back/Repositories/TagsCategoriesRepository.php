@@ -139,6 +139,17 @@ class TagsCategoriesRepository
         $this->order .= ", $column DESC";
         return $this;
     }
+
+    /**
+     * @param $query
+     * @return $this
+     */
+     public function customWhere($query){
+
+              $this->where .= " AND " .$query;
+              return $this;
+     }
+
     /**
      * @return TagsCategorieCollection
      * @throws \Exception

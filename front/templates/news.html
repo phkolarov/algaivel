@@ -6,7 +6,11 @@
             <div  class="col-md-6 col-xs-3 col-md-offset-2">
             <h1>Новини</h1>
             </div>
-
+            <div id="selectCount" class="col-md-1 col-xs-1 col-md-offset-1">
+                <select class="form-control" ng-change="$emit('changeYearOfNews')"  ng-model='years.count' ng-options='option.value as option.name for option in year'>
+                </select>
+            </div>
+            <div  class="col-md-2 col-xs-3" paging-news></div>
         </div>
     </div>
 </div>

@@ -1,0 +1,58 @@
+<div id="currentArticleWrapper">
+
+
+    <div class="row">
+        <div class="header col-xs-12">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 col-xs-offset-1">
+                    <h1 id="articleTitle">{{title}}</h1>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 col-xs-offset-1">
+                    <p id="articlePostDate">{{postDate}}</p>
+                    <div class="col-md-12" style="border: 1px solid #bbbbbb"></div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 col-xs-offset-1">
+                    <img id="articleImage" class="col-md-12 col-xs-10" ng-src="images/{{articleImage}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 col-xs-offset-1">
+                    <p>{{aricleContent}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 col-xs-offset-1">
+
+                    <div id="fb-root"></div>
+
+                    <script src="https://apis.google.com/js/platform.js" async defer>
+                        {
+                            lang: 'bg'
+                        }
+                    </script>
+
+                    <div class="row">
+                        <div id="facebookButtons" class="col-xs-1">
+                            <div class="fb-share-button" data-href="#" data-layout="button_count"></div>
+                        </div>
+                        <div id="googleButtons" class="col-xs-1">
+                            <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

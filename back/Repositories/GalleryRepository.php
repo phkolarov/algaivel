@@ -184,6 +184,17 @@ class GalleryRepository
         $this->order .= ", $column DESC";
         return $this;
     }
+
+    /**
+     * @param $query
+     * @return $this
+     */
+     public function customWhere($query){
+
+              $this->where .= " AND " .$query;
+              return $this;
+     }
+
     /**
      * @return GalleryCollection
      * @throws \Exception

@@ -42,12 +42,12 @@ galya.config(['$routeProvider',
             controller: 'allNewsMainController'
         }).
         when('/news/:articleId', {
-            templateUrl: 'templates/news.html',
-            controller: 'articleController'
+            templateUrl: 'templates/currentArticle.html',
+            controller: 'currentArticleController'
         }).
-        when('/calendar', {
-            templateUrl: 'templates/calendar.html',
-            /*controller: calendarCtrl*/
+        when('/news/page/:page/:year', {
+            templateUrl: 'templates/news.html',
+            controller: 'allNewsMainController'
         })
     }]);
 

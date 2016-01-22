@@ -272,8 +272,23 @@ img{
 
     margin-top: 3px;
     margin-bottom: -2px;
+
     font-size: 18px;
 }
-.monthName{
+#articlePostDate{
+    color: grey;
+}
+#articleImage{
+    margin: 15px 0 25px 0;
+    /*margin-bottom: 25px;*/
+    background-color: #eeeeee;
+    border: 1px solid #7e7e7e;
+}
 
+#articleTitle{
+
+    margin-top: 25px;
+}
+#googleButtons{
+    margin-left: 20px;
 }

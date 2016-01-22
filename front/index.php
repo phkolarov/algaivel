@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height" />
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/components/jquery/jquery-1.9.1.min.js"></script>
   <link rel="stylesheet" type="text/css" href="js/components/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/css.css">
     <link rel="stylesheet" type="text/css" href="css/css2.css">
@@ -35,6 +35,7 @@
     <script src="js/controllers/allNewsMainController.js"></script>
     <script src="js/controllers/allNewsController.js"></script>
     <script src="js/controllers/pagingNewsController.js"></script>
+    <script src="js/controllers/currentArticleController.js"></script>
 
     <!--DIRECTIVES-->
     <script src="js/directives/main-menu-directive.js"></script>
@@ -46,6 +47,7 @@
     <script src="js/directives/icons-set-directive.js"></script>
     <script src="js/directives/all-news-element-directive.js"></script>
     <script src="js/directives/pagin-news-element-directive.js"></script>
+    <script src="js/directives/current-article-element-directive.js"></script>
 
 
 </head>

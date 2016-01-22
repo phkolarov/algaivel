@@ -2,57 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0e51c4-3503-4876-8c97-702b1455cce5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/css/arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/css/img/arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/back/controllers/defaultControllers/ArticleController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/controllers/allNewsController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/controllers/allNewsMainController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/controllers/articleController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/controllers/iconsController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/controllers/mainMenuController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/controllers/pagingNewsController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/directives/all-news-element-directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/directives/arrows-element-directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/directives/current-image-element-directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/directives/icons-set-directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/directives/images-element-directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/directives/main-menu-directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/directives/pagin-news-element-directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/templates/currentImage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/templates/partials/all-news-block-element.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/templates/partials/arrows-block-element.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/templates/partials/article-block-element.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/templates/partials/icons-set-block-element.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/templates/partials/images-block-element.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/templates/partials/main-menu-block-element.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/templates/partials/paging-news-block-element.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/js/directives/image-element-directive.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/front/js/controllers/imageController.js" afterPath="$PROJECT_DIR$/front/js/controllers/imagesController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/components/jquery/jquery-1.9.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/controllers/currentArticleController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/directives/about-galya-element-directive.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/js/directives/current-article-element-directive.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/templates/currentArticle.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Models/Gallery.php" afterPath="$PROJECT_DIR$/back/Models/Gallery.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Models/Tag.php" afterPath="$PROJECT_DIR$/back/Models/Tag.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/ArticlesRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/ArticlesRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/CategoriesRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/CategoriesRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/GalleryCategoriesRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/GalleryCategoriesRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/GalleryRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/GalleryRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/GalleryTagsRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/GalleryTagsRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/RolesRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/RolesRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/SessionsRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/SessionsRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/TagCategoryRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/TagCategoryRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/TagsCategoriesRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/TagsCategoriesRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/TagsRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/TagsRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/controllers/defaultControllers/GalleryController.php" afterPath="$PROJECT_DIR$/back/controllers/defaultControllers/GalleryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/index.php" afterPath="$PROJECT_DIR$/back/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/css/css.css" afterPath="$PROJECT_DIR$/front/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/Repositories/UsersRepository.php" afterPath="$PROJECT_DIR$/back/Repositories/UsersRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/controllers/defaultControllers/ArticleController.php" afterPath="$PROJECT_DIR$/back/controllers/defaultControllers/ArticleController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/dbFirstModelBuilder/repositories_create.php" afterPath="$PROJECT_DIR$/back/dbFirstModelBuilder/repositories_create.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/css/css2.css" afterPath="$PROJECT_DIR$/front/css/css2.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/index.php" afterPath="$PROJECT_DIR$/front/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/js/controllers/galleryController.js" afterPath="$PROJECT_DIR$/front/js/controllers/galleryController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/js/controllers/imageController.js" afterPath="$PROJECT_DIR$/front/js/controllers/imageController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/js/controllers/allNewsController.js" afterPath="$PROJECT_DIR$/front/js/controllers/allNewsController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/js/controllers/pagingController.js" afterPath="$PROJECT_DIR$/front/js/controllers/pagingController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/js/controllers/pagingNewsController.js" afterPath="$PROJECT_DIR$/front/js/controllers/pagingNewsController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/js/custom-js/custom-js.js" afterPath="$PROJECT_DIR$/front/js/custom-js/custom-js.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/js/main.js" afterPath="$PROJECT_DIR$/front/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/js/service/data-service.js" afterPath="$PROJECT_DIR$/front/js/service/data-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/aboutGalya.html" afterPath="$PROJECT_DIR$/front/templates/aboutGalya.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/calendar.html" afterPath="$PROJECT_DIR$/front/templates/calendar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/clients.html" afterPath="$PROJECT_DIR$/front/templates/clients.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/contacts.html" afterPath="$PROJECT_DIR$/front/templates/contacts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/gallery.html" afterPath="$PROJECT_DIR$/front/templates/gallery.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/home.html" afterPath="$PROJECT_DIR$/front/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/media.html" afterPath="$PROJECT_DIR$/front/templates/media.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/news.html" afterPath="$PROJECT_DIR$/front/templates/news.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/partials/image-block-element.html" afterPath="$PROJECT_DIR$/front/templates/partials/image-block-element.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/partials/paging-block-element.html" afterPath="$PROJECT_DIR$/front/templates/partials/paging-block-element.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/partials/all-news-block-element.html" afterPath="$PROJECT_DIR$/front/templates/partials/all-news-block-element.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/partials/article-block-element.html" afterPath="$PROJECT_DIR$/front/templates/partials/article-block-element.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/partials/images-block-element.html" afterPath="$PROJECT_DIR$/front/templates/partials/images-block-element.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/partials/main-menu-block-element.html" afterPath="$PROJECT_DIR$/front/templates/partials/main-menu-block-element.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/templates/partials/paging-news-block-element.html" afterPath="$PROJECT_DIR$/front/templates/partials/paging-news-block-element.html" />
     </list>
     <ignored path="algaivel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,87 +60,59 @@
         <entry file="file://$PROJECT_DIR$/front/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="current-image-element-directive.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/js/directives/current-image-element-directive.js">
+      <file leaf-file-name="main-menu-block-element.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/front/templates/partials/main-menu-block-element.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="37" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.787949">
+              <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="article-block-element.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="article-block-element.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/templates/partials/article-block-element.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-20.923077">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/templates/news.html">
+      <file leaf-file-name="allNewsController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/js/controllers/allNewsController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077">
-              <caret line="19" column="80" selection-start-line="19" selection-start-column="80" selection-end-line="19" selection-end-column="80" />
+            <state vertical-scroll-proportion="-23.034483">
+              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pagingNewsController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/js/controllers/pagingNewsController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3448277">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="articleController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/js/controllers/articleController.js">
+      <file leaf-file-name="current-article-element-directive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/js/directives/current-article-element-directive.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paging-news-block-element.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/templates/partials/paging-news-block-element.html">
+      <file leaf-file-name="currentArticleController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/js/controllers/currentArticleController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pagingController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/js/controllers/pagingController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-45.310345">
-              <caret line="175" column="28" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -174,14 +128,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.109091">
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -191,21 +155,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/front/js/controllers/filtersController.js" />
-        <option value="$PROJECT_DIR$/front/templates/partials/filters-block-element.html" />
-        <option value="$PROJECT_DIR$/front/templates/partials/image.html" />
-        <option value="$PROJECT_DIR$/front/js/directives/image-element-directive.js" />
-        <option value="$PROJECT_DIR$/front/js/directives/images-element-directive.js" />
-        <option value="$PROJECT_DIR$/front/js/controllers/mainMenuController.js" />
-        <option value="$PROJECT_DIR$/front/templates/media.html" />
         <option value="$PROJECT_DIR$/front/templates/contacts.html" />
         <option value="$PROJECT_DIR$/front/templates/clients.html" />
         <option value="$PROJECT_DIR$/front/templates/calendar.html" />
         <option value="$PROJECT_DIR$/front/templates/aboutGalya.html" />
-        <option value="$PROJECT_DIR$/front/js/directives/main-menu-directive.js" />
         <option value="$PROJECT_DIR$/front/templates/home.html" />
-        <option value="$PROJECT_DIR$/front/templates/partials/images-block-element.html" />
-        <option value="$PROJECT_DIR$/front/js/controllers/pagingController.js" />
         <option value="$PROJECT_DIR$/front/templates/partials/paging-block-element.html" />
         <option value="$PROJECT_DIR$/front/js/controllers/iconSetController.js" />
         <option value="$PROJECT_DIR$/front/js/directives/icons-set-directive.js" />
@@ -218,30 +172,40 @@
         <option value="$PROJECT_DIR$/front/js/controllers/imageController.js" />
         <option value="$PROJECT_DIR$/front/templates/partials/arrows-block-element.html" />
         <option value="$PROJECT_DIR$/front/js/controllers/iconsController.js" />
-        <option value="$PROJECT_DIR$/front/templates/partials/main-menu-block-element.html" />
         <option value="$PROJECT_DIR$/front/templates/partials/all-news-directive.html" />
         <option value="$PROJECT_DIR$/front/js/directives/all-news-element-directive.js" />
         <option value="$PROJECT_DIR$/front/js/controllers/allNewsMainController.js" />
-        <option value="$PROJECT_DIR$/back/controllers/defaultControllers/GalleryController.php" />
-        <option value="$PROJECT_DIR$/back/Repositories/ArticlesRepository.php" />
-        <option value="$PROJECT_DIR$/back/controllers/defaultControllers/ArticleController.php" />
-        <option value="$PROJECT_DIR$/front/js/service/data-service.js" />
         <option value="$PROJECT_DIR$/front/css/css.css" />
-        <option value="$PROJECT_DIR$/back/index.php" />
         <option value="$PROJECT_DIR$/front/templates/partials/image-block-element.html" />
         <option value="$PROJECT_DIR$/front/templates/gallery.html" />
         <option value="$PROJECT_DIR$/front/js/controllers/imagesController.js" />
+        <option value="$PROJECT_DIR$/front/js/directives/pagin-news-element-directive.js" />
+        <option value="$PROJECT_DIR$/front/js/controllers/articleController.js" />
+        <option value="$PROJECT_DIR$/front/templates/news.html" />
+        <option value="$PROJECT_DIR$/front/js/controllers/pagingController.js" />
+        <option value="$PROJECT_DIR$/front/templates/partials/paging-news-block-element.html" />
+        <option value="$PROJECT_DIR$/back/controllers/defaultControllers/GalleryController.php" />
+        <option value="$PROJECT_DIR$/back/dbFirstModelBuilder/repositories_create.php" />
+        <option value="$PROJECT_DIR$/back/index.php" />
+        <option value="$PROJECT_DIR$/back/Repositories/ArticlesRepository.php" />
+        <option value="$PROJECT_DIR$/front/js/controllers/pagingNewsController.js" />
+        <option value="$PROJECT_DIR$/front/index.php" />
+        <option value="$PROJECT_DIR$/back/controllers/defaultControllers/ArticleController.php" />
+        <option value="$PROJECT_DIR$/front/js/service/data-service.js" />
+        <option value="$PROJECT_DIR$/front/templates/currentArticle.html" />
+        <option value="$PROJECT_DIR$/front/templates/partials/current-article-block-element.html" />
+        <option value="$PROJECT_DIR$/front/js/directives/current-article-element-directive.js" />
+        <option value="$PROJECT_DIR$/front/templates/partials/images-block-element.html" />
         <option value="$PROJECT_DIR$/front/templates/partials/all-news-block-element.html" />
         <option value="$PROJECT_DIR$/front/css/css2.css" />
-        <option value="$PROJECT_DIR$/front/js/directives/pagin-news-element-directive.js" />
-        <option value="$PROJECT_DIR$/front/js/controllers/allNewsController.js" />
-        <option value="$PROJECT_DIR$/front/templates/news.html" />
-        <option value="$PROJECT_DIR$/front/index.php" />
-        <option value="$PROJECT_DIR$/front/templates/partials/paging-news-block-element.html" />
-        <option value="$PROJECT_DIR$/front/js/controllers/pagingNewsController.js" />
-        <option value="$PROJECT_DIR$/front/js/controllers/articleController.js" />
+        <option value="$PROJECT_DIR$/front/js/custom-js/custom-js.js" />
+        <option value="$PROJECT_DIR$/front/js/directives/main-menu-directive.js" />
+        <option value="$PROJECT_DIR$/front/js/directives/about-galya-element-directive.js" />
         <option value="$PROJECT_DIR$/front/js/main.js" />
+        <option value="$PROJECT_DIR$/front/js/controllers/allNewsController.js" />
+        <option value="$PROJECT_DIR$/front/js/controllers/currentArticleController.js" />
         <option value="$PROJECT_DIR$/front/templates/partials/article-block-element.html" />
+        <option value="$PROJECT_DIR$/front/templates/partials/main-menu-block-element.html" />
       </list>
     </option>
   </component>
@@ -285,7 +249,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -490,7 +453,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -522,93 +493,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algaivel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algaivel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algaivel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algaivel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Repositories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algaivel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algaivel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algaivel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algaivel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="defaultControllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -616,12 +508,13 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/xa/htdocs/test" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp_1\htdocs\xampp\algaivel\front\js\components\jquery" />
       <recent name="C:\xampp_1\htdocs\xampp\algaivel\front\css" />
       <recent name="C:\xampp_1\htdocs\xampp\algaivel\front\css\img" />
       <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\algaivel" />
@@ -686,10 +579,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -701,7 +594,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -725,164 +618,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/front/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.811321">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/partials/filters-block-element.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/partials/icons-set-block-element.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.038116593">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/partials/group-block-element.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/Repositories/CategoriesRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/Repositories/GalleryCategoriesRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/Repositories/GalleryTagsRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.0">
-          <caret line="172" column="9" selection-start-line="172" selection-start-column="9" selection-end-line="172" selection-end-column="9" />
-          <folding>
-            <marker date="1453214507938" expanded="true" signature="3842:3868" placeholder="SELECT * FRO..gallery_tags$..." />
-            <marker date="1453214507938" expanded="true" signature="4512:4581" placeholder="SELECT * FRO..gallery_tags$..." />
-            <marker date="1453214507938" expanded="true" signature="5062:5086" placeholder="DELETE FROM ..." />
-            <marker date="1453214507938" expanded="true" signature="5841:5920" placeholder="UPDATE galle..." />
-            <marker date="1453214507938" expanded="true" signature="6273:6347" placeholder="INSERT INTO gallery_tags..." />
-            <marker date="1453214507938" expanded="true" signature="7137:7221" placeholder="SELECT * FRO..gallery_tags$..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/Repositories/RolesRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1453214507948" expanded="true" signature="3556:3575" placeholder="SELECT * FRO..roles$..." />
-            <marker date="1453214507948" expanded="true" signature="4172:4234" placeholder="SELECT * FRO..roles$..." />
-            <marker date="1453214507948" expanded="true" signature="4680:4697" placeholder="DELETE FROM ..." />
-            <marker date="1453214507948" expanded="true" signature="5440:5483" placeholder="UPDATE roles..." />
-            <marker date="1453214507948" expanded="true" signature="5784:5823" placeholder="INSERT INTO roles..." />
-            <marker date="1453214507948" expanded="true" signature="6555:6632" placeholder="SELECT * FRO..roles$..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/Repositories/SessionsRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1453214507955" expanded="true" signature="3814:3836" placeholder="SELECT * FRO..sessions$..." />
-            <marker date="1453214507955" expanded="true" signature="4469:4534" placeholder="SELECT * FRO..sessions$..." />
-            <marker date="1453214507955" expanded="true" signature="5010:5030" placeholder="DELETE FROM ..." />
-            <marker date="1453214507955" expanded="true" signature="5779:5850" placeholder="UPDATE sessi..." />
-            <marker date="1453214507955" expanded="true" signature="6196:6262" placeholder="INSERT INTO sessions..." />
-            <marker date="1453214507955" expanded="true" signature="7042:7122" placeholder="SELECT * FRO..sessions$..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/Repositories/TagCategoryRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65695065">
-          <caret line="349" column="0" selection-start-line="349" selection-start-column="0" selection-end-line="349" selection-end-column="0" />
-          <folding>
-            <marker date="1453214507964" expanded="true" signature="3815:3841" placeholder="SELECT * FRO..tag_category$..." />
-            <marker date="1453214507964" expanded="true" signature="4482:4551" placeholder="SELECT * FRO..tag_category$..." />
-            <marker date="1453214507964" expanded="true" signature="5027:5051" placeholder="DELETE FROM ..." />
-            <marker date="1453214507964" expanded="true" signature="5808:5875" placeholder="UPDATE tag_c..." />
-            <marker date="1453214507964" expanded="true" signature="6217:6279" placeholder="INSERT INTO tag_category..." />
-            <marker date="1453214507964" expanded="true" signature="7059:7143" placeholder="SELECT * FRO..tag_category$..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/directives/filters-element-directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.037037037">
-          <caret line="2" column="66" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/controllers/defaultControllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20964126">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/Repositories/GalleryRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33256084">
-          <caret line="309" column="30" selection-start-line="309" selection-start-column="20" selection-end-line="309" selection-end-column="30" />
-          <folding>
-            <marker date="1453214507915" expanded="true" signature="4986:5007" placeholder="SELECT * FRO..gallery$..." />
-            <marker date="1453214507915" expanded="true" signature="5770:5834" placeholder="SELECT * FRO..gallery$..." />
-            <marker date="1453214507915" expanded="true" signature="6440:6459" placeholder="DELETE FROM ..." />
-            <marker date="1453214507915" expanded="true" signature="7208:7393" placeholder="UPDATE galle..." />
-            <marker date="1453214507915" expanded="true" signature="7939:8114" placeholder="INSERT INTO gallery..." />
-            <marker date="1453214507915" expanded="true" signature="9094:9173" placeholder="SELECT * FRO..gallery$..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/directives/arrows-element-directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055555556">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/directives/icons-set-directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055555556">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/js/controllers/filtersController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -899,19 +640,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/controllers/imageController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.275862">
-          <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/partials/arrows-block-element.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.022497188">
           <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -919,14 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.724138">
           <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/partials/main-menu-block-element.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68609864">
-          <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -939,99 +663,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/controllers/defaultControllers/GalleryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5090909">
-          <caret line="437" column="3" selection-start-line="437" selection-start-column="3" selection-end-line="453" selection-end-column="5" />
-          <folding>
-            <element signature="e#51#70#0#PHP" expanded="true" />
-            <element signature="e#1581#1644#0#PHP" expanded="false" />
-            <element signature="e#1649#2321#0#PHP" expanded="false" />
-            <element signature="e#2373#3618#0#PHP" expanded="false" />
-            <marker date="1453193624785" expanded="true" signature="13794:14229" placeholder="SELECT g.id,..gallery..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/Repositories/ArticlesRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.909091">
-          <caret line="310" column="39" selection-start-line="310" selection-start-column="31" selection-end-line="310" selection-end-column="39" />
-          <folding>
-            <marker date="1453214507895" expanded="true" signature="4531:4553" placeholder="SELECT * FRO..articles$..." />
-            <marker date="1453214507895" expanded="true" signature="5341:5406" placeholder="SELECT * FRO..articles$..." />
-            <marker date="1453214507895" expanded="true" signature="6017:6037" placeholder="DELETE FROM ..." />
-            <marker date="1453214507895" expanded="true" signature="6789:6921" placeholder="UPDATE artic..." />
-            <marker date="1453214507895" expanded="true" signature="7460:7584" placeholder="INSERT INTO articles..." />
-            <marker date="1453214507895" expanded="true" signature="8547:8628" placeholder="SELECT * FRO..articles$..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/controllers/defaultControllers/ArticleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.793103">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="44" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/service/data-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="208" column="46" selection-start-line="208" selection-start-column="46" selection-end-line="208" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/partials/image-block-element.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="48" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26681614">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/gallery.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4712514">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/js/directives/images-element-directive.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.037037037">
           <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/controllers/imagesController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7962963">
-          <caret line="147" column="6" selection-start-line="121" selection-start-column="3" selection-end-line="147" selection-end-column="6" />
-          <folding>
-            <element signature="e#755#848#0" expanded="false" />
-            <element signature="e#4461#4965#0" expanded="false" />
-            <element signature="e#5017#5181#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/controllers/galleryController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22222222">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1044,66 +679,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/partials/images-block-element.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19058296">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.85762334">
           <caret line="306" column="0" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/css/css2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7903587">
-          <caret line="273" column="21" selection-start-line="273" selection-start-column="21" selection-end-line="273" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/partials/all-news-block-element.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3030303">
-          <caret line="15" column="46" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/controllers/allNewsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7457818">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/directives/pagin-news-element-directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/partials/paging-block-element.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1116,34 +695,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/news.html">
+    <entry file="file://$PROJECT_DIR$/front/js/directives/current-image-element-directive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077">
-          <caret line="19" column="80" selection-start-line="19" selection-start-column="80" selection-end-line="19" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/partials/paging-news-block-element.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/controllers/pagingController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-45.310345">
-          <caret line="175" column="28" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/controllers/pagingNewsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3448277">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1156,6 +711,206 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/back/controllers/defaultControllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/controllers/imagesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="147" column="6" selection-start-line="121" selection-start-column="3" selection-end-line="147" selection-end-column="6" />
+          <folding>
+            <element signature="e#755#848#0" expanded="false" />
+            <element signature="e#4461#4965#0" expanded="false" />
+            <element signature="e#5017#5181#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/controllers/imageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/controllers/galleryController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="63" selection-start-line="3" selection-start-column="3" selection-end-line="9" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/Core/Database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46300447">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/dbFirstModelBuilder/collections_create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/controllers/pagingController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7962962">
+          <caret line="8" column="50" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/components/jquery/jquery-1.9.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/Repositories/GalleryRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3719583">
+          <caret line="194" column="27" selection-start-line="194" selection-start-column="27" selection-end-line="194" selection-end-column="27" />
+          <folding>
+            <marker date="1453461774958" expanded="true" signature="5171:5192" placeholder="SELECT * FRO..gallery$..." />
+            <marker date="1453461774958" expanded="true" signature="5955:6019" placeholder="SELECT * FRO..gallery$..." />
+            <marker date="1453461774958" expanded="true" signature="6625:6644" placeholder="DELETE FROM ..." />
+            <marker date="1453461774958" expanded="true" signature="7393:7578" placeholder="UPDATE galle..." />
+            <marker date="1453461774958" expanded="true" signature="8124:8299" placeholder="INSERT INTO gallery..." />
+            <marker date="1453461774958" expanded="true" signature="9279:9358" placeholder="SELECT * FRO..gallery$..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/dbFirstModelBuilder/dbFirstModelBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64798206">
+          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/dbFirstModelBuilder/repositories_create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.961538">
+          <caret line="164" column="40" selection-start-line="164" selection-start-column="40" selection-end-line="164" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26681614">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/directives/pagin-news-element-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11111111">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/partials/paging-news-block-element.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/controllers/pagingNewsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0526314">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/Repositories/SessionsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1453461775039" expanded="true" signature="3999:4021" placeholder="SELECT * FRO..sessions$..." />
+            <marker date="1453461775039" expanded="true" signature="4654:4719" placeholder="SELECT * FRO..sessions$..." />
+            <marker date="1453461775039" expanded="true" signature="5195:5215" placeholder="DELETE FROM ..." />
+            <marker date="1453461775039" expanded="true" signature="5964:6035" placeholder="UPDATE sessi..." />
+            <marker date="1453461775039" expanded="true" signature="6381:6447" placeholder="INSERT INTO sessions..." />
+            <marker date="1453461775039" expanded="true" signature="7227:7307" placeholder="SELECT * FRO..sessions$..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/Repositories/ArticlesRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33256084">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <marker date="1453461774936" expanded="true" signature="4934:4956" placeholder="SELECT * FRO..articles$..." />
+            <marker date="1453461774936" expanded="true" signature="5692:5757" placeholder="SELECT * FRO..articles$..." />
+            <marker date="1453461774936" expanded="true" signature="6336:6356" placeholder="DELETE FROM ..." />
+            <marker date="1453461774936" expanded="true" signature="7105:7266" placeholder="UPDATE artic..." />
+            <marker date="1453461774936" expanded="true" signature="7770:7922" placeholder="INSERT INTO articles..." />
+            <marker date="1453461774936" expanded="true" signature="8860:8940" placeholder="SELECT * FRO..articles$..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/controllers/defaultControllers/ArticleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67600894">
+          <caret line="123" column="52" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
+          <folding>
+            <element signature="e#50#69#0#PHP" expanded="true" />
+            <marker date="1453447871552" expanded="true" signature="973:991" placeholder="SELECT * FRO..Articles..." />
+            <marker date="1453447871552" expanded="true" signature="973:992" placeholder="SELECT * FRO..Articles..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/controllers/defaultControllers/GalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76233184">
+          <caret line="546" column="34" selection-start-line="546" selection-start-column="27" selection-end-line="546" selection-end-column="34" />
+          <folding>
+            <element signature="e#51#70#0#PHP" expanded="true" />
+            <marker date="1453193624785" expanded="true" signature="13794:14229" placeholder="SELECT g.id,..gallery..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/partials/image-block-element.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/currentArticle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/currentImage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -1164,26 +919,150 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/main.js">
+    <entry file="file://$PROJECT_DIR$/front/js/service/data-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+          <caret line="251" column="44" selection-start-line="251" selection-start-column="44" selection-end-line="251" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/directives/current-image-element-directive.js">
+    <entry file="file://$PROJECT_DIR$/front/templates/partials/all-news-block-element.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/gallery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/partials/images-block-element.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/css/css2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.615385">
+          <caret line="274" column="0" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/custom-js/custom-js.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="37" />
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="9" column="79" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.109091">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/partials/paging-block-element.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/directives/about-galya-element-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.074074075">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/controllers/allNewsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.034483">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/directives/current-article-element-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/controllers/currentArticleController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/partials/article-block-element.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.923077">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/directives/main-menu-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.037037037">
+          <caret line="2" column="69" selection-start-line="2" selection-start-column="69" selection-end-line="2" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/partials/main-menu-block-element.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.787949">
+          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
           <folding />
         </state>
       </provider>

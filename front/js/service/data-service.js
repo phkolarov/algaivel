@@ -1,62 +1,62 @@
-galya.factory("siteData", ['$http','serviceURL','$q','$routeParams', function ($http,serviceURL,$q,$routeParams) {
+galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function ($http, serviceURL, $q, $routeParams) {
 
 
-    function getImagesWithoutFiltration(currentPage,currentCount){
+    function getImagesWithoutFiltration(currentPage, currentCount) {
 
         var page = currentPage;
         var count = currentCount;
 
 
-        if(page == undefined){
+        if (page == undefined) {
             page = 0;
         }
-        if(count == undefined){
+        if (count == undefined) {
             count = 15;
         }
-        var url = serviceURL + "gallery/index/"+ page + "/" + count ;
+        var url = serviceURL + "gallery/index/" + page + "/" + count;
         var defer = $q.defer();
 
-       return $http({
+        return $http({
             method: "GET",
-            url : url,
-            headers:{
+            url: url,
+            headers: {
                 "Content-type": "application/json",
-                dataType : "JSON"
+                dataType: "JSON"
             }
 
         }).success(function (success) {
 
-           defer.resolve(success);
+            defer.resolve(success);
         }).error(function (error) {
-           defer.reject(error)
+            defer.reject(error)
         })
 
         return defer.promise();
     }
 
-    function getImagesWithFiltration(currentPage,currentCount,filteringObject){
+    function getImagesWithFiltration(currentPage, currentCount, filteringObject) {
 
 
         var page = currentPage;
         var count = currentCount;
 
 
-        if(page == undefined){
+        if (page == undefined) {
             page = 0;
         }
-        if(count == undefined){
+        if (count == undefined) {
             count = 15;
         }
-        var url = serviceURL + "gallery/index/"+ page + "/" + count ;
+        var url = serviceURL + "gallery/index/" + page + "/" + count;
         var defer = $q.defer();
 
         return $http({
-            url : url,
+            url: url,
             method: "POST",
             data: filteringObject,
             headers: {
                 "Content-type": "application/json",
-                dataType : "JSON"
+                dataType: "JSON"
             }
 
         }).success(function (success) {
@@ -70,17 +70,17 @@ galya.factory("siteData", ['$http','serviceURL','$q','$routeParams', function ($
         return defer.promise();
     }
 
-    function getPageCount(count){
+    function getPageCount(count) {
 
 
-        var url  = serviceURL + "gallery/pageCounter/" + count;
-        var defer  = $q.defer();
+        var url = serviceURL + "gallery/pageCounter/" + count;
+        var defer = $q.defer();
 
         return $http({
-            url : url,
-            method : "GET",
-            headers :{
-                "Content-type":"application/json",
+            url: url,
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
                 dataType: "JSON"
             }
         }).success(function (success) {
@@ -93,7 +93,7 @@ galya.factory("siteData", ['$http','serviceURL','$q','$routeParams', function ($
         return defer.promise();
     }
 
-    function getTagCategories(){
+    function getTagCategories() {
 
         var url = serviceURL + "gallery/getTagCategories";
         var defer = $q.defer();
@@ -117,30 +117,30 @@ galya.factory("siteData", ['$http','serviceURL','$q','$routeParams', function ($
         return defer.promise();
     }
 
-    function getImages(currentPage,currentCount,categoryArray,filtersArray){
+    function getImages(currentPage, currentCount, categoryArray, filtersArray) {
 
         //{"groups" : ["mountains"], "tags": ["Rila", "Stara planina", "Pirin", "Rodopi","Summer"]}
-        if(categoryArray != null){
+        if (categoryArray != null) {
 
             var filteringObject = {
 
-                "groups" : categoryArray,
-                "tags" : filtersArray
+                "groups": categoryArray,
+                "tags": filtersArray
             };
 
-            return getImagesWithFiltration(currentPage,currentCount,filteringObject)
-        }else {
-            return getImagesWithoutFiltration(currentPage,currentCount)
+            return getImagesWithFiltration(currentPage, currentCount, filteringObject)
+        } else {
+            return getImagesWithoutFiltration(currentPage, currentCount)
         }
     }
 
-    function getCurrentImage(imageId,categoryArray,filtersArray){
+    function getCurrentImage(imageId, categoryArray, filtersArray) {
 
         var url = serviceURL + "gallery/getCurrentImage/" + imageId;
         var defer = $q.defer();
-        var data =  {
-            groups : categoryArray,
-            tags : filtersArray
+        var data = {
+            groups: categoryArray,
+            tags: filtersArray
         };
         return $http({
             url: url,
@@ -153,30 +153,12 @@ galya.factory("siteData", ['$http','serviceURL','$q','$routeParams', function ($
         });
     }
 
-    function nextImage(id,categoryArray, filtersArray){
+    function nextImage(id, categoryArray, filtersArray) {
         var url = serviceURL + "gallery/getNextImageWithCustomFiltration/" + id;
         var defer = $q.defer();
         var data = {
             groups: categoryArray,
-            tags:filtersArray
-        };
-        return $http({
-                url: url,
-                method: 'POST',
-                headers: {
-                    "Content-type": "application/json",
-                    "dataType": "json"
-                },
-            data: JSON.stringify(data)
-        });
-    }
-
-    function previousImage(id,categoryArray, filtersArray){
-        var url = serviceURL + "gallery/getPreviousImageWithCustomFiltration/" + id;
-        var defer = $q.defer();
-        var data = {
-            groups: categoryArray,
-            tags:filtersArray
+            tags: filtersArray
         };
         return $http({
             url: url,
@@ -189,52 +171,85 @@ galya.factory("siteData", ['$http','serviceURL','$q','$routeParams', function ($
         });
     }
 
-    function getArticles(currentPage,countOfArticles,year){
-
-
-        if(year == null){
-
-            return getArticlesWithoutFiltration(currentPage,countOfArticles)
-        }else{
-
-            getArticlesWithFiltration(currentPage,countOfArticles,year)
-        }
+    function previousImage(id, categoryArray, filtersArray) {
+        var url = serviceURL + "gallery/getPreviousImageWithCustomFiltration/" + id;
+        var defer = $q.defer();
+        var data = {
+            groups: categoryArray,
+            tags: filtersArray
+        };
+        return $http({
+            url: url,
+            method: 'POST',
+            headers: {
+                "Content-type": "application/json",
+                "dataType": "json"
+            },
+            data: JSON.stringify(data)
+        });
     }
 
+    function getArticles(currentPage,  year) {
+
+        var url = serviceURL + "article/index/" + currentPage;
 
 
-    function getArticlesWithoutFiltration(currentPage,countOfArticles){
+        if(year != null){
+            var url = serviceURL + "article/index/" + currentPage + "/" + year
+        }
 
-
-        var url = serviceURL + "article/index/" + currentPage + "/" + countOfArticles;
-        var defer = $q.defer();
 
         return $http({
             url: url,
             method: "GET",
             headers: {
-                "Content-type" : "application/json",
+                "Content-type": "application/json",
+                "dataTYpe": "json"
+            }
+        })
+    }
+
+
+
+    function getPageNewsCount(year) {
+        var url = serviceURL + "article/getNewsPageCount/" + year;
+
+        return $http({
+            url: url,
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
                 "dataType": "json"
             }
         });
     }
 
-    function getArticlesWithFiltration(year){
+    function getCurrentArticle(id){
 
+        var url = serviceURL + "article/getCurrentArticle/" + id;
 
+        return $http({
+            url: url,
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "dataType": "json"
+            }
+        })
 
     }
 
-
     return {
-        getImagesWithoutFiltration:getImagesWithoutFiltration,
-        getPageCount : getPageCount,
+        getImagesWithoutFiltration: getImagesWithoutFiltration,
+        getPageCount: getPageCount,
         getTagCategories: getTagCategories,
         getImages: getImages,
         getCurrentImage: getCurrentImage,
         nextImage: nextImage,
         previousImage: previousImage,
-        getArticles: getArticles
+        getArticles: getArticles,
+        getPageNewsCount: getPageNewsCount,
+        getCurrentArticle: getCurrentArticle
     }
 
 

@@ -1,4 +1,4 @@
-galya.controller("pagingController", ["$scope", 'siteData','$routeParams', function ($scope, siteData,$routeParams) {
+galya.controller("pagingController", ["$scope", 'siteData','$routeParams','$location', function ($scope, siteData,$routeParams,$location) {
 
 
     var countOfArticles = 79;
@@ -75,6 +75,7 @@ galya.controller("pagingController", ["$scope", 'siteData','$routeParams', funct
             leftButtonSide();
             rightButtonSide();
         }
+
 
         var count = $scope.formPageCount.count;
         var page = currentPage - 1;
