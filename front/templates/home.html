@@ -1,5 +1,5 @@
 <div main-menu></div>
-<header id="myCarousel" class="carousel slide">
+<header id="myCarousel" class="carousel slide" ng-controller="homeController">
   <!-- Indicators -->
         <!-- <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -7,9 +7,8 @@
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol> -->
     <!-- Wrapper for Slides -->
-  <div class="carousel-inner">
+  <div class="carousel-inner" id="carousel-inner">
     <div class="item active">
-      <!-- Set the first background image using inline CSS below. -->
       <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
     </div>
     <div class="item ">
@@ -22,20 +21,29 @@
     </div>
   </div>
 
+<video width="100%" controls>
+<source src="video/video.mp4" type="video/mp4">
+<source src="mov_bbb.ogg" type="video/ogg">
+Your browser does not support HTML5 video.
+</video>
+
   <!-- Controls -->
-  <a class="carousel-control" href="#myCarousel" data-slide="prev">
+  <!-- <a class="carousel-control" href="#myCarousel" data-slide="prev">
     <span class="icon-prev"></span>
   </a>
   <a class="carousel-control" href="#myCarousel" data-slide="next">
     <span class="icon-next"></span>
-  </a>
+  </a> -->
+<div class="carouselLeft">
+  <img ng-click="carouselLeft()" src="css/img/arrows.jpg">
+</div>
+<div class="carouselRight">
+  <img ng-click="carouselRight()" src="css/img/arrows.jpg">
+</div>
+   
 </header>
 
 <script>
-$(document).ready(function(){
-  $('.carousel').carousel({
-       interval: 5000,
-       pause: "" //changes the speed
-  })
-})
+
+
 </script>

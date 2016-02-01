@@ -7,7 +7,11 @@ body {
 pre {
     tab-size: 8;
 }
-  
+ 
+.navbar{
+	border-bottom: none;
+}
+
 .navbar-fixed-top{
 	background-color: #EEE;
 	box-shadow: 0px 5px 5px #777;
@@ -34,6 +38,10 @@ pre {
 
 	.navbar-right li:hover{
 		border-bottom: 1px inset black;	
+	}
+
+	.navbar-right li:last-child:hover{
+		border-bottom: none;
 	}
 
 	.navbar-right a:hover{
@@ -114,9 +122,112 @@ pre {
 	outline: none;
 }
 
-@media screen and (max-width: 962px) {
+#loginBtn{
+	display: none;
+}
+
+.faceb-user{
+	width: 190px;
+	height: 30px;
+}
+
+/*.faceb-user:hover{
+	border-bottom: none!important;
+}*/
+
+/*.faceb-user2:hover{
+	border-bottom: none!important;
+}*/
+
+.faceb-name{
+	float: right;
+	width: 150px;
+	margin-top: 10px;
+	margin-right: 10px;
+	height: 31px;
+	line-height: 31px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #777;
+	font-weight: 600;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.faceb-photo img{
+	margin-top: 10px;
+	width: 30px;
+	height: 31px;
+	float: left;
+}
+
+.carouselLeft, .carouselRight{
+	position: fixed;
+	top: 50%;
+	margin-top: -64px;
+	width: 128px;
+	height: 128px;
+	overflow: hidden;
+	z-index: 10;
+	border-radius: 50%;
+}
+
+.carouselLeft img:hover, .carouselRight img:hover{
+	background-color: #00D9F9;
+}
+
+.carouselLeft{
+	left: 50px;
+}
+
+.carouselRight{
+	right: 50px;
+}
+
+.carouselRight img{
+	position: relative;
+	right: 128px;
+}
+
+@media screen and (max-width: 1268px) {
 	.wal{
 		display: none!important;
+	}
+}
+
+@media screen and (max-width: 962px) {
+	
+	.carouselLeft, .carouselRight{
+		width: 48px;
+		height: 48px;
+		margin-top: -32px;
+	}
+
+	.carouselLeft img, .carouselRight img{
+		width: 96px;
+		height: 96px;
+	}
+
+	.carouselRight img{
+		right: 48px;
+	}
+}
+
+@media only screen and (min-width:963px) and (max-width: 1268px) {
+
+	.carouselLeft, .carouselRight{
+		width: 96px;
+		height: 96px;
+		margin-top: -48px;
+	}
+
+	.carouselLeft img, .carouselRight img{
+		width: 192px;
+		height: 192px;
+	}
+
+	.carouselRight img{
+		right: 96px;
 	}
 }
 
@@ -203,6 +314,10 @@ pre {
 	.closeSide{
 		display: block;
 	}
+
+	.fb-login-btn, .faceb-user{
+		margin-left: 35px;
+	}
 }
 
 /*!
@@ -247,64 +362,252 @@ body {
 
 footer {
     margin: 50px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
 }
 
-
-/*Admin Panel start*/
-
-.adminPanel{
-	height: 90%;
-	position: relative;
-	box-shadow: 10px 10px 10px #383535;
+.imageTitle{
+	margin: 0;
+	color: #FFF;
+	padding-left: 250px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-family: Verdana;
+	font-size: 60px;
+	text-shadow: 2px 2px #222;
 }
 
-.adminPanel .row, .adminPanel .col-xs-3, .adminPanel .col-xs-9{
-	height: 100%;
+.imageDescription{
+	margin: 0;
+	color: #FFF;
+	padding-left: 270px;
+	font-size: 30px;
+	text-shadow: 2px 2px #222;
 }
 
-.adminNav{
-	background-color: #383535;
-	color: white;
-	padding: 15px;
-	height: 100%;
+@media screen and (max-width: 962px) {
+	.imageDescription{
+		display: none !important;
+	}
+
+	.imageTitle{
+		padding-left: 20px;
+		font-size:40px;
+	}
 }
 
-.adminNav ul{
-	margin-top: 50px;
-	list-style-type: none;
-	padding: 0px;
+@media screen and (min-width:963px) and (max-width: 1268px) {
+
+	.imageTitle{
+		padding-left: 115px;
+		font-size:50px;
+	}
+
+	.imageDescription{
+		padding-left: 135px;
+	}
 }
 
-.adminNav ul li a{
-	color: #777;
-	line-height: 15px;
-}
-
-.adminNav ul li a:hover{
-	color: white;
-}
-
-.adminNav ul li hr{
-	margin: 0px;
+video{
 	width: 100%;
-	vertical-align: middle;
+	height: 0px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
 }
-.adminTempHold{
-	padding: 0px;
+
+video:hover{
+	height: auto;
+	width: 100%;
+	z-index: 10001;
+}
+
+
+/*Login*/
+
+.loginForm{
+	top: 100px;
+	min-height: 300px;
+	border: 1px solid #CCC;
+	font-family: cursive;
+	background-color: rgba(238, 238, 238, .5);
 	position: relative;
 }
 
-.adminTemplates{
-	border:2px groove #383535;
-	padding: 15px;
+.loginForm .row{
+	margin: 0;
+}
+
+.inactive{
+	background-color: #fff;
+}
+
+
+.action label{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	color: #AAA;
+	text-align: center;
+}
+
+
+.logAction{
+	padding: 20px 20px 0px 20px;
+	margin: 0;
+	height: auto;
+}
+
+.logAction span{
+	position: absolute;
+	z-index: 3;
+	left: 100%;
+	margin-left: -6.5px;
+	top: 50%;
+	margin-top: -10px;
+	color: #AAA;
+	font-weight: 400;
+	background-color: rgba(238, 238, 238, .5);
+}
+
+.logAction input{
+	width: 100%;
+	height: 40px;
+	margin-bottom: 20px;
+	padding-left: 10px;
+}
+
+.logAction input[type="button"]{
+	border:none;
+	background-color: #5add88;
+	color: white;
+	font-size: 18px;
+}
+
+.forgotPassword{
+	display: block;
+	width: 100%;
+	text-align: right;
+	margin-bottom: 20px;
+}
+
+.fb-login-btn{
+	height: 30px;
+	width: 30px;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.fb-login-btn img{
+	width: 30px;
+	height: 30px;
+}
+
+.fb-login-btn img:hover{
+	cursor: pointer;
+}
+
+.fb-login-btn input:hover{
+	background-color: #415E9B;
+}
+
+.logEmailErr, .logPassErr, .regEmailErr, .regPassErr, .regNickErr, .logErr{
+	position: relative!important;
+	top: 0!important;
+	left: 5px!important;
+	background-color: none!important;
+	display: none;
+	color: #d64136!important;
+}
+/*Login End*/
+
+/*Admin Panel*/
+
+.panel{
+	width: 60%;
+	height: 80%;
+	border: 1px solid black;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -20%;
+	margin-left: -30%;
+}
+
+.leftAside{
+	width: 30%;
 	height: 100%;
+	border-right: 1px solid black;
+	float: left;
+	background-color: #6d6b6b;
 }
 
-#bottomPagination{
-
+.panelContent{
+	width: 70%;
+	height:100%;
+	float: right;
 }
 
+.adminOptions{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	padding-top: 20px;
+}
 
+	.adminOptions li{
+		width: 100%;
+		height: 40px;
+		border-bottom: 1px solid #f7a116;
+	}
 
+	.adminOptions li:last-child{
+		border-bottom:none;	
+	}
 
-/*Admin Panel end*/
+		.adminOptions li a{
+			display: block;
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			text-align: left;
+			padding-left: 40px;
+			text-decoration: none;
+			color: #f7a116;
+			font-size: 16px;
+			font-family: verdana;
+		}
+
+			.adminOptions li a:hover{
+				background-color: #f7a116;
+				color: #6d6b6b;
+			}
+
+	/*removeCarousel*/
+	.removeCarousel{
+		overflow: auto;
+		text-align: center;
+		height: 100%;
+	}
+
+		.removeCarousel div{
+			width: 30%;
+			height: 200px;
+			float: left;
+			margin-left: 2.5%;
+			margin-top: 2.5%;
+			border: 2px inset #222;
+			box-shadow: 3px 2px 3px #222;
+		}
+
+			.removeCarousel div img{
+				width: 100%;
+				height: 196px;			
+			}
+
+				.removeCarousel div img:hover{
+					cursor: pointer;
+				}

@@ -1,0 +1,27 @@
+<div main-menu></div>
+<div class="col-xs-1 col-sm-2 col-md-4"></div>
+<div class="col-xs-10 col-sm-8 col-md-4">
+	<div class="col-md-1"></div>
+	<div class="col-md-9">
+		<div class="loginForm " ng-controller="loginController">
+			<div class="row">
+				<div class="col-xs-12 action" id="logLabel">
+					<label>Login</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 logAction" id="login">
+					<span class="logEmailErr">Email is required!</span>
+					<input type="email" placeholder="E-mail" id="loginEmail" />
+					<span class="logPassErr">Password is required!</span>
+					<input type="password" placeholder="Password" id="loginPass" />
+					<span class="logErr">Username or Password is incorrect!</span>
+					<input class="log-btn" type="button" ng-click="login()" value="Login" />
+					<a class="forgotPassword" href="">Forgot Password?</a>
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+<div id="status"></div>
+<div id="message"></div>
