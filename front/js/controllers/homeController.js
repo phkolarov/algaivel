@@ -1,9 +1,9 @@
-galya.controller('homeController', ['$scope', '$http', function ($scope, $http) {
+galya.controller('homeController', ['$scope', '$http','serviceURL', function ($scope, $http,serviceURL) {
 
 	$scope.getImage = function() {
 
 		$http({
-            url: '../back/Gallery/getCarouselImages'
+            url: serviceURL + 'Gallery/getCarouselImages'
         }).then(function successCallback(response) {
             $scope.setImages(response.data.results);
         }, function errorCallback(response) {
@@ -39,14 +39,14 @@ galya.controller('homeController', ['$scope', '$http', function ($scope, $http) 
 
 			if ( value == 0 ) {
 				string += "<div class='item active'>";
-				string +=   '<div class="fill" style="background-image:url(\''+ images[arr[value]].source +'\');">'+
+				string +=   '<div class="fill" style="background-image:url(\'images/'+ images[arr[value]].source +'\');">'+
 								'<h1 class="imageTitle">'+ images[arr[value]].title +'</h1>'+
 								'<p class="imageDescription">'+ images[arr[value]].description +'</p>'+
 							'</div>';
 				string += "</div>";
 			}else{
 				string += "<div class='item'>";
-				string +=   '<div class="fill" style="background-image:url(\''+ images[arr[value]].source +'\');">'+
+				string +=   '<div class="fill" style="background-image:url(\'images/'+ images[arr[value]].source +'\');">'+
 								'<h1 class="imageTitle">'+ images[arr[value]].title +'</h1>'+
 								'<p class="imageDescription">'+ images[arr[value]].description +'</p>'+
 							'</div>';

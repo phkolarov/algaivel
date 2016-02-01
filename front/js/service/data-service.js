@@ -17,8 +17,8 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
         var defer = $q.defer();
 
         return $http({
-            method: "GET",
             url: url,
+            method: "GET",
             headers: {
                 "Content-type": "application/json",
                 dataType: "JSON"

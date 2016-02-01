@@ -62,7 +62,44 @@ galya.config(['$routeProvider',
         }).
         when('/aboutMe', {
             templateUrl: 'templates/aboutGalya.html'
+        }).
+        when('/login', {
+            templateUrl: 'templates/login.html',
+            controller: 'loginController'
+        }).
+        when('/css3_periodictable', {
+            templateUrl: 'templates/css3_periodictable.html',
+            /*controller: 'loginController'*/
+        }).
+        when('/adminPanel', {
+            templateUrl: 'templates/adminPanel.html',
+            controller: 'adminController'
+        }).
+        when('/addImage', {
+            templateUrl: 'templates/adminPanel.html',
+            controller: 'addImageController'
+        }).
+        when('/editImage', {
+            templateUrl: 'templates/adminPanel.html',
+            controller: 'editImageController'
+        }).
+        when('/deleteImage', {
+            templateUrl: 'templates/adminPanel.html',
+            controller: 'deleteImageController'
+        }).
+        when('/editAboutMe', {
+            templateUrl: 'templates/adminPanel.html',
+            controller: 'editAboutMeController'
+        }).
+        when('/addToCarousel', {
+            templateUrl: 'templates/adminPanel.html',
+            controller: 'addToCarouselController'
+        }).
+        when('/removeFromCarousel', {
+            templateUrl: 'templates/adminPanel.html',
+            controller: 'removeFromCarouselController'
         })
+
     }]);
 
 galya.controller('mainController', ['$scope', '$location', function ($scope, $location) {

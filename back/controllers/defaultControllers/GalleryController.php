@@ -563,4 +563,16 @@ class GalleryController
     public function getArticlesYearsForCategory(){
 
     }
+
+
+    public function getCarouselImages(){
+
+        $galleryRepo = GalleryRepository::create();
+
+        $carousel = $galleryRepo->filterByCarousel(1)->findAll();
+        $carousel = $carousel->getObject();
+
+        echo json_encode($carousel);
+
+    }
 }

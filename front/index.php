@@ -18,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
 
-
+    <script type="text/javascript" src="js/globals.js"></script>
     <script src="js/main.js"></script>
     <script src="js/service/data-service.js"></script>
 
@@ -41,6 +41,9 @@
     <script src="js/controllers/fineArtController.js"></script>
     <script src="js/controllers/aboutMeController.js"></script>
     <script src="js/controllers/cartController.js"></script>
+    <script src="js/controllers/loginController.js"></script>
+    <script src="js/controllers/homeController.js"></script>
+    <script src="js/controllers/adminController.js"></script>
 
     <!--DIRECTIVES-->
     <script src="js/directives/main-menu-directive.js"></script>
@@ -61,6 +64,29 @@
     <script src="js/directives/socialDirectives/02-facebook.js"></script>
     <script src="js/directives/socialDirectives/03-twitter.js"></script>
     <script src="js/directives/socialDirectives/04-google-plus.js"></script>
+
+
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha512.js"></script>
+
+    <!-- FB API -->
+    <script type="text/javascript">
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script src="fbapp/fb.js"></script>
+
+
+    <!-- 3D View -->
+    <script src="js/3dView/build/three.min.js"></script>
+    <script src="js/3dView/periodictable/js/controls/TrackballControls.js"></script>
+    <script src="js/3dView/periodictable/js/libs/tween.min.js"></script>
+    <script src="js/3dView/periodictable/js/renderers/CSS3DRenderer.js"></script>
 
 
 </head>
@@ -86,21 +112,78 @@
 
 
 <script type="text/javascript">
-    $(document).ready(function () {
 
-        var sideslider = $('[data-toggle=collapse-side]'),
-            sel = sideslider.attr('data-target'),
-            sel2 = sideslider.attr('data-target-2');
+    $(document).ready(function() {
 
-        sideslider.click(function (event) {
-            $(sel).toggleClass('in');
+        function facebookReady(){
+            FB.init({
+                appId  : '1664655443803322',
+                status : true,
+                cookie : true,
+                xfbml  : true,
+                version: 'v2.5'
+            });
+
+            $(document).trigger("facebook:ready");
+            loginStatus();
+
+        }
+
+        if( window.FB ) {
+
+            facebookReady();
+        } else {
+
+            window.fbAsyncInit = facebookReady;
+        }
+
+        $(document).unbind("userInfo:ready").on("userInfo:ready", function(){
+
+            var data = {
+                id: userInfo.id
+            };
+
+            userInfo.admin = false;
+
+            data = JSON.stringify(data);
+
+            $.when(
+
+                $.ajax({
+                    url: '../back/Users/isAdmin',
+                    method: 'post',
+                    data: {data},
+                    success: function(result) {
+                        if( JSON.parse(result) == 'admin' && userInfo.role != 2 ){
+                            userInfo.admin = true;
+                            document.getElementById('loginBtn').style.display = 'block';
+                        }
+                    },
+                    error: function(err) {
+                        console.log(err)
+                    }
+                })
+            ).then(function() {
+
+
+                $('.navbar-right').append(
+                    '<li class="faceb-user">'+
+                    '<div class="faceb-photo"></div>'+
+                    '<div class="faceb-name"></div>'+
+                    '</li>'
+                );
+                $('.fb-login-btn').hide();
+                $('.faceb-user').show();
+                $('.faceb-name').text(userInfo.name);
+                $('.faceb-photo').append('<img src="https://graph.facebook.com/'+ userInfo.id + '/picture?" />');
+                $('.faceb-user').css('display','block');
+
+
+            })
         });
 
     });
 
-    $('.closeSide button').click(function () {
-        $('.side-collapse').addClass('in');
-    });
 </script>
 
 </body>

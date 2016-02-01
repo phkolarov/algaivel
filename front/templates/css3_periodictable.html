@@ -72,7 +72,7 @@
 	}
 </style>
 
-
+<div main-menu></div>
 <div id="container"></div>
 <div id="menu">
 	<button id="table">TABLE</button>
@@ -100,17 +100,20 @@
 
 	$(document).ready(function(){
 
+
 		$.ajax({
-			url:'http://127.0.0.1/test/back/Gallery/index/0/60',
+			url:'http://localhost:1234/algaivel/back/Gallery/index/0/60',
+			method: "GET",
 			header: {
 				"Content-type":"application/json",
 				"dataType":"json"
 			},
 			success: function(result) {
-				
+
+				console.log(123);
 				result.results.forEach(function(index, value){
 
-					table[count] = index.source;
+					table[count] = 'images/'+index.source;
 					count += 1;
 
 					if( column < 19 ){
