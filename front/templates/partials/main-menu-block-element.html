@@ -21,12 +21,13 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+
                     <li><a ng-click="setRoute('home')" class="glyphicon glyphicon-home"></a></li>
                     <li><a ng-click="setRoute('gallery')" href="">ГАЛЕРИЯ</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" >ЗА АВТОРА <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a ng-click="setRoute('aboutGalya')" href="">ЗА ГАЛЯ</a></li>
+                            <li><a ng-click="setRoute('aboutMe')" href="">ЗА ГАЛЯ</a></li>
                             <li><a ng-click="setRoute('media')" href="">В МЕДИИ</a></li>
                             <li><a ng-click="setRoute('clients')" href="">КЛИЕНТИ</a></li>
                             <li><a ng-click="setRoute('contacts')" href="">КОНТАКТИ</a></li>
@@ -35,6 +36,7 @@
 
                     <li><a ng-click="setRoute('news')" href="">НОВИНИ</a></li>
                     <li><a href="#" class="glyphicon glyphicon-envelope"></a></li>
+                    <li id="cartHoverIcon"><a  ng-click="setRoute('cart')" ng-show="true" href="" id="cartIcon" class="glyphicon glyphicon-shopping-cart">{{cartCounter}}</a></li>
                     <li><a href="#" class="language">EN</a></li>
                     <li><a href="#" class="mLanguage">English</a></li>
                 </ul>

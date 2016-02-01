@@ -189,12 +189,12 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
         });
     }
 
-    function getArticles(currentPage,  year) {
+    function getArticles(currentPage, year) {
 
         var url = serviceURL + "article/index/" + currentPage;
 
 
-        if(year != null){
+        if (year != null) {
             var url = serviceURL + "article/index/" + currentPage + "/" + year
         }
 
@@ -210,7 +210,6 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
     }
 
 
-
     function getPageNewsCount(year) {
         var url = serviceURL + "article/getNewsPageCount/" + year;
 
@@ -224,7 +223,7 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
         });
     }
 
-    function getCurrentArticle(id){
+    function getCurrentArticle(id) {
 
         var url = serviceURL + "article/getCurrentArticle/" + id;
 
@@ -239,6 +238,38 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
 
     }
 
+    function getFineArtInfo() {
+
+        var url = serviceURL + "fineArt";
+
+        return $http({
+            url: url,
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "dataType": "json"
+            }
+        })
+    }
+
+    function getAboutMeInformation(){
+
+
+        var url = serviceURL + "aboutme";
+
+        return $http({
+            url: url,
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "dataTYpe": "json"
+            }
+        })
+    }
+
+
+
+
     return {
         getImagesWithoutFiltration: getImagesWithoutFiltration,
         getPageCount: getPageCount,
@@ -249,7 +280,9 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
         previousImage: previousImage,
         getArticles: getArticles,
         getPageNewsCount: getPageNewsCount,
-        getCurrentArticle: getCurrentArticle
+        getCurrentArticle: getCurrentArticle,
+        getFineArtInfo: getFineArtInfo,
+        getAboutMeInformation: getAboutMeInformation
     }
 
 

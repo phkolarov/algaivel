@@ -1,62 +1,76 @@
-.paging{
+body{
+    background-color: #bfbfbf;
+    font-family: "Comic Sans MS";
+}
+h1{
+    color: white;
+
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.paging {
 
     list-style-type: none;
     display: inline-block;
     padding-left: 0px;
 }
 
-.paging li{
+.paging li {
     display: inline-block;
-    color: coral;
+    color: #ffc165;;
     width: 8px;
     height: 6px;
     padding: 10px;
     padding-bottom: 15px;
     margin: 0px 3px 0px 3px;
 }
-.paging li:hover{
+
+.paging li:hover {
     /*background-color: yellow;*/
 }
 
-.paging li a{
-    color: coral;
+.paging li a {
+    color: #ffc165;;;
 }
 
-#currentPage li{
+#currentPage li {
     font-weight: bold;
     width: 10px;
     height: 10px;
 }
-.paginationWrapper{
+
+.paginationWrapper {
     margin-top: 25px;
 }
 
-#selectCount{
+#selectCount {
     margin-top: 25px;
     font-weight: bold;
-    color: coral;
+    color: #ffc165;;
 }
 
-.filtersElement{
+.filtersElement {
 
     border: 1px solid black;
     margin-bottom: 15px;
     color: grey;
-    background-color: #f1f1f1;
+    background-color: #f6f6f6;
     padding-left: 20px;
     padding-right: 30px;
     border-radius: 3px;
     width: 150px;
 }
 
- h4{
-     width: 145px;
-}
-.imagesWrapper{
-    margin-top: 39px;
+h4 {
+    width: 145px;
 }
 
-#presentedImage{
+.imagesWrapper {
+    margin-top: 19px;
+}
+
+#presentedImage {
 
     width: 745px;
     height: 500px;
@@ -70,16 +84,18 @@
     position: relative;
 
 }
-#presentedImage img{
-    max-width:100%;
-    max-height:100%;
+
+#presentedImage img {
+    max-width: 100%;
+    max-height: 100%;
     z-index: 10;
     /*-webkit-transition: max-width 0.5s, max-height 0.5s; !* For Safari 3.1 to 6.0 *!*/
     /*transition: max-height 0.5s, max-height 0.5s;*/
     /*-webkit-transition: all 0.5s ease-in-out;*/
     position: absolute;
 }
-#presentedImage img:hover{
+
+#presentedImage img:hover {
 
     /*max-width:105%;*/
     /*max-height:105%;*/
@@ -88,20 +104,22 @@
     /*transition: max-height 0.5s, max-height 0.5s;*/
     /*-webkit-transition: all 0.5s ease-in-out*/
 }
-#regularImage{
 
-    width: 362px;
-    height: 240px;
+#regularImage {
+
+    width: 457px;
+    height: 307px;
     display: inline-block;
     padding: 0px;
     margin: 10px;
     float: left;
     position: relative;
     overflow: hidden;
-
+    border: 3px solid #e8e8e8;
 
 }
-.mIco{
+
+.mIco {
     position: absolute;
     width: 100px;
     z-index: 100;
@@ -110,11 +128,11 @@
     display: none;
 }
 
+#regularImage img {
 
-#regularImage img{
+    max-width: 100%;
+    max-height: 100%;
 
-    max-width:100%;
-    max-height:100%;
     position: absolute;
     /*-webkit-transition: max-width 0.5s, max-height 0.5s; !* For Safari 3.1 to 6.0 *!*/
     /*transition: max-height 0.5s, max-height 0.5s;*/
@@ -122,7 +140,7 @@
 
 }
 
-#regularImage img:hover{
+#regularImage img:hover {
 
     /*max-width:105%;*/
     /*max-height:105%;*/
@@ -131,93 +149,32 @@
     /*-webkit-transition: all 0.3s ease-in-out*/
 
 }
-img{
+
+img {
     display: inline-block;
 }
-.currentImage{
+
+.currentImage {
     width: 100%;
+    height: 110%;
+    position: absolute;
 }
 
-
-.arrow{
-
-    position: fixed;
-    width: 100%;
-
-
-}
-#leftArrow{
-    background-image: url("arrows.png");
-    right: calc(97% - 128px);
-    width: 128px;
-    height: 128px;
-    top: calc(55% - 128px);
-    z-index: 100;
-
-}
-
-#leftArrow:hover{
-    border: 0px;
-    background: url("arrows.png") 0 128px;
-}
-
-#rightArrow{
-    background: url("arrows.png") 128px 0;
-    left: calc(97% - 128px);
-    width: 128px;
-    height: 128px;
-    top: calc(55% - 128px);
-    z-index: 100;
-}
-
-#rightArrow:hover{
-    background: url("arrows.png") 128px 128px;
-}
-#test{
+#test {
     display: inline-block;
     vertical-align: middle;
     float: none;
 }
-#iconsSetWrapper{
 
-    position: fixed;
-    width: 100%;
-}
-
-#ico{
-
-    left: calc(97% - 100px);
-    width: 80px;
-    height: 80px;
-    top: calc(55% - 250px);
-    z-index: 100;
-    font-size: 40px;
-
-}
-#ico:hover{
-    color: #00d9f9;
-}
-
-#size{
-
-    left: calc(97% - 100px);
-    width: 80px;
-    height: 80px;
-    top: calc(55% - 315px);
-    z-index: 100;
-    font-size: 40px;
-
-}
-#size:hover{
-    color: #00d9f9;
-}
-.artContainer{
+.artContainer {
     position: relative;
 }
-.articleWrapper{
+
+.articleWrapper {
     /*margin: 20px;*/
 }
-.article{
+
+.article {
     position: relative;
     overflow: hidden;
     display: block;
@@ -228,7 +185,7 @@ img{
 
 }
 
-.tick{
+.tick {
 
     display: block;
     background-color: coral;
@@ -239,12 +196,14 @@ img{
     top: -1.3%;
     left: 90%;
 }
-.tick div{
+
+.tick div {
     position: absolute;
     display: inline-block;
     left: 0px;
 }
-.tick div span{
+
+.tick div span {
     color: white;
     display: block;
     text-align: left;
@@ -252,43 +211,681 @@ img{
     font-weight: bold;
 }
 
-.article img{
+.article img {
 
-    max-width:100%;
-    max-height:100%;
+    max-width: 100%;
+    max-height: 100%;
     margin-bottom: 25px;
     float: left;
 }
-.title{
+
+.title {
     position: absolute;
     top: calc(98% - 25px);
     width: 100%;
     color: white;
     text-align: center;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-.day{
+.day {
 
     margin-top: 3px;
     margin-bottom: -2px;
 
     font-size: 18px;
 }
-#articlePostDate{
-    color: grey;
+
+#articlePostDate {
+    margin-top: 40px;
+    color: white;
 }
-#articleImage{
+
+#articleImage {
     margin: 15px 0 25px 0;
     /*margin-bottom: 25px;*/
     background-color: #eeeeee;
     border: 1px solid #7e7e7e;
 }
 
-#articleTitle{
+#articleTitle {
 
     margin-top: 25px;
 }
-#googleButtons{
-    margin-left: 20px;
+
+#googleButtons {
+    margin-left: 55px;
+}
+
+.twitter-share-button {
+    margin-left: 50px;
+
+}
+
+#filtersWrapper {
+    margin-top: 0px;
+    padding-left: 0px;
+}
+
+/*ICONS*/
+
+.icons {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.positionFixer {
+
+    position: fixed;
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.arrows {
+    display: inline-block;
+    top: 30%;
+}
+
+#leftArrowWrapper {
+
+    position: absolute;
+    left: 4%;
+}
+
+.leftArrow {
+    background-image: url("arrows.png");
+    width: 128px;
+    height: 128px;
+    z-index: 100;
+
+}
+
+.leftArrow:hover {
+    border: 0px;
+    background: url("arrows.png") 0 128px;
+}
+
+#rightArrowWrapper {
+    position: absolute;
+    left: 90%;
+}
+
+.rightArrow {
+    background: url("arrows.png") 128px 0;
+    width: 128px;
+    height: 128px;
+    z-index: 100;
+}
+
+.rightArrow:hover {
+    background: url("arrows.png") 128px 128px;
+}
+
+#iconsSetWrapper {
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: rgba(0, 212, 248, 0.1);
+    padding: 10px;
+    position: absolute;
+    top: 80%;
+    left: 86%;
+    display: inline-block;
+    width: 220px;
+    font-size: 35px;
+}
+
+.innerWrapper {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 56px;
+}
+
+.arrow {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /*-webkit-transition: -webkit-transform 0.3s;*/
+    /*-webkit-transition: transform 0.3s;*/
+}
+
+#size {
+    z-index: 100000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /*-webkit-transition: -webkit-transform 0.6s;*/
+    /*-webkit-transition: transform 0.6s;*/
+    transition: all 0.6s;
+}
+
+#ico {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /*-webkit-transition: -webkit-transform 0.6s;*/
+    /*-webkit-transition: transform 0.6s;*/
+    transition: transform 0.6s;
+}
+
+#cart {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /*-webkit-transition: -webkit-transform 0.3s;*/
+    /*-webkit-transition: transform 0.3s;*/
+    transition: all 0.6s;
+
+}
+
+#fineArt {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /*-webkit-transition: -webkit-transform 0.3s;*/
+    /*-webkit-transition: transform 0.3s;*/
+    transition: all 0.6s;
+
+}
+
+.innerWrapper a {
+    display: block;
+    width: 40px;
+    height: 100%;
+}
+
+.innerWrapper a:hover #size {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    color: #00D4F8;
+
+}
+
+.innerWrapper a:hover #cart {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    color: #00D4F8;
+
+}
+
+.innerWrapper a:hover #ico {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    color: #00D4F8;
+
+}
+
+.innerWrapper a:hover #fineArt {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    color: #00D4F8;
+
+}
+
+/*Social Buttons article*/
+.socialButtonsWrapper {
+
+    border: 1px solid white;
+    background-color: rgba(0, 212, 248, 0.3);
+
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    position: absolute;
+    top: 87%;
+    left: 5%;
+    display: inline-block;
+    width: 440px;
+    font-size: 25px;
+}
+
+.innerSocialWrapper {
+
+    display: block;
+    position: relative;
+    left: 50px;
+    line-height: 30px;
+}
+
+.twitter-follow-button {
+    vertical-align: bottom;
+}
+
+#gbutt {
+
+    position: absolute;
+    top: 15px;
+}
+
+.gwrap {
+
+    width: 80px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+/*Fullsize image wrapper*/
+
+.fullSizeWrapper {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+}
+
+#fullSizeImage {
+
+    height: 105.5%;
+    max-width: 100%;
+    max-height: 105.5%;
+    position: absolute;
+    background-color: grey;
+    margin-top: -50px;
+
+}
+
+/*Fine Art*/
+
+.fineArtWrapper {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.fineArtController {
+
+    position: relative;
+    display: block;
+    border-bottom: 3px solid black;
+}
+
+#fineArtPresentedImage {
+
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 3px solid black;
+    display: block;
+    height: 500px;
+    padding: 5px;
+    background-color: grey;
+}
+
+#fineArtImagesWrapper {
+
+    position: relative;
+    margin: 50px 0 50px 35px;
+    border: 3px solid black;
+    display: block;
+    background-color: grey;
+    height: 500px;
+}
+
+.fineArtImages {
+
+    position: relative;
+    border: 1px solid lightgray;
+    background-color: white;
+    margin: 10px 0 10px 0;
+    height: 144px;
+    padding: 0px;
+}
+
+.fineArtImages img {
+    position: absolute;
+    margin-left: calc(50% - 42%);
+    max-width: 100%;
+    max-height: 100%;
+    /*padding-right: 20px;*/
+    padding: 3px 20px 3px 5px;
+}
+
+#fineArtAnimation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 3px solid lightgray;
+    -webkit-perspective: 350px; /* Chrome, Safari, Opera  */
+    perspective: 1150px;
+}
+
+#backGroundImage {
+
+    position: absolute;
+    margin-left: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 3px;
+
+
+}
+#animation{
+    position: absolute;
+    margin-left: 10px;
+    /*max-width: 30%;*/
+    /*max-height: 30%;*/
+    padding: 3px;
+
+}
+
+.fineArtContent {
+
+    margin-top: 15px;
+    position: absolute;
+    font-family: "Comic Sans MS";
+    color: white;
+    margin-bottom: 30px;
+}
+
+/*price table*/
+
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#bbb; margin-top: 10px; margin-left: -5px}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#E0FFEB;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#9DE0AD;}
+.tg .tg-yw4l{vertical-align:top}
+
+/*---------*/
+#cartIcon{
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+#cartIcon:hover{
+    color: #FF7F50 !important;
+}
+
+/*About me*/
+
+.aboutMeWrapper{
+
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+#topImage{
+    background-image: url("nature.jpg");
+    width: 100%;
+    height: 35%;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#middleContent{
+    color: black;
+    position: relative;
+    width: 100%;
+    background-color: white;
+}
+#middleContent h1{
+    color: black;
+}
+
+#bottomImage{
+    background-image: url("nature.jpg");
+    height: 50%;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100%;
+    background-attachment: fixed;
+    position: relative;
+
+}
+
+.aboutMeImageWrapper img{
+    position: absolute;
+}
+
+
+/*Cart*/
+
+
+#cartContainer{
+    margin-top: 3px;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+}
+
+#innerCartContainer{
+
+
+    padding: 30px;
+    background-color: white;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+
+.panel {
+    height: 500px;
+    overflow: auto !important;
+}
+
+#emailAddress{
+
+    margin: 0 0 10px -10px;
+}
+#cartPresentImage{
+
+    position: relative;
+
+}
+#cartPresentImage img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+}
+.modal-footer{
+    position: relative;
+}
+
+
+
+
+
+
+/*RESPONSIVE*/
+@media screen and (max-width: 1751px) {
+    #regularImage {
+
+        width: 450px;
+        height: 297px;
+    }
+
+    .rightArrow {
+        background: url("arrows.png") 100px 0;
+        background-size: 200px 200px;
+        width: 100px;
+        height: 100px;
+        z-index: 100;
+    }
+
+    .rightArrow:hover {
+        background: url("arrows.png") 100px 100px;
+        background-size: 200px 200px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .leftArrow {
+        background-image: url("arrows.png");
+        background-size: 200px 200px;
+        width: 100px;
+        height: 100px;
+        z-index: 100;
+
+    }
+
+    .leftArrow:hover {
+        border: 0px;
+        background: url("arrows.png") 0 100px;
+        background-size: 200px 200px;
+        width: 100px;
+        height: 100px;
+    }
+
+    #rightArrowWrapper {
+        position: absolute;
+        left: 90%;
+    }
+
+
+    #buyButton{
+
+        width: 56% !important;
+    }
+
+    tr td{
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+}
+
+@media screen and (max-width: 1716px) {
+    #regularImage {
+
+        width: 415px;
+        height: 277px;
+    }
+
+    #filtersContainer {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+}
+
+@media screen and (max-width: 1643px) {
+    #regularImage {
+        width: 370px;
+        height: 247px;
+    }
+
+    #filtersContainer {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #rightArrowWrapper {
+        position: absolute;
+        left: 90%;
+    }
+}
+
+@media screen and (max-width: 1426px) {
+    #regularImage {
+        width: 360px;
+        height: 247px;
+    }
+
+    #filtersContainer {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #rightArrowWrapper {
+        position: absolute;
+        left: 90%;
+    }
+}
+
+@media screen and (max-width: 1393px) {
+    #regularImage {
+        width: 320px;
+        height: 197px;
+    }
+
+    #filtersContainer {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .rightArrow {
+        background: url("arrows.png") 80px 0;
+        background-size: 160px 160px;
+        width: 80px;
+        height: 80px;
+        z-index: 100;
+    }
+
+    .rightArrow:hover {
+        background: url("arrows.png") 80px 80px;
+        background-size: 160px 160px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .leftArrow {
+        background-image: url("arrows.png");
+        background-size: 160px 160px;
+        width: 80px;
+        height: 80px;
+        z-index: 100;
+
+    }
+
+    .leftArrow:hover {
+        background: url("arrows.png") 0 80px;
+        background-size: 160px 160px;
+        width: 80px;
+        height: 80px;
+    }
+
+    #rightArrowWrapper {
+        position: absolute;
+        left: 80%;
+    }
+
+    #fineArtImagesWrapper {
+
+        margin: 50px 0 50px 0;
+    }
+
+    #topImage{
+
+        background-size: 140%;
+    }
+    #bottomImage{
+
+        background-size: 140%;
+    }
+
+
+
+
+}
+@media screen and (max-width: 1393px) {
+
+    #topImage{
+
+        background-size: 220%;
+        background-position: top;
+    }
+    #bottomImage{
+
+        background-position: bottom
+    ;
+        background-size: 220%;
+    }
+
 }

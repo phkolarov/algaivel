@@ -3,6 +3,7 @@
 namespace controllers\defaultControllers;
 
 
+use Models\Categorie;
 use Models\Gallery;
 use Repositories\CategoriesRepository;
 use Repositories\GalleryCategoriesRepository;
@@ -68,9 +69,9 @@ class GalleryController
 
         $count = (int)$param[0];
 //        $currentPage = $param[1];
-        $imageRepo = GalleryRepository::create();
+            $imageRepo = GalleryRepository::create();
 
-        $allImages = $imageRepo->findAll();
+            $allImages = $imageRepo->findAll();
 
         $imagesObject = $allImages->getObject();
 
@@ -138,6 +139,7 @@ class GalleryController
         $currentImageId = $parameters[0];
         $images = $this->getFilteredGallery($groups, $filters, 0, 99999);
 
+//        var_dump($images);
         if (count($groups) == 0) {
 
             $prvImages = $this->pagination(0, 99999);
@@ -544,6 +546,9 @@ class GalleryController
 
         $groups = TagCategoryRepository::create();
 
+
+
+
         $groups = $groups->findAll();
         $allGroupsData = $groups->getObject();
 
@@ -551,5 +556,11 @@ class GalleryController
             $group->elements = [];
         }
         return $allGroupsData->results;
+    }
+
+
+
+    public function getArticlesYearsForCategory(){
+
     }
 }

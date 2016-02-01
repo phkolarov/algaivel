@@ -21,6 +21,14 @@ galya.config(['$routeProvider',
             templateUrl: 'templates/currentImage.html',
             controller: 'galleryController'
         }).
+        when('/gallery/fullSizeImage/:image', {
+            templateUrl: 'templates/fullSizeImage.html',
+            controller: 'fullSizeImageController'
+        }).
+        when('/gallery/fineArt/:imageId', {
+            templateUrl: 'templates/fineArt.html',
+            controller: 'fineArtController'
+        }).
         when('/aboutGalya', {
             templateUrl: 'templates/aboutGalya.html',
             /*controller: aboutGalyaCtrl*/
@@ -48,6 +56,12 @@ galya.config(['$routeProvider',
         when('/news/page/:page/:year', {
             templateUrl: 'templates/news.html',
             controller: 'allNewsMainController'
+        }).
+        when('/cart', {
+            templateUrl: 'templates/cart.html'
+        }).
+        when('/aboutMe', {
+            templateUrl: 'templates/aboutGalya.html'
         })
     }]);
 

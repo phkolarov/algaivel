@@ -9,14 +9,14 @@ galya.controller('imagesController', ['$scope', 'siteData','$routeParams','$rout
     var count = $scope.formPageCount.count;
     var currentPage = $scope.currentPage - 1;
     var countOfAllPages = null;
-    sessionStorage.clear();
+
+    sessionStorage.removeItem('categoryArray');
+    sessionStorage.removeItem('filtersArray');
 
     //GET DEFAULT DATA WITHOUT FILTRATION
     siteData.getImages(currentPage, count).then(function (data) {
 
-
-        $scope.presentImage = data.data.results[0];
-        $scope.imageData = data.data.results.splice(1, data.data.results.length);
+        $scope.imageData = data.data.results;
 
     });
 
@@ -94,9 +94,12 @@ galya.controller('imagesController', ['$scope', 'siteData','$routeParams','$rout
                 var pages = pageCounter(data.data.countOfImages, $scope.formPageCount.count);
                 $scope.countOfPages = pages;
                 that.$emit("refreshPageCount", pages);
-                $scope.presentImage = data.data.results[0];
-                $scope.imageData = data.data.results.splice(1, data.data.results.length);
-                sessionStorage.clear();
+                $scope.imageData = $scope.imageData = data.data.results;
+
+                //sessionStorage.clear();
+
+                sessionStorage.removeItem('categoryArray');
+                sessionStorage.removeItem('filtersArray');
             });
 
         } else {
@@ -106,8 +109,7 @@ galya.controller('imagesController', ['$scope', 'siteData','$routeParams','$rout
                 var pages = pageCounter(data.data.countOfImages, $scope.formPageCount.count);
                 $scope.countOfPages = pages;
                 that.$emit("refreshPageCount", pages);
-                $scope.presentImage = data.data.results[0];
-                $scope.imageData = data.data.results.splice(1, data.data.results.length);
+                $scope.imageData = $scope.imageData = data.data.results;
 
                 sessionStorage.categoryArray = JSON.stringify(categoryArray);
                 sessionStorage.filtersArray = JSON.stringify(filtersArray);
@@ -116,7 +118,6 @@ galya.controller('imagesController', ['$scope', 'siteData','$routeParams','$rout
 
             })
         }
-
     };
 
     $scope.zoom = function (data) {

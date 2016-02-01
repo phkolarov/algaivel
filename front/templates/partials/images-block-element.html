@@ -1,21 +1,22 @@
 <div class="imagesWrapper">
 
-    <div class="col-md-12" style="border: 1px solid lightgray"></div>
-    <div class="row">
+    <div class="col-md-12" style="border: 1px solid lightgray; margin-bottom: 9px"></div>
+    <div class="col-md-12">
+        <div class="row">
 
 
-        <a ng-href="#/gallery/{{presentImage.id}}">
-            <div ng-mouseover="zoom($event)" ng-mouseout="unzoom($event)" id="presentedImage" class="image col-md-6">
-                <img src="{{presentImage.source}}">
+            <!--<a ng-href="#/gallery/{{presentImage.id}}">-->
+            <!--<div ng-mouseover="zoom($event)" ng-mouseout="unzoom($event)" id="presentedImage" class="image col-md-6">-->
+            <!--<img src="{{presentImage.source}}">-->
+            <!--<img class="mIco" src="css/img/mountains-ico.png">-->
+            <!--</div>-->
+            <!--</a>-->
+            <a ng-href="#/gallery/{{i.id}}" ng-mouseover="zoom($event)" ng-mouseout="unzoom($event)" id="regularImage"
+               ng-repeat="i in imageData">
+                <img src="images/{{i.source}}">
                 <img class="mIco" src="css/img/mountains-ico.png">
-            </div>
-        </a>
-        <a ng-href="#/gallery/{{i.id}}" ng-mouseover="zoom($event)" ng-mouseout="unzoom($event)" id="regularImage" class="image col-md-2"
-             ng-repeat="i in imageData">
-                <img src="{{i.source}}">
-                <img class="mIco" src="css/img/mountains-ico.png">
-
-        </a>
-
+            </a>
+        </div>
     </div>
+
 </div>

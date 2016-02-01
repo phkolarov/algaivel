@@ -1,0 +1,132 @@
+<div id="cartContainer">
+
+
+    <div class="row">
+        <div class="header col-xs-12">
+            <div class="row">
+                <div class="col-md-6 col-xs-3 col-md-offset-2">
+                    <h1>Количка</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+
+
+            <div id="innerCartContainer" class="col-md-12">
+
+                <div class="panel panel-default col-md-12">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Поръчка: дигитален формат на изображение</div>
+                    <div class="panel-body">
+                        <p>От тук имате възможност да закупите правата за използването на дадена снимка. След заплащане
+                            снимката ще ви бъде изпратена в срок от 3 работни дни на посочения от вас Email адрес.
+                            Качеството на изображенията ше съответства на избраното от вас!
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <input type="text" class="form-control" id="emailAddress" ng-model="email" placeholder="Моля, първо въведете вашият Email адрес:">
+                    </div>
+                    <table id="table" class="table">
+                        <tr ng-repeat="i in imagesObject" class="{{i.imageId}}">
+
+                            <div id="{{i.imageId}}">
+                                <td>ID: {{i.imageId}}</td>
+                                <td>Име: {{i.imageName}}</td>
+                                <td>
+                                    <!--<select class="testChange">-->
+                                        <!--<option value="10">XS - 800 x 531 px @ 72 dpi</option>-->
+                                        <!--<option value="30">S - 1440 x 961 px @ 300 dpi</option>-->
+                                        <!--<option value="50">M - 2126 x 1419 px @ 300 dpi</option>-->
+                                        <!--<option value="70">L - 3200 х 2136 px @ 300 dpi</option>-->
+                                        <!--<option value="100">XL - 4288 x 2862 px @ 300 dpi</option>-->
+                                        <!--<option value="150">XXL - 7360 x 4912 px @ 300 dpi</option>-->
+                                    <!--</select>-->
+
+                                    <!--<script>-->
+                                        <!--$('.testChange').on('click', function() {-->
+
+                                            <!---->
+                                            <!--console.log($(this).val());-->
+                                        <!--});-->
+
+
+
+                                    <!--</script>-->
+
+                                    <select class="form-control"
+                                            ng-init="formPageCount[i.imageId] = priceOption[0].price"
+                                            ng-change="$emit('updatePrice')"
+                                            ng-model='formPageCount[i.imageId]'
+                                            ng-options='option.price as option.name for option in priceOption'>
+                                    </select>
+                                </td>
+                                <td>Цена: {{formPageCount[i.imageId]}} лв.</td>
+
+                                <td>
+                                    <button class="btn btn-default" ng-click="remove(i.imageId)"> Изтрий</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#myModal">Преглед
+                                    </button>
+                                </td>
+                                <td>
+                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                        <input type="hidden" name="business" value="rastiv_1300521109_biz@mail.bg" />
+                                        <input type="hidden" name="cmd" value="_xclick" />
+                                        <input type="hidden" name="item_name" value="User:John Doe, Order No:4445TG778HJ-E" />
+                                        <input type="hidden" name="amount" value="{{formPageCount[i.imageId] * 0.511}}" />
+
+                                        <input type="hidden" name="currency_code" value="EUR" />
+                                        <input type="hidden" name="no_shipping" value="1" />
+                                        <input type="hidden" name="cancel_return" value="http://renttv.net/paypal.php?result=cancel" />
+                                        <input type="hidden" name="return" value="http://renttv.net/paypal.php?result=success" />
+                                        <!--<input type="image" id="buyButton" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/x-click-but6.gif" alt="PayPal - The safer, easier way to pay online">-->
+                                        <!--<img alt="" border="0" width="1" height="1" src="https://www.paypal.com/en_US/i/scr/pixel.gif" />-->
+                                        <button type="image" id="buyButton" name="submit" border="0" ng-if="formPageCount[i.imageId] != null && email != null"  ng-click="initPrice(i.imageId)" class="{{i.imageId}} btn btn-default">Плащане</button>
+
+                                        </input>
+                                    </form>
+                                </td>
+
+                            </div>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="col-md-2"></div>
+
+    </div>
+
+
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Снимка преглед</h4>
+            </div>
+            <div id="cartPresentImage" class="modal-body">
+                <img src="images/1.jpg">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

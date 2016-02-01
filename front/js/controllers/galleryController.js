@@ -9,10 +9,6 @@ galya.controller('galleryController',['$scope','siteData','$route', function ($s
     ];
     $scope.formPageCount = {count : $scope.pageCount[0].value};
 
-
-
-
-
     $scope.$on('MyEvent', function (event,data) {
 
         var currentPage = 0;
@@ -25,21 +21,14 @@ galya.controller('galleryController',['$scope','siteData','$route', function ($s
 
             siteData.getImages(currentPage,imagegPerPage).then(function (data) {
 
-                console.log(currentPage);
-                console.log(imagegPerPage);
-                console.log(data);
-
-                $scope.presentImage = data.data.results[0];
-                $scope.imageData = data.data.results.splice(1,data.data.results.length);
-
+                $scope.imageData = data.data.results;
             });
         }else{
 
             siteData.getImages(currentPage, $scope.formPageCount.count,categoryArray,filtersArray).then(function (data) {
 
                 $scope.countOfPages = data.data.countOfPages;
-                $scope.presentImage = data.data.results[0];
-                $scope.imageData = data.data.results.splice(1,data.data.results.length);
+                $scope.imageData = data.data.results;
 
             })
         }

@@ -25,6 +25,8 @@ class ArticlesRepository
     {
         if (self::$inst == null) {
         }
+        self::$selectedObjectPool = [];
+        self::$insertObjectPool = [];
         self::$inst = new self();
         return self::$inst;
     }
