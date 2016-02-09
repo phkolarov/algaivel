@@ -9,8 +9,8 @@
                 <span class="icon-bar"></span>
             </button>
             <ul class="nav navbar-nav navbar-left">
-                <li><a ng-click="setRoute('home')" class="logo" href="">GALYA</a></li>
-                <li class="wal"><span>планините в България и по света</span></li>
+                <li><a ng-click="setRoute('home')" class="logo" href="">ALGAIVEL</a></li>
+                <li class="wal"><span>Пейзажна фотография</span></li>
             </ul>
 
         </div>
@@ -23,10 +23,12 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li><a ng-click="setRoute('home')" class="glyphicon glyphicon-home"></a></li>
+                    <li class="searchListElement">
+                        <div search></div>
+                    </li>
                     <li><a ng-click="setRoute('gallery')" href="">ГАЛЕРИЯ</a></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle">ЗА АВТОРА <span class="caret"></span></a>
+                        <a href="" class="dropdown-toggle">ЗА АВТОРА <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a ng-click="setRoute('aboutMe')" href="">ЗА ГАЛЯ</a></li>
                             <li><a ng-click="setRoute('media')" href="">В МЕДИИ</a></li>
@@ -36,7 +38,7 @@
                     </li>
 
                     <li><a ng-click="setRoute('news')" href="">НОВИНИ</a></li>
-                    <li><a href="#" class="glyphicon glyphicon-envelope"></a></li>
+                    <li><a id="mail" href="" class="glyphicon glyphicon-envelope"></a></li>
                     <li id="cartHoverIcon"><a ng-click="setRoute('cart')" ng-show="true" href="" id="cartIcon"
                                               class="glyphicon glyphicon-shopping-cart">{{cartCounter}}</a></li>
                     <li><a href="#" class="language">EN</a></li>

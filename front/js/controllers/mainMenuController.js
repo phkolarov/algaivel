@@ -75,7 +75,6 @@ galya.controller('mainMenuController', ['$scope','$routeParams',function ($scope
         $scope.checkCookie();
 
         $scope.setFb = function() {
-            console.log(userInfo);
             if ( userInfo.name != undefined ) {
                 var x = '<img style="float:left;width:30px;height:30px;margin-top:10px;" src="https://graph.facebook.com/'+ userInfo.id + '/picture?" />'+
                     "<span style='display:inline-block;font-weight:600;color:rgb(119,119,119);float:right;background-color:#fff;width:130px;height:30px;line-height:30px;padding-left:10px;overflow:hidden;margin-right:10px;margin-top:10px'>" + userInfo.name + "</span>"

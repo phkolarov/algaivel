@@ -1,0 +1,87 @@
+<div id="cartContainer">
+
+
+    <div class="row">
+        <div class="header col-xs-12">
+            <div class="row">
+                <div class="col-md-6 col-xs-3 col-md-offset-2">
+                    <h1>{{searchPlaceholder}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+
+
+            <div id="searchPageWrapper" class="col-md-12">
+
+                <div class="panel panel-default col-md-12">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">{{infoResult}} {{searchContext}}</div>
+                    <div class="panel-body">
+                        <div id="imagesResultsWrapper">
+
+
+                            <ul ng-repeat="i in searchedResultObject">
+                                <li ng-if="i.source">
+                                    <a ng-href="#/gallery/{{i.id}}">
+                                        <img class="seachedResultImageElement" ng-src="images/{{i.source}}">
+                                        <div class="titleSearchedResult">
+                                            <p ng-if="language == 'BG'">{{i.titleBG}}</p>
+
+                                            <p ng-if="language == 'EN'">{{i.title}}</p>
+                                        </div>
+                                        <div class="searchedElementDate">
+                                            <div>
+                                                <span class="day">{{i.Day}}</span>
+                                                <span class="monthName">{{i.monthName}}</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li ng-if="i.articleImage">
+
+                                    <a ng-href="#/news/{{i.id}}"> <img class="seachedResultImageElement"
+                                                                          ng-src="images/{{i.articleImage}}">
+                                        <div class="titleSearchedResult">
+                                            <p ng-if="language == 'BG'">{{i.titleBG}}</p>
+
+                                            <p ng-if="language == 'EN'">{{i.title}}</p>
+                                        </div>
+                                        <div class="searchedElementDate">
+                                            <div>
+                                                <span class="day">{{i.Day}}</span>
+                                                <span class="monthName">{{i.monthName}}</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div ng-if="!notFound">
+                                <h3>{{notFoundText}}</h3>
+                            </div>
+                        </div>
+                        <!--<div id="newsResultsWrapper">-->
+                        <!--<h3>Новини</h3>-->
+                        <!--</div>-->
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<!--<script>-->
+<!--$(window).scroll(function() {-->
+<!--if($(window).scrollTop() + $(window).height() > $(document).height()) {-->
+<!--alert("bottom!");-->
+<!--}-->
+<!--});-->
+<!--</script>-->

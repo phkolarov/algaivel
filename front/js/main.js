@@ -63,6 +63,10 @@ galya.config(['$routeProvider',
         when('/aboutMe', {
             templateUrl: 'templates/aboutGalya.html'
         }).
+        when('/search/:searchingContext/:lang/:type', {
+            templateUrl: 'templates/search.html',
+            controller: "searchController"
+        }).
         when('/login', {
             templateUrl: 'templates/login.html',
             controller: 'loginController'
@@ -72,6 +76,10 @@ galya.config(['$routeProvider',
             /*controller: 'loginController'*/
         }).
         when('/adminPanel', {
+            templateUrl: 'templates/adminPanel.html',
+            controller: 'adminController'
+        }).
+        when('/adminPanel/AddToCarousel', {
             templateUrl: 'templates/adminPanel.html',
             controller: 'adminController'
         }).
@@ -95,14 +103,48 @@ galya.config(['$routeProvider',
             templateUrl: 'templates/adminPanel.html',
             controller: 'addToCarouselController'
         }).
-        when('/removeFromCarousel', {
-            templateUrl: 'templates/adminPanel.html',
+        when('/adminPanel/removeFromCarousel', {
+            templateUrl: 'templates/partials/remove-from-carousel.html',
             controller: 'removeFromCarouselController'
-        })
+        }).
+        when('/adminPanel/editAboutMe', {
+            templateUrl: 'templates/editAboutMe.html',
+            controller: 'editAboutMeController'
+        }).
+        when('/adminPanel/editNews/:page/:year', {
+            templateUrl: 'templates/partials/edit-news-page.html',
+            controller: 'editNewsController'
+        }).
+        when('/adminPanel/editNews/:articleId', {
+            templateUrl: 'templates/partials/editCurrentArticle.html',
+            controller: 'editCurrentArticleController'
+        }).
+        when('/adminPanel/editImage/', {
+            templateUrl: 'templates/partials/edit-image.html',
+            controller: 'editImageController'
+        }).
+        when('/adminPanel/uploadImage/', {
+            templateUrl: 'templates/partials/upload-image.html',
+            controller: 'uploadImageController'
+        }).
+        when('/adminPanel/editImage/:imageId', {
+            templateUrl: 'templates/partials/edit-current-image.html',
+            controller: 'editCurrentImageController'
+        }).when('/adminPanel/addNews', {
+            templateUrl: 'templates/partials/add-news.html',
+            controller: 'addNewsController'
+        }).when('/adminPanel/addToCarousel', {
+            templateUrl: 'templates/partials/add-to-carousel.html',
+            controller: 'addToCarouselController'
+        }).when('/adminPanel/editNews', {
+            templateUrl: 'templates/partials/edit-news-page.html',
+            controller: 'editNewsController'
+        });
 
     }]);
 
 galya.controller('mainController', ['$scope', '$location', function ($scope, $location) {
+    console.log(121);
     $scope.setRoute = function (route) {
         $location.path(route);
     }

@@ -1,0 +1,31 @@
+<div main-menu></div>
+<div admin-panel></div>
+<div class="panelContent">
+    <div class="articleWrapper">
+        <div class="col-xs-12" edit-news-paging></div>
+        <div class="row">
+            
+            <div class="col-xs-12 col-md-4" ng-repeat="i in articles">
+                <a ng-click="selectArticle($event)" data-id="{{i.id}}" class="article" >
+                    <img src="images/{{i.articleImage}}">
+
+                    <div class="title">
+                        <p>{{i.titleBG}}</p>
+                    </div>
+
+                    <div class="tick">
+                        <div>
+                            <span class="day">{{i.Day}}</span>
+                            <span class="monthName">{{i.monthName}}</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+            
+        </div>
+        <input type="button" value="remove article" class="uploadArticle" ng-click="removeArticle()" />
+        <input type="button" value="edit article" class="uploadArticle" ng-click="editArticle()" />
+        <div class="col-xs-12" edit-news-paging></div>
+    </div>
+</div>

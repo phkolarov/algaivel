@@ -12,7 +12,7 @@ require_once("Autoloader/Autoloader.php");
 
 $dbFirstModelBuilder = new \dbFirstModelBuilder\dbFirstModelBuilder();
 
-$dbFirstModelBuilder->createdbFirstModels();
+//$dbFirstModelBuilder->createdbFirstModels();
 
 Core\Database::setInstance(
     \Config\DatabaseConfig::DB_INSTANCE,

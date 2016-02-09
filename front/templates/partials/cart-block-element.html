@@ -15,7 +15,6 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
 
-
             <div id="innerCartContainer" class="col-md-12">
 
                 <div class="panel panel-default col-md-12">
@@ -65,40 +64,73 @@
                                             ng-model='formPageCount[i.imageId]'
                                             ng-options='option.price as option.name for option in priceOption'>
                                     </select>
+                                    <div ng-model="price[i.imageId] =  priceOption[0].price"></div>
                                 </td>
                                 <td>Цена: {{formPageCount[i.imageId]}} лв.</td>
 
                                 <td>
-                                    <button class="btn btn-default" ng-click="remove(i.imageId)"> Изтрий</button>
+                                    <button class="btn btn-default noRadius" ng-click="remove(i.imageId)"> Изтрий</button>
                                 </td>
                                 <td>
-                                    <button class="btn btn-default" data-toggle="modal" data-target="#myModal">Преглед
+                                    <button class="btn btn-default noRadius" data-toggle="modal" data-target="#myModal">Преглед
                                     </button>
                                 </td>
                                 <td>
-                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-                                        <input type="hidden" name="business" value="rastiv_1300521109_biz@mail.bg" />
-                                        <input type="hidden" name="cmd" value="_xclick" />
-                                        <input type="hidden" name="item_name" value="User:John Doe, Order No:4445TG778HJ-E" />
-                                        <input type="hidden" name="amount" value="{{formPageCount[i.imageId] * 0.511}}" />
+                                    <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">-->
+                                        <!--<input type="hidden" name="business" value="rastiv_1300521109_biz@mail.bg" />-->
+                                        <!--<input type="hidden" name="cmd" value="_xclick" />-->
+                                        <!--<input type="hidden" name="item_name" value="User:John Doe, Order No:4445TG778HJ-E" />-->
+                                        <!--<input type="hidden" name="amount" value="{{formPageCount[i.imageId] * 0.511}}" />-->
 
-                                        <input type="hidden" name="currency_code" value="EUR" />
-                                        <input type="hidden" name="no_shipping" value="1" />
-                                        <input type="hidden" name="cancel_return" value="http://renttv.net/paypal.php?result=cancel" />
-                                        <input type="hidden" name="return" value="http://renttv.net/paypal.php?result=success" />
-                                        <!--<input type="image" id="buyButton" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/x-click-but6.gif" alt="PayPal - The safer, easier way to pay online">-->
-                                        <!--<img alt="" border="0" width="1" height="1" src="https://www.paypal.com/en_US/i/scr/pixel.gif" />-->
-                                        <button type="image" id="buyButton" name="submit" border="0" ng-if="formPageCount[i.imageId] != null && email != null"  ng-click="initPrice(i.imageId)" class="{{i.imageId}} btn btn-default">Плащане</button>
+                                        <!--<input type="hidden" name="currency_code" value="EUR" />-->
+                                        <!--<input type="hidden" name="no_shipping" value="1" />-->
+                                        <!--<input type="hidden" name="cancel_return" value="http://renttv.net/paypal.php?result=cancel" />-->
+                                        <!--<input type="hidden" name="return" value="http://renttv.net/paypal.php?result=success" />-->
+                                        <!--&lt;!&ndash;<input type="image" id="buyButton" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/x-click-but6.gif" alt="PayPal - The safer, easier way to pay online">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<img alt="" border="0" width="1" height="1" src="https://www.paypal.com/en_US/i/scr/pixel.gif" />&ndash;&gt;-->
+                                        <!--<button type="image" id="buyButton" name="submit" border="0" ng-if="formPageCount[i.imageId] != null && email != null" class="{{i.imageId}} btn btn-default">Плащане</button>-->
 
-                                        </input>
-                                    </form>
+                                        <!--</input>-->
+                                    <!--</form>-->
                                 </td>
 
                             </div>
                         </tr>
-
                     </table>
+
                 </div>
+               <div class="row">
+                   <div class="col-md-2">
+
+                       <div ng-repeat="i in price">
+
+                           <div ng-init="calcTotal(i)"></div>
+
+                       </div>
+                       <h3 id="totalPriceInformation">Общо: {{total}} лв.</h3>
+                   </div>
+                   <div id="payButtonWrapper" class="col-md-2">
+                       <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                           <input type="hidden" name="business" value="rastiv_1300521109_biz@mail.bg" />
+                           <input type="hidden" name="cmd" value="_xclick" />
+                           <input type="hidden" name="item_name" value="User:John Doe, Order No:4445TG778HJ-E" />
+                           <input type="hidden" name="amount" value="{{total * 0.511}}" />
+
+                           <input type="hidden" name="currency_code" value="EUR" />
+                           <input type="hidden" name="no_shipping" value="1" />
+                           <input type="hidden" name="cancel_return" value="http://renttv.net/paypal.php?result=cancel" />
+                           <input type="hidden" name="return" value="http://renttv.net/paypal.php?result=success" />
+                           <!--<input type="image" id="buyButton" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/x-click-but6.gif" alt="PayPal - The safer, easier way to pay online">-->
+                           <!--<img alt="" border="0" width="1" height="1" src="https://www.paypal.com/en_US/i/scr/pixel.gif" />-->
+                           <button type="image" id="" name="submit" border="0" ng-if="email != null && total > 0" ng-click="initPrice(i.imageId)" class="total btn btn-default noRadius">Плащане</button>
+
+                           </input>
+                       </form>
+                   </div>
+                   <div id="paypalButtonWrapper" class="col-md-6 pull-right">
+                       <a href="https://www.paypal.com"><img id="paypalBanner" src="css/paypalBanner.jpg"></a>
+                   </div>
+               </div>
 
             </div>
 
@@ -124,7 +156,7 @@
                 <img src="images/1.jpg">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default noRadius" data-dismiss="modal">Close</button>
             </div>
         </div>
 

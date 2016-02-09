@@ -31,8 +31,8 @@ galya.controller('allNewsController', ['$scope','siteData','$routeParams', funct
         var parent = $(data.currentTarget)[0];
         var image = $(parent).children()[0];
 
-        $(image).css({'max-width': '103%'});
-        $(image).css({'max-height': '103%'});
+        $(image).css({'max-width': '104%'});
+        $(image).css({'max-height': '104%'});
         $(image).css({' -webkit-transition': 'max-width 0.3s, max-height 0.3s'});
         $(image).css({'transition': 'max-height 0.3s, max-height 0.3s'});
         $(image).css({'-webkit-transition': 'all 0.3s ease-in-out'});
@@ -45,8 +45,8 @@ galya.controller('allNewsController', ['$scope','siteData','$routeParams', funct
         var parent = $(data.currentTarget)[0];
         var image = $(parent).children()[0];
 
-        $(image).css({'max-width': '100%'});
-        $(image).css({'max-height': '100%'});
+        $(image).css({'max-width': '102%'});
+        $(image).css({'max-height': '102%'});
         $(image).css({' -webkit-transition': 'max-width 0.3s, max-height 0.3s'});
         $(image).css({'transition': 'max-height 0.3s, max-height 0.3s'});
         $(image).css({'-webkit-transition': 'all 0.3s ease-in-out'});

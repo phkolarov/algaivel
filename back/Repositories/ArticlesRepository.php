@@ -178,14 +178,41 @@ class ArticlesRepository
         return $this;
     }
 
-    /**
-     * @param $query
+     /**
+     * @param $column
+     * @param $value
      * @return $this
      */
-     public function customWhere($query){
+     public function customOr($column,$value){
 
-              $this->where .= " AND " .$query;
-              return $this;
+         if(!strpos($this->where,'AND')){
+
+                $this->where .= " AND ";
+                $this->where .= "$column Like ?";
+                $this->placeholders[] = '%'.$value.'%';
+                return $this;
+         }else{
+
+         $this->where .= " OR $column Like ?";
+                $this->placeholders[] = '%'.$value.'%';
+                return $this;
+         }
+
+
+     }
+
+
+    /**
+     * @param $column
+     * @param $value
+     * @return $this
+     */
+     public function customWhere($column,$value){
+
+         $this->where .= " AND $column Like ?";
+         $this->placeholders[] = $value;
+         return $this;
+
      }
 
     /**
@@ -312,8 +339,6 @@ $entityInfo['id']);
         $param1 = (int)$pageNum;
         $param2 = (int)$count;
 
-        $this->placeholders[] = $pageNum;
-        $this->placeholders[] = $count;
         $db = Database::getInstance('app');
         $this->query = "SELECT * FROM articles" . $this->where. " ORDER BY post_date DESC LIMIT $param1,$count;";
         $result = $db->prepare($this->query);
@@ -331,9 +356,8 @@ $entityInfo['id']);
             self::$selectedObjectPool[] = $entity;
         }
         return new ArticleCollection($collection);
-
-
     }
+
 
       /**
      * @param $table2Name

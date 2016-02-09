@@ -1,0 +1,21 @@
+<div main-menu></div>
+<div admin-panel></div>
+<div class="panelContent">
+	<div class="addArticle">
+		<div class="addArticleHeader">
+			<label>Language:</label>
+			<select id="u-articleLang" ng-model="detectLanguage" ng-change="changedValue(detectLanguage)" >
+				<option value="bg" selected>bg</option>
+				<option value="en">en</option>
+			</select>
+			<label >News image:</label>
+			<input id="u-articleImage" type="text" />
+			<label >Title:</label>
+			<input id="u-articleTitle" type="text" />			
+		</div>
+		<div>
+			<div id="summernote">Write your article here</div>
+		</div>
+		<input type="button" value="upload article" class="uploadArticle" ng-click="uploadArticle()" />
+	</div>
+</div>

@@ -69,9 +69,9 @@ class GalleryController
 
         $count = (int)$param[0];
 //        $currentPage = $param[1];
-            $imageRepo = GalleryRepository::create();
+        $imageRepo = GalleryRepository::create();
 
-            $allImages = $imageRepo->findAll();
+        $allImages = $imageRepo->findAll();
 
         $imagesObject = $allImages->getObject();
 
@@ -186,9 +186,7 @@ class GalleryController
             for ($t = 0; $t < count($images->results); $t++) {
 
 
-
                 if ($images->results[$t]['id'] == $currentImageId) {
-
 
 
                     if ($t == (count($images->results) - 1)) {
@@ -260,9 +258,9 @@ class GalleryController
                             $images->results[$t + 1]->lastOne = false;
                         }
 
-                        if($t == 0){
+                        if ($t == 0) {
                             $images->results[$t + 1]->firstOne = true;
-                        }else{
+                        } else {
 
                             $images->results[$t + 1]->firstOne = false;
                         }
@@ -306,11 +304,11 @@ class GalleryController
                         } else {
                             $images->results[$t + 1]['lastOne'] = false;
                         }
-                        if($t == 0){
+                        if ($t == 0) {
 
 
                             $images->results[$t + 1]['firstOne'] = true;
-                        }else{
+                        } else {
                             $images->results[$t + 1]['firstOne'] = false;
                         }
 
@@ -367,11 +365,11 @@ class GalleryController
 
                                 $images->results[$t - 1]->firstOne = false;
                             }
-                            if($t == (count($images->results[$t]) - 1)){
+                            if ($t == (count($images->results[$t]) - 1)) {
 
 
                                 $images->results[$t - 1]->lastOne = true;
-                            }else{
+                            } else {
 
                                 $images->results[$t - 1]->lastOne = false;
                             }
@@ -420,11 +418,11 @@ class GalleryController
                                 $images->results[$t - 1]['firstOne'] = false;
                             }
 
-                            if($t == (count($images->results[$t]) - 1)){
+                            if ($t == (count($images->results[$t]) - 1)) {
 
                                 $images->results[$t - 1]['lastOne'] = true;
-                            }else{
-                                $images->results[$t- 1]['lastOne'] = false;
+                            } else {
+                                $images->results[$t - 1]['lastOne'] = false;
                             }
 
                             header("Content-type: application/json");
@@ -547,8 +545,6 @@ class GalleryController
         $groups = TagCategoryRepository::create();
 
 
-
-
         $groups = $groups->findAll();
         $allGroupsData = $groups->getObject();
 
@@ -559,13 +555,14 @@ class GalleryController
     }
 
 
-
-    public function getArticlesYearsForCategory(){
+    public function getArticlesYearsForCategory()
+    {
 
     }
 
 
-    public function getCarouselImages(){
+    public function getCarouselImages()
+    {
 
         $galleryRepo = GalleryRepository::create();
 

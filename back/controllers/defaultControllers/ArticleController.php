@@ -41,12 +41,7 @@ class ArticleController
 
             $queryYear = (int)$year;
 
-            $query = "year(post_date) = $queryYear";
-
-
-            $articleRepo->customWhere($query);
-            $articleRepo->orderByDescending('post_date');
-            $articles = $articleRepo->pagination($page, 9);
+            $articles = $this->pagination($page, 9,"year(post_date)", $queryYear);
             $outputArticles = $articles->getObject();
             header('Content-type: application/json');
             echo json_encode($outputArticles);
@@ -76,10 +71,12 @@ class ArticleController
      * @param $count
      * @return \Collections\ArticleCollection
      */
-    private function pagination($page, $count)
+    private function pagination($page, $count,$column,$queryYear)
     {
         $startIndex = $page * $count;
         $articlesRepo = ArticlesRepository::create();
+        $articlesRepo->customWhere($column,$queryYear);
+        $articlesRepo->orderByDescending('post_date');
         $outputObject = $articlesRepo->pagination($startIndex, $count);
 
         return $outputObject;
@@ -94,7 +91,7 @@ class ArticleController
 
         $queryYear = (int)$year[0];
         $query = "year(post_date) = $queryYear";
-        $articleRepo->customWhere($query);
+        $articleRepo->customWhere("year(post_date)",$queryYear);
         $articleRepo->orderByDescending("post_date");
 
         $articles = $articleRepo->findAll();

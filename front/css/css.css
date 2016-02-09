@@ -1,5 +1,5 @@
 body {
-    padding-top: 50px;
+    padding-top: 40px;
     position: relative;
     overflow-x:hidden;
 }
@@ -14,7 +14,6 @@ pre {
 
 .navbar-fixed-top{
 	background-color: #EEE;
-	box-shadow: 0px 5px 5px #777;
 }
 
 .icon-bar{
@@ -48,7 +47,10 @@ pre {
 		color: #000!important;
 	}
 
+.nav.navbar-nav.navbar-left{
 
+	height: 10px;
+}
 .dropdown:hover a ~ .dropdown-menu{
 	display: block!important;
 }
@@ -98,7 +100,7 @@ pre {
 }
 
 .glyphicon{
-	padding: 15px 0px!important;
+	padding: 10px 0px!important;
 }
 
 .closeSide{
@@ -142,7 +144,7 @@ pre {
 .faceb-name{
 	float: right;
 	width: 150px;
-	margin-top: 10px;
+	margin-top: 5px;
 	margin-right: 10px;
 	height: 31px;
 	line-height: 31px;
@@ -155,79 +157,15 @@ pre {
 }
 
 .faceb-photo img{
-	margin-top: 10px;
+	margin-top: 5px;
 	width: 30px;
 	height: 31px;
 	float: left;
 }
 
-.carouselLeft, .carouselRight{
-	position: fixed;
-	top: 50%;
-	margin-top: -64px;
-	width: 128px;
-	height: 128px;
-	overflow: hidden;
-	z-index: 10;
-	border-radius: 50%;
-}
-
-.carouselLeft img:hover, .carouselRight img:hover{
-	background-color: #00D9F9;
-}
-
-.carouselLeft{
-	left: 50px;
-}
-
-.carouselRight{
-	right: 50px;
-}
-
-.carouselRight img{
-	position: relative;
-	right: 128px;
-}
-
 @media screen and (max-width: 1268px) {
 	.wal{
 		display: none!important;
-	}
-}
-
-@media screen and (max-width: 962px) {
-	
-	.carouselLeft, .carouselRight{
-		width: 48px;
-		height: 48px;
-		margin-top: -32px;
-	}
-
-	.carouselLeft img, .carouselRight img{
-		width: 96px;
-		height: 96px;
-	}
-
-	.carouselRight img{
-		right: 48px;
-	}
-}
-
-@media only screen and (min-width:963px) and (max-width: 1268px) {
-
-	.carouselLeft, .carouselRight{
-		width: 96px;
-		height: 96px;
-		margin-top: -48px;
-	}
-
-	.carouselLeft img, .carouselRight img{
-		width: 192px;
-		height: 192px;
-	}
-
-	.carouselRight img{
-		right: 96px;
 	}
 }
 
@@ -282,9 +220,9 @@ pre {
 		position: relative;
 	}
 
-		.navbar-right li a{
+		/*.navbar-right li a{
 			padding: 0px 0px 10px 35px;
-		}
+		}*/
 
 		.navbar-right li:hover{
 			border-bottom: 1px inset #EEE!important;
@@ -409,22 +347,6 @@ footer {
 	}
 }
 
-video{
-	width: 100%;
-	height: 0px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	z-index: 1;
-}
-
-video:hover{
-	height: auto;
-	width: 100%;
-	z-index: 10001;
-}
-
-
 /*Login*/
 
 .loginForm{
@@ -526,19 +448,13 @@ video:hover{
 
 /*Admin Panel*/
 
-.panel{
-	width: 60%;
-	height: 80%;
+.adminPanel{
 	border: 1px solid black;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-top: -20%;
-	margin-left: -30%;
+	height: 100%;
 }
 
 .leftAside{
-	width: 30%;
+	width: 300px;
 	height: 100%;
 	border-right: 1px solid black;
 	float: left;
@@ -546,45 +462,45 @@ video:hover{
 }
 
 .panelContent{
-	width: 70%;
+	width: 60%;
 	height:100%;
+	margin-right:10%;
 	float: right;
+	padding: 0px 10px;
 }
 
 .adminOptions{
+	height: 100%;
+	display: block;
+	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	list-style-type: none;
-	padding-top: 20px;
 }
 
-	.adminOptions li{
-		width: 100%;
-		height: 40px;
-		border-bottom: 1px solid #f7a116;
+	.adminOptions ul{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
 	}
 
-	.adminOptions li:last-child{
-		border-bottom:none;	
-	}
-
-		.adminOptions li a{
-			display: block;
-			width: 100%;
-			height: 40px;
-			line-height: 40px;
-			text-align: left;
+		.adminOptions ul li a{
 			padding-left: 40px;
-			text-decoration: none;
-			color: #f7a116;
-			font-size: 16px;
-			font-family: verdana;
 		}
 
-			.adminOptions li a:hover{
-				background-color: #f7a116;
-				color: #6d6b6b;
-			}
+	.adminOptions a{
+		display: block;
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		color: #fff;
+		padding-left: 20px;
+		font-size: 16px;
+		text-decoration: none;
+	}
+
+		.adminOptions a:hover{
+
+		}
 
 	/*removeCarousel*/
 	.removeCarousel{
@@ -593,14 +509,12 @@ video:hover{
 		height: 100%;
 	}
 
-		.removeCarousel div{
+		.removeCarouselContent div{
 			width: 30%;
 			height: 200px;
 			float: left;
 			margin-left: 2.5%;
 			margin-top: 2.5%;
-			border: 2px inset #222;
-			box-shadow: 3px 2px 3px #222;
 		}
 
 			.removeCarousel div img{
@@ -611,3 +525,221 @@ video:hover{
 				.removeCarousel div img:hover{
 					cursor: pointer;
 				}
+
+	.removeFromCarousel{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin: 20px;
+	}
+
+	.addArticleHeader{
+		text-align: left;
+	}
+
+	.addArticle label{
+		height: 80px;
+		line-height: 80px;
+		font-size: 16px;
+	}
+
+	.addArticle input{
+		height: 30px;
+	}
+
+	.addArticle select{
+		height: 30px;
+		width: 50px;
+	}
+
+.uploadArticle{
+	float: right;
+}
+
+#u-articleTitle, #u-eArticleTitle{
+	width: 40%;
+}
+/*Upload Image*/
+.uploadImagePanel{
+	padding-top: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.uploadImagePanel label{
+	width: 100%;
+	padding: 10px 0px;
+}
+
+/*.uploadImagePanel input[type="file"]{
+
+}*/
+
+.uploadImagePanel input[type="text"]{
+	width: 100%;
+	height: 30px;
+}
+
+.uploadImagePanel textarea{
+	width: 100%;
+	height: 300px;
+}
+
+.uploadImagePanel input[type="submit"]{
+	float: right;
+}
+
+/*Upload Image end*/
+
+
+
+.navbar-collapse{
+	height: 41px;
+}
+
+.navbar-right{
+	height: 41px;
+}
+
+.navbar-right li a{
+	padding: 10px 15px;
+}
+
+.dropdown li a{
+	padding: 5px 15px;
+}
+
+.dropdown li:last-child a:hover{
+	border-bottom: 1px solid #EEE;
+}
+
+.navbar{
+	min-height: 41px;
+}
+
+/*edit image*/
+.editCurrentImage{
+	padding-top: 30px;
+}
+
+.editCurrentImage label{
+	width: 100%;
+}
+
+.editCurrentImage input{
+	width: 50%;
+	height: 30px;
+	margin: 10px 0px;
+}
+
+.editCurrentImage textarea{
+	width: 100%;
+	height: 300px;
+}
+
+.saveImageChanges{
+	float: right;
+}
+
+/*Slick Carousel start*/
+#features{
+	height: 100%;
+}
+
+.single-item{
+	height: 100%;
+}
+
+.slick-track, .slick-list{
+	height: 100%;
+}
+
+.slick-prev, .slick-next{
+	position: fixed;
+	top: 50%;
+	margin-top: -48px;
+	width: 96px;
+	height: 96px;
+	overflow: hidden;
+	z-index: 10;
+	border-radius: 50%;
+}
+
+.slick-prev img, .slick-next img{
+	width: 194px;
+}
+
+.slick-prev img:hover, .slick-next img:hover{
+	background-color: #00D9F9;
+}
+
+.slick-prev{
+	left: 50px;
+}
+
+.slick-next{
+	right: 50px;
+}
+
+.slick-next img{
+	position: relative;
+	right: 103px;
+	top: -2px;
+}
+
+.slick-prev img{
+	position: relative;
+	left: -6px;
+	top: -2px;
+}
+
+.single-item button{
+	outline: none;
+	border: none;
+}
+
+video{
+	outline: none;
+}
+
+@media screen and (max-width: 962px) {
+	
+	.slick-prev, .slick-next{
+		width: 48px;
+		height: 48px;
+		margin-top: -32px;
+	}
+
+	.slick-prev img, .slick-next img{
+		width: 96px;
+		height: 96px;
+	}
+
+	.slick-next img{
+		right: 54px;
+		top: -1px;
+	}
+
+	.slick-prev img{
+		top: -1px;
+	}
+}
+
+@media only screen and (min-width:963px) and (max-width: 1268px) {
+
+	.slick-prev, .slick-next{
+		width: 96px;
+		height: 96px;
+		margin-top: -48px;
+	}
+
+	.slick-prev img, .slick-next img{
+		width: 192px;
+		height: 192px;
+	}
+
+	.slick-next img{
+		right: 102px;
+	}
+}
+
+/*slick carousel end*/

@@ -1,9 +1,8 @@
 galya.controller('cartController', ['$scope', 'siteData', function ($scope, siteData) {
 
 
-
-
-
+    $scope.total = 0;
+    $scope.price = {};
     if (sessionStorage.addtoCartImages) {
 
         var imagesIdsArray = JSON.parse(sessionStorage.addtoCartImages);
@@ -28,9 +27,6 @@ galya.controller('cartController', ['$scope', 'siteData', function ($scope, site
     }
 
 
-
-
-
     $scope.priceOption = [
         {name: "XS - 800 x 531 px @ 72 dpi", price: "10"},
         {name: "S - 1440 x 961 px @ 300 dpi", price: "30"},
@@ -40,14 +36,7 @@ galya.controller('cartController', ['$scope', 'siteData', function ($scope, site
         {name: "XXL - 7360 x 4912 px @ 300 dpi", price: "150"}
     ];
 
-    $scope.formPageCount = {count : $scope.priceOption[0].price};
-
-
-
-
-
-
-
+    $scope.formPageCount = {count: $scope.priceOption[0].price};
 
     $scope.remove = function (imageId) {
 
@@ -58,7 +47,7 @@ galya.controller('cartController', ['$scope', 'siteData', function ($scope, site
         var currentElementIndex = imagesIdsArray.indexOf(imageId);
 
 
-        imagesIdsArray.splice(currentElementIndex, 1);
+        var imageId = imagesIdsArray.splice(currentElementIndex, 1);
         cartImagesNames.splice(currentElementIndex, 1);
         //cartImageSources.splice(currentElementIndex,1);
 
@@ -76,6 +65,38 @@ galya.controller('cartController', ['$scope', 'siteData', function ($scope, site
         }
 
 
+        var allProductsPrice = $scope.formPageCount;
+
+        delete allProductsPrice[imageId];
+        $scope.formPageCount = allProductsPrice;
+        $scope.total = 0;
+
+        for(var i in allProductsPrice){
+            if(parseFloat(i)){
+
+                $scope.total += parseFloat(allProductsPrice[i]);
+            }
+        }
+    };
+
+
+    $scope.$on('updatePrice', function (data,event) {
+
+        var allProductsPrice = $scope.formPageCount;
+        console.log(allProductsPrice);
+        $scope.total = 0;
+
+        for(var i in allProductsPrice){
+            if(parseFloat(i)){
+
+                $scope.total += parseFloat(allProductsPrice[i]);
+            }
+        }
+    });
+
+    $scope.calcTotal = function (price) {
+
+       $scope.total+=  parseFloat(price);
     }
 
 }]);

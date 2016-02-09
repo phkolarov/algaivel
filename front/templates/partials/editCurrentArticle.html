@@ -1,0 +1,34 @@
+<div main-menu></div>
+<div admin-panel></div>
+<div class="panelContent">
+	<div class="addArticle">
+		<div class="addArticleHeader">
+			<div class="form-group">
+				<input type="checkbox" id="langSlider" data-on-text="Български" data-off-text="Английски" value="aboutMeLanguage" name="my-checkbox" checked>
+			</div>
+			<script>
+
+
+				$("[name='my-checkbox']").bootstrapSwitch();
+				$('input[name="my-checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+
+
+				});
+
+
+			</script>
+			<form>
+            <textarea name="articleEditor" id="articleEditor" rows="10" cols="80">
+
+            </textarea>
+				<script>
+					var editor = CKEDITOR.replace( 'articleEditor' );
+				</script>
+			</form>
+		</div>
+		<div>
+			<div id="summernote"></div>
+		</div>
+		<input type="button" value="save changes" class="uploadArticle" ng-click="saveChanges()" />
+	</div>
+</div>

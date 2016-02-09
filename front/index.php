@@ -8,11 +8,12 @@
     <meta name="viewport"
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height"/>
     <script type="text/javascript" src="js/components/jquery/jquery-1.9.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="js/components/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="js/components/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="js/components/bootstrap/css/bootstrap.icon-large.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/css.css">
     <link rel="stylesheet" type="text/css" href="css/css2.css">
     <link rel="stylesheet" type="text/css" href="css/media-queries.css">
+    <link rel="stylesheet" type="text/css" href="js/components/boostrapswitch/bootstrap-switch.min.css">
     <script type="text/javascript" src="js/components/bootstrap/js/bootstrap.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
@@ -21,7 +22,16 @@
     <script type="text/javascript" src="js/globals.js"></script>
     <script src="js/main.js"></script>
     <script src="js/service/data-service.js"></script>
+    <script src="js/components/ckeditor/ckeditor.js"></script>
+    <script src="js/components/ckeditor/sample.js"></script>
+    <script src="js/components/boostrapswitch/bootstrap-switch.min.js"></script>
 
+
+    <script type="text/javascript" src="js/components/slick-1.5.9/slick/slick.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/components/slick-1.5.9/slick/slick.css">
+
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.3/summernote.css" rel="stylesheet">
     <!--CUSTOM JS-->
     <script src="js/custom-js/custom-js.js"></script>
 
@@ -44,6 +54,25 @@
     <script src="js/controllers/loginController.js"></script>
     <script src="js/controllers/homeController.js"></script>
     <script src="js/controllers/adminController.js"></script>
+    <script src="js/controllers/footerController.js"></script>
+    <script src="js/controllers/contactsController.js"></script>
+    <script src="js/controllers/searchController.js"></script>
+    <script src="js/controllers/additionalSearchController.js"></script>
+    <script src="js/controllers/searchPageController.js"></script>
+    <script src="js/controllers/editAboutMeController.js"></script>
+    <script src="js/controllers/editFineArtController.js"></script>
+
+    <script src="js/controllers/editNewsController.js"></script>
+    <script src="js/controllers/editNewsPagingController.js"></script>
+    <script src="js/controllers/removeFromCarouselController.js"></script>
+    <script src="js/controllers/addNewsController.js"></script>
+    <script src="js/controllers/addToCarouselController.js"></script>
+    <script src="js/controllers/imagesAddToCarouselController.js"></script>
+    <script src="js/controllers/editCurrentArticleController.js"></script>
+    <script src="js/controllers/editImageController.js"></script>
+    <script src="js/controllers/loadEditImagesController.js"></script>
+    <script src="js/controllers/uploadImageController.js"></script>
+    <script src="js/controllers/editCurrentImageController.js"></script>
 
     <!--DIRECTIVES-->
     <script src="js/directives/main-menu-directive.js"></script>
@@ -58,6 +87,20 @@
     <script src="js/directives/current-article-element-directive.js"></script>
     <script src="js/directives/about-me-element-directive.js"></script>
     <script src="js/directives/cart-element-directive.js"></script>
+    <script src="js/directives/admin-panel.js"></script>
+    <script src="js/directives/footer-element-directive.js"></script>
+    <script src="js/directives/contancts-element-directive.js"></script>
+    <script src="js/directives/enter-element-directive.js"></script>
+    <script src="js/directives/search-element-directive.js"></script>
+    <script src="js/directives/search-page-element-directive.js"></script>
+    <script src="js/directives/scrolling-element-directive.js"></script>
+    <script src="js/directives/edit-fine-art-element-directive.js"></script>
+    <script src="js/directives/edit-about-me-element-directive.js"></scri
+
+    <script src="js/directives/edit-news.js"></script>
+    <script src="js/directives/edit-news-paging.js"></script>
+    <script src="js/directives/images-add-to-carousel.js"></script>
+    <script src="js/directives/edit-image.js"></script>pt>
 
     <!--SOCIAL DIRECTIVES-->
     <script src="js/directives/socialDirectives/00-directive.js"></script>
@@ -94,7 +137,7 @@
 <body>
 
 
-<div id="mainWrapper" class="container-fluid wrapper" ng-view>
+<div id="mainWrapper" class="container-fluid wrapper"  ng-view>
 
 
 </div>
@@ -114,7 +157,7 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
-
+        userInfo.admin = true;
         function facebookReady(){
             FB.init({
                 appId  : '1664655443803322',
@@ -140,7 +183,7 @@
         $(document).unbind("userInfo:ready").on("userInfo:ready", function(){
 
             var data = {
-                id: userInfo.id
+                id: 'assdafsdafadsdasfafsd'
             };
 
             userInfo.admin = false;

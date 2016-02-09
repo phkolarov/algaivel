@@ -51,16 +51,15 @@ galya.controller("pagingController", ["$scope", 'siteData','$routeParams','$loca
         if ($scope.groups.length > 0) {
 
             siteData.getImages(page, count, $scope.groups, $scope.filters).then(function (data) {
-                $scope.presentImage = data.data.results[0];
-                $scope.imageData = data.data.results.splice(1, data.data.results.length);
+
+                $scope.imageData = data.data.results;
 
             });
 
         } else {
 
             siteData.getImages(page, count).then(function (data) {
-                $scope.presentImage = data.data.results[0];
-                $scope.imageData = data.data.results.splice(1, data.data.results.length);
+                $scope.imageData = data.data.results;
 
             });
         }
@@ -84,16 +83,14 @@ galya.controller("pagingController", ["$scope", 'siteData','$routeParams','$loca
         if ($scope.groups.length > 0) {
 
             siteData.getImages(page, count, $scope.groups, $scope.filters).then(function (data) {
-                $scope.presentImage = data.data.results[0];
-                $scope.imageData = data.data.results.splice(1, data.data.results.length);
+                $scope.imageData = data.data.results;
 
             });
 
         } else {
 
             siteData.getImages(page, count).then(function (data) {
-                $scope.presentImage = data.data.results[0];
-                $scope.imageData = data.data.results.splice(1, data.data.results.length);
+                $scope.imageData = data.data.results;
 
             });
         }

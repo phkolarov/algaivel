@@ -28,7 +28,7 @@ galya.controller('imagesController', ['$scope', 'siteData','$routeParams','$rout
 
     });
 
-    //GET FILTERED DATA;
+    //GET FILTERED DATA !!!!!! AND CHECK FOR PAGES !!!!!!!;
     $scope.filter = function (groupId, filtersObject) {
 
         if (countOfAllPages == null) {
@@ -125,8 +125,8 @@ galya.controller('imagesController', ['$scope', 'siteData','$routeParams','$rout
         var parent = $(data.currentTarget)[0];
 
         var image = $(parent).children()[0];
-        $(image).css({'max-width': '103%'});
-        $(image).css({'max-height': '103%'});
+        $(image).css({'max-width': '105%'});
+        $(image).css({'max-height': '105%'});
         $(image).css({' -webkit-transition': 'max-width 0.3s, max-height 0.3s'});
         $(image).css({'transition': 'max-height 0.3s, max-height 0.3s'});
         $(image).css({'-webkit-transition': 'all 0.3s ease-in-out'});
@@ -138,8 +138,8 @@ galya.controller('imagesController', ['$scope', 'siteData','$routeParams','$rout
 
         var parent = $(data.currentTarget)[0];
         var image = $(parent).children()[0];
-        $(image).css({'max-width': '100%'});
-        $(image).css({'max-height': '100%'});
+        $(image).css({'max-width': '103%'});
+        $(image).css({'max-height': '103%'});
         $(image).css({' -webkit-transition': 'max-width 0.3s, max-height 0.3s'});
         $(image).css({'transition': 'max-height 0.3s, max-height 0.3s'});
         $(image).css({'-webkit-transition': 'all 0.3s ease-in-out'});

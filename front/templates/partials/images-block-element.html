@@ -1,6 +1,6 @@
 <div class="imagesWrapper">
 
-    <div class="col-md-12" style="border: 1px solid lightgray; margin-bottom: 9px"></div>
+    <div class="col-xs-12 col-sm-12 col-md-11" style="border: 1px solid lightgray; margin-left: 10px; margin-bottom: 9px;"></div>
     <div class="col-md-12">
         <div class="row">
 
@@ -14,7 +14,10 @@
             <a ng-href="#/gallery/{{i.id}}" ng-mouseover="zoom($event)" ng-mouseout="unzoom($event)" id="regularImage"
                ng-repeat="i in imageData">
                 <img src="images/{{i.source}}">
-                <img class="mIco" src="css/img/mountains-ico.png">
+                <!--<span class="mIco glyphicon glyphicon-eye-open"></span>-->
+                <!--<img class="mIco" src="css/img/eye_1.png">-->
+                <!--<img class="mIco" src="css/img/photo.png">-->
+                <img class="mIco" src="css/img/image.png">
             </a>
         </div>
     </div>

@@ -1,63 +1,65 @@
 
-    <div class="socialButtonsWrapper">
-        <div class="row">
+    <!--<div class="socialButtonsWrapper">-->
+        <!--<div class="row">-->
 
 
 
-           <div class="innerSocialWrapper">
-               <div id="fb-root"></div>
-               <script>
-                   window.fbAsyncInit = function() {
-                       FB = null;
-                       FB.init({appId: 'http://www.algaivel.com/', status: true, cookie: true,
-                           xfbml: true});
-                   };
-                   (function() {
-                       var e = document.createElement('script'); e.async = true;
-                       e.src = document.location.protocol +
-                               '//connect.facebook.net/en_US/all.js';
-                       document.getElementById('fb-root').appendChild(e);
-                   }());
-               </script>
+           <!--<div class="innerSocialWrapper">-->
+               <!--<div id="fb-root"></div>-->
+               <!--<script>-->
+                   <!--(function () {-->
+                       <!--window.fbAsyncInit = function() {-->
+                           <!--FB = null;-->
+                           <!--FB.init({appId: 'http://www.algaivel.com/', status: true, cookie: true,-->
+                               <!--xfbml: true});-->
+                       <!--};-->
+                       <!--(function() {-->
+                           <!--var e = document.createElement('script'); e.async = true;-->
+                           <!--e.src = document.location.protocol +-->
+                                   <!--'//connect.facebook.net/en_US/all.js';-->
+                           <!--document.getElementById('fb-root').appendChild(e);-->
+                       <!--}());-->
+                   <!--})();-->
+               <!--</script>-->
 
-               <!-- Your like button code -->
-               <div class="fb-like"
-                    data-href="http://www.algaivel.com/"
-                    data-layout="button_count"
-                    data-action="like"
-                    data-show-faces="true"
-                    data-share="true"
-               >
-               </div>
+               <!--&lt;!&ndash; Your like button code &ndash;&gt;-->
+               <!--<div class="fb-like"-->
+                    <!--data-href="http://www.algaivel.com/"-->
+                    <!--data-layout="button_count"-->
+                    <!--data-action="like"-->
+                    <!--data-show-faces="true"-->
+                    <!--data-share="true"-->
+               <!--&gt;-->
+               <!--</div>-->
 
 
 
 
-               <a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
-               <script>
-                   !function(d,s,id){
-                   var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+               <!--<a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>-->
+               <!--<script>-->
+                   <!--!function(d,s,id){-->
+                   <!--var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';-->
 
-                       js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);
-                   }(document, 'script', 'twitter-wjs');
-               </script>
+                       <!--js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);-->
+                   <!--}(document, 'script', 'twitter-wjs');-->
+               <!--</script>-->
 
-               <!-- Поставете този маркер в заглавката или точно преди затварящия маркер за основния текст. -->
-               <script src="https://apis.google.com/js/platform.js" async defer>
-                   {lang: 'bg'}
-               </script>
+               <!--&lt;!&ndash; Поставете този маркер в заглавката или точно преди затварящия маркер за основния текст. &ndash;&gt;-->
+               <!--<script src="https://apis.google.com/js/platform.js" async defer>-->
+                   <!--{lang: 'bg'}-->
+               <!--</script>-->
 
-               <!-- Поставете този маркер там, където искате да се изобразява вашият бутон „Споделяне“. -->
+               <!--&lt;!&ndash; Поставете този маркер там, където искате да се изобразява вашият бутон „Споделяне“. &ndash;&gt;-->
 
-               <div class="gwrap">
-                   <div class="g-plus" data-action="share" data-annotation="none"></div>
-               </div>
+               <!--<div class="gwrap">-->
+                   <!--<div class="g-plus" data-action="share" data-annotation="none"></div>-->
+               <!--</div>-->
 
-           </div>
+           <!--</div>-->
 
-        </div>
+        <!--</div>-->
 
-        </div>
+        <!--</div>-->
     </div>
 
     <div id="iconsSetWrapper">
@@ -69,7 +71,7 @@
             <a ng-click="favorites()"><span id="ico" class="favorites arrow glyphicon glyphicon-heart"></span></a>
         </div>
         <div class="innerWrapper">
-            <a href="#/gallery/fineArt/{{currentImage.id}}"><span id="fineArt" class="favorites arrow glyphicon glyphicon-picture"></span></a>
+            <a  data-toggle="tooltip" title="Hooray!" href="#/gallery/fineArt/{{currentImage.id}}"><span id="fineArt" class="favorites arrow glyphicon glyphicon-picture"></span></a>
         </div>
 
         <div class="innerWrapper">

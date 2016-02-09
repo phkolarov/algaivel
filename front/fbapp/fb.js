@@ -21,7 +21,6 @@ function statusChangeCallback(response) {
 
 function checkLoginState() {
     FB.getLoginStatus(function(response) {
-      console.log(response);
       statusChangeCallback(response);
     });
 }
@@ -33,7 +32,8 @@ function getUserInfo(token, id) {
     function (response) {
 
       if (response && !response.error) {
-        userInfo = response;
+        userInfo.name = response.name;
+        userInfo.id = response.id;
         $(document).trigger("userInfo:ready");
       }
 

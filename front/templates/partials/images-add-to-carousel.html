@@ -1,0 +1,13 @@
+<div class="imagesWrapper">
+
+    <div class="col-md-12" style="border: 1px solid lightgray; margin-bottom: 9px"></div>
+    <div class="col-md-12">
+        <div class="row">
+            <a id="regularImage"
+               ng-repeat="i in imageData">
+                <img style="cursor:pointer" ng-click="addToQueueAC($event)" src="images/{{i.source}}" data-id="{{i.id}}">
+            </a>
+        </div>
+    </div>
+
+</div>

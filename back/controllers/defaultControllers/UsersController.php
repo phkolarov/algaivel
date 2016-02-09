@@ -14,7 +14,7 @@ class UsersController{
 			$data = file_get_contents('php://input');
 			$data = json_decode($data);
 
-			if( $data->data->username == 'zhivko' && $data->data->id == '10153885240913377' ){
+			if( $data->data->username == 'admin' && $data->data->id == 'assdafsdafadsdasfafsd' ){
 
 				$link = mysqli_connect("localhost", "root", "", "algaivel");
 
@@ -74,6 +74,13 @@ class UsersController{
 		}else{
 			
 		}
+
+	}
+
+
+	public function setAboutMeInformation($params){
+
+
 
 	}
 

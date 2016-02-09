@@ -1,52 +1,33 @@
-galya.controller('adminController',['$scope', '$http', 'serviceURL',function ($scope, $http,serviceURL) {
+galya.controller('adminController',['$scope', 'siteData', '$http', 'serviceURL','$routeParams', '$location' ,function ($scope, siteData, $http,serviceURL,$routeParams, $location) {
 
 
-    console.log(serviceURL)
+    /*Post Article*/
 
-	$scope.getImage = function() {
-
-        return $http({
-            url: serviceURL + 'Gallery/getCarouselImages',
-            method: 'GET',
-            headers: {
-                "Content-type": "application/json",
-                "dataType": "json"
-            }
-        }).success(function(response) {
-            console.log(response);
-            $scope.setImages(response.results);
-        });
-
-
-
-	};
-
-    $scope.setImages = function(images) {
+   /* $scope.uploadArticle = function(){
         
-        var canvas = "";
+        var lang = document.getElementById('u-articleLang').value,
+            data,
+            title = document.getElementById('u-articleTitle').value,
+            image = document.getElementById('u-articleImage').value,
+            desc = document.getElementsByClassName('note-editable')[0].innerHTML;
 
-        images.forEach(function(index, value){
+        data = {
+            lang: lang,
+            title: title,
+            image: image,
+            desc: desc,
+            id: userInfo.id,
+            sessionId: userInfo.session
+        }
 
-            canvas += '<div><img src="images/'+ index.source +'" onclick="func(event)" /></div>';
+        data = JSON.stringify(data);
 
-        })
-
-        console.log(images);
-        document.getElementsByClassName('removeCarousel')[0].innerHTML = canvas;
-    }
-
-    func = function (e) {
-
-        var element = e.target.attributes.src.textContent;
-        var data = JSON.stringify({element: element, id: userInfo.id, sessionId: userInfo.session});
-
-        console.log(data);
         $http({
-            url: '../back/Admin/index',
-            method:'POST',
-            contentType:'application/json',
-            dataType:'json',
-            data: data
+             url: '../back/Admin/postArticle',
+             method:'POST',
+             contentType:'application/json',
+             dataType:'json',
+             data: data
         }).then(function successCallback(response) {
             console.log(response);
         }, function errorCallback(response) {
@@ -54,23 +35,22 @@ galya.controller('adminController',['$scope', '$http', 'serviceURL',function ($s
         });
 
 
+
     }
 
-	$scope.getImage();
+    $(document).ready(function() {
+      $('#summernote').summernote();
+    });*/
 
-    //$scope.addToCarousel = function(){
-    //
-    //    $http({
-    //        url: '../back/Gallery/index',
-    //        method:'get',
-    //    }).then(function successCallback(response) {
-    //        console.log(response);
-    //    }, function errorCallback(response) {
-    //        //console.log(response);
-    //    });
-    //
-    //}
-    //
-    //$scope.addToCarousel();
+
+    /*Edit Article*/
+  
+    $scope.route = function(path){
+        
+        $location.path(path);
+
+    }
+
+
 
 }]);

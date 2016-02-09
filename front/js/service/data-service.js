@@ -142,7 +142,7 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
             groups: categoryArray,
             tags: filtersArray
         };
-        return $http({
+        $http({
             url: url,
             method: 'POST',
             headers: {
@@ -150,7 +150,12 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
                 "dataType": "json"
             },
             data: JSON.stringify(data)
+        }).then(function (data) {
+            defer.resolve(data)
         });
+
+
+        return defer.promise;
     }
 
     function nextImage(id, categoryArray, filtersArray) {
@@ -252,7 +257,7 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
         })
     }
 
-    function getAboutMeInformation(){
+    function getAboutMeInformation() {
 
 
         var url = serviceURL + "aboutme";
@@ -262,12 +267,60 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
             method: "GET",
             headers: {
                 "Content-type": "application/json",
-                "dataTYpe": "json"
+                "dataType": "json"
             }
         })
     }
 
 
+    function searchArticles(context, page, lang) {
+
+        var url = serviceURL + "search/searchArticles/" + page + "/" + context;
+
+
+        if (lang == "BG") {
+            url += "/BG"
+        } else {
+            url += "/EN"
+        }
+
+        return $http({
+            url: url,
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "dataType": "json"
+            }
+        })
+    }
+
+    function searchImages(context, page, lang) {
+        var url = serviceURL + "search/searchImages/" + page + "/" + context;
+
+
+        if (lang == "BG") {
+            url += "/BG"
+        } else {
+            url += "/EN"
+        }
+
+        return $http({
+            url: url,
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "dataType": "json"
+            }
+        })
+    }
+
+    function setAboutMeInformation(){
+
+
+
+
+
+    }
 
 
     return {
@@ -282,7 +335,9 @@ galya.factory("siteData", ['$http', 'serviceURL', '$q', '$routeParams', function
         getPageNewsCount: getPageNewsCount,
         getCurrentArticle: getCurrentArticle,
         getFineArtInfo: getFineArtInfo,
-        getAboutMeInformation: getAboutMeInformation
+        getAboutMeInformation: getAboutMeInformation,
+        searchArticles: searchArticles,
+        searchImages: searchImages
     }
 
 

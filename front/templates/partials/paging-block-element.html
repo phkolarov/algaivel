@@ -1,6 +1,6 @@
 <div class="paginationWrapper">
 
-    <button class="btn btn-default" ng-click="backPage()">&#8592;</button>
+    <button class="btn btn-default noRadius" ng-click="backPage()">&#8592;</button>
 
     <ul class="paging">
         <li ng-repeat="i in leftSideButtons(leftPageButForPrint) track by $index"><a href="#/gallery/page/{{leftSideIndex + $index}}">{{leftSideIndex + $index}}</a></li>
@@ -11,5 +11,5 @@
     <ul class="paging">
         <li ng-repeat="i in rightSideButtons(rightPageButForPrint) track by $index"><a href="#/gallery/page/{{rightSideIndex + $index}}">{{rightSideIndex + $index}}</a></li>
     </ul>
-    <button class="btn btn-default" ng-click="nextPage()">&#8594;</button>
+    <button class="btn btn-default noRadius" ng-click="nextPage()">&#8594;</button>
 </div>

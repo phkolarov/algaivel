@@ -61,7 +61,7 @@ galya.controller('fineArtController', ['$scope','siteData','$sce','$routeParams'
         var animationWidth = width/100 * 33;
         var animationHeight = height/100 * 25;
         var animationTop = height/100 *30;
-        var animationLeft = width/100 *23;
+        var animationLeft = width/100 *21;
 
         $('#animation').css('width',animationWidth);
         $('#animation').css('height',animationHeight);
@@ -78,7 +78,7 @@ galya.controller('fineArtController', ['$scope','siteData','$sce','$routeParams'
         var animationWidth = width / 100 * 28;
         var animationHeight = height / 100 * 40;
         var animationTop = height / 100 * 16.6;
-        var animationLeft = width / 100 * 37;
+        var animationLeft = width / 100 * 35;
 
         $('#animation').css('width', animationWidth);
         $('#animation').css('height', animationHeight);
@@ -96,7 +96,7 @@ galya.controller('fineArtController', ['$scope','siteData','$sce','$routeParams'
         var animationWidth = width / 100 * 34;
         var animationHeight = height / 100 * 36;
         var animationTop = height / 100 * 30;
-        var animationLeft = width / 100 * 33;
+        var animationLeft = width / 100 * 32;
 
         $('#animation').css('width', animationWidth);
         $('#animation').css('height', animationHeight);

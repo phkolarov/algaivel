@@ -1,0 +1,39 @@
+<div class="editAboutMeWrapper col-md-12">
+<h1>За мен</h1>
+
+
+   <div class="col-md-6">
+       <form role="form">
+           <div class="form-group">
+           <label >Съдържание Български</label>
+
+               <div class="form-group">
+                   <input type="checkbox" id="langSlider" data-on-text="Български" data-off-text="Английски" value="aboutMeLanguage" name="my-checkbox" checked>
+               </div>
+               <script>
+
+
+                   $("[name='my-checkbox']").bootstrapSwitch();
+                   $('input[name="my-checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+
+                       angular.element('#langSlider').scope().changeAboutMeLanguage();
+
+
+                   });
+
+
+               </script>
+               <form>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                {{aboutMeContent}}
+            </textarea>
+                   <script>
+                       var editor = CKEDITOR.replace( 'editor1' );
+                   </script>
+               </form>
+       </div>
+           <button ng-click="submitAboutMeInfo()" type="submit" class="btn btn-default">Запази</button>
+       </form>
+   </div>
+
+</div>

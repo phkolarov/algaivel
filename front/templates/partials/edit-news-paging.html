@@ -1,0 +1,16 @@
+<div class="editNewsPagination">
+
+    <button ng-click="backNewsPage()">&#8592;</button>
+
+    <ul class="paging">
+        <li ng-repeat="i in leftSideButtons(leftPageButForPrint) track by $index"><a href="#/adminPanel/editNews/{{leftSideIndex + $index}}/{{linkYear}}">{{leftSideIndex + $index}}</a></li>
+    </ul>
+    <ul id="currentPage" class="paging">
+        <li><a href="#/gallery/page/{{currentPage}}/{{linkYear}}">{{currentPage}}</a></li>
+    </ul>
+    <ul class="paging">
+        <li ng-repeat="i in rightSideButtons(rightPageButForPrint) track by $index"><a href="#/adminPanel/editNews/{{rightSideIndex + $index}}/{{linkYear}}">{{rightSideIndex + $index}}</a></li>
+    </ul>
+
+    <button ng-click="nextNewsPage()">&#8594;</button>
+</div>

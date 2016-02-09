@@ -7,7 +7,7 @@ galya.controller('loginController', ['$scope', '$http', function ($scope, $http)
 
       var username = document.getElementById('loginEmail').value,
           password = CryptoJS.SHA512(document.getElementById('loginPass').value).toString(CryptoJS.enc.Base64),
-          id = userInfo.id || '1',
+          id = 'assdafsdafadsdasfafsd' || '1',
           data = {
               username: username,
               password: password,

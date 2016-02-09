@@ -1,6 +1,9 @@
 galya.controller('galleryController',['$scope','siteData','$route', function ($scope,siteData,$route) {
 
 
+
+
+
     $scope.pageCount = [
         { name: '15', value: '15' },
         { name: '30', value: '30' },
